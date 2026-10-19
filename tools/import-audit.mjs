@@ -10,7 +10,11 @@ export const ARCHIVED_SOURCE_BLOBS=Object.freeze({
  'src/classic/OriginalRomSha1.js':'6153a5c4caf10a09a8f0992e934a1263b6560b97',
  'src/classic/NesBinaryAssets.js':'694627443c015cd12e57fe4be5c32a78aea46c2d',
  'src/classic/OriginalChrBanking.js':'669acc786b5b957731f7b1ad0dea26bf4e172d1d',
- 'src/classic/OriginalWeatherSprites.js':'1e2fd245ccce2725398be2434df6fbdbd5d8c3a1'
+ 'src/classic/OriginalWeatherSprites.js':'1e2fd245ccce2725398be2434df6fbdbd5d8c3a1',
+ 'src/classic/OriginalPpuTransfers.js':'29edb93b67d4ca93991fa79781f197c81bcb2a0d',
+ 'src/classic/OriginalActionBuffers.js':'ae9f2e48b17fba5846796656ceeb9e16b1a45abf',
+ 'src/classic/OriginalInput.js':'aa991f4cfbc83e13321bf96b852020d35f51db8f',
+ 'src/classic/OriginalPossessionControl.js':'d56920ac60d4832cece81f37881a37efdbcee5b0'
 });
 export const archivedGitBlob = content => createHash('sha1').update('blob '+content.length+'\0').update(content).digest('hex');
 export function verifyRestoredSources(root=fileURLToPath(new URL('..',import.meta.url))){
