@@ -13,3 +13,7 @@ Pinned upstream: `df2c8e55e7f13e5792482527db9e7c9e4a84c6e1`
 The exact original ROM, extracted graphics and sound bytes must be supplied locally by the owner rather than embedded or uploaded to the public repository. This document tracks implementation progress, not a 1:1 fidelity certification.
 
 The full original 185-file archive and its historical Git commits are not yet imported. Every recovered JS blob above has been verified individually using GitHub Git object SHA.
+
+| `CHR_ROM.chr` graphics format; iNES header inspection | `src/classic/NesBinaryAssets.js` | `java/src/org/magicfootball/classic/OriginalChrDecoder.java` | Exact original archived JS blob; 2bpp synthetic Node test; exhaustive 65,536 Java plane-byte pairs | No original CHR bytes distributed, no verified palette |
+| `bank_FF.asm` `$EE7D–$EED2`, MMC3 CHR select | `src/classic/OriginalChrBanking.js` | pending | Exact original archived JS blob, synthetic mapper inversion test | No full sprite composition |
+| `bank_FF.asm` `$D993–$DA45`, weather OAM | `src/classic/OriginalWeatherSprites.js` | pending | Exact original archived JS blob, synthetic twelve-sprite initialisation test | Actual weather frames and palette unverified |

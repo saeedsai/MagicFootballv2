@@ -3,7 +3,7 @@ on:
   push:
   pull_request:
 jobs:
-  java-rng-parity:
+  java-classic-core:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -14,5 +14,7 @@ jobs:
           distribution: temurin
           java-version: '21'
       - run: mkdir -p build/java
-      - run: javac -d build/java java/src/org/magicfootball/classic/OriginalRandom.java java/test/org/magicfootball/classic/OriginalRandomTest.java
+      - run: javac -d build/java java/src/org/magicfootball/classic/*.java java/test/org/magicfootball/classic/*.java
       - run: java -cp build/java org.magicfootball.classic.OriginalRandomTest
+
+      - run: java -cp build/java org.magicfootball.classic.OriginalChrDecoderTest
