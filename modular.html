@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#111b2b"><title>Kunio Soccer — Native Development Foundation</title><link rel="stylesheet" href="./styles.css"></head>
+<body>
+<div class="app">
+  <header class="topbar"><div class="brand"><span class="brand-icon">⚽</span><span>KUNIO SOCCER <small>BINARY RECONSTRUCTION / v0.13</small></span></div><nav><button id="homeBtn">Home</button><button id="controlsBtn">Controls</button><button id="restartBtn">Restart</button><button id="pauseBtn">Pause</button><button id="saveReplayBtn" disabled>Save Replay</button><button id="loadReplayBtn">Load Replay</button><input type="file" id="replayFile" accept=".json,application/json" hidden></nav></header>
+  <main>
+    <section id="home" class="home">
+      <div class="hero-label">ORIGINAL NES BINARY • SOURCE-DRIVEN RECONSTRUCTION</div>
+      <h1>ORIGINAL NES FOOTBALL<br><em>FAITHFUL RECONSTRUCTION.</em></h1>
+      <p class="intro">Classic Mode is being rebuilt directly from original NES machine code, binary graphics, and verified game data. Original 8×8 graphics tiles can be decoded from your own NES binary, or viewed immediately when a privately imported original ROM is available. The separate development match is provisional, not a version of the original game.</p>
+      <div class="mode-grid"><article class="mode-card locked"><div class="mode-index">01 / ORIGINAL</div><h2>CLASSIC NES</h2><p>Fidelity conversion in progress. Original rules, sprites, menus, teams and animation must be verified first.</p><span class="coming">NOT YET PLAYABLE</span><div><button id="classicGraphicsLabBtn" type="button">INSPECT ORIGINAL CHR GRAPHICS →</button> <button id="classicInputLabBtn" type="button">ORIGINAL INPUT LAB →</button></div></article>
+      <article class="mode-card active"><div class="mode-index">02 / ENGINE PREVIEW</div><h2>DEVELOPMENT MATCH</h2><p>Unverified mechanics and provisional artwork; preserved as an internal engine testbed, NOT the original NES game.</p><button id="playBtn" class="primary">PLAY DEVELOPMENT MATCH →</button></article></div>
+      <p class="legal">Original NES ROM/PRG/audio are not included. A private owner-specific build may contain only the verified CHR tiles extracted from the provided ROM. These are source tile patterns, NOT fully composed original character sprites. Source pinned to <code>df2c8e55</code>; do not distribute copyrighted data without rights.</p>
+    </section>
+    <section id="game" class="game hidden" aria-label="Football development match">
+      <div class="canvas-frame"><canvas id="field" width="960" height="540" aria-label="Football pitch; use keyboard, gamepad, or touch controls"></canvas></div>
+      <div id="touchSurface" class="touch-surface"><div class="joystick" id="joystick" aria-label="Touch joystick"><div class="joystick-dot" id="joystickDot"></div></div><div class="touch-actions" id="touchActions"><button data-touch="shoot">SHOOT</button><button data-touch="pass">PASS</button><button data-touch="tackle">TACKLE</button><button data-touch="sprint">SPRINT</button></div></div>
+      <div class="below-controls"><span>Single-player development ruleset • 60Hz fixed-step</span><div><button id="switchBtn">Switch player</button><button id="gamePauseBtn">Pause / Resume</button></div></div>
+    </section>
+    <section id="lab" class="lab hidden" aria-label="Original NES controller research lab">
+      <div class="settings-top"><h2>ORIGINAL NES CONTROLLER LAB</h2><button id="labBackBtn">Back to Home</button></div>
+      <p>This research tool ports the controller serial-read and new-press detection from original assembly at $EE06 and $EDCD, plus the two-byte random update at $EE35. Toggle any NES buttons, then select <strong>Scan frame</strong>. It does not run original football gameplay. The original field-screen Start-to-pause mapping and a kickoff gate are traced separately below.</p>
+      <div class="lab-toolbar"><button id="labScanBtn" class="primary">SCAN FRAME</button><button id="labResetBtn">Reset controller state</button></div>
+      <div id="labChannels" class="lab-channels"></div><p id="labStatus" role="status"></p>
+      <article class="lab-field"><h3>Original match-state logic — source-derived, isolated</h3>
+        <p>When the <strong>field</strong> subscreen ($C615) is active, a <strong>new Start press on channel 1</strong> toggles game-script pause bit $80. Select Start above, scan, release and scan, then press and scan again. Audio command bytes are recorded, not played; the research music ID is an arbitrary $12.</p>
+        <p id="labFieldStatus" role="status"></p>
+        <div class="lab-field-controls">
+          <label><input id="labFoulPending" type="checkbox"> Foul pending (game-script bit $20)</label>
+          <label>Ball state flags <select id="labBallFlags"><option value="0">$00 (neither)</option><option value="64">$40</option><option value="128">$80</option><option value="192">$C0</option></select></label>
+          <label><input id="labBrightnessReady" type="checkbox" checked> Brightness complete (bit $80)</label>
+          <button id="labKickoffTraceBtn" type="button">TRACE KICKOFF GATE</button><button id="labFieldResetBtn" type="button">Reset field bytes</button>
+        </div>
+        <p id="labKickoffStatus" role="status">Kickoff trace not yet run. The downstream original state transition is not implemented.</p>
+      </article>
+      <article class="lab-field" id="labGoalCutscene"><h3>Original goal cutscene — source-derived RAM trace</h3>
+        <p>The original match subscreen 03 ($C699) updates the goal cutscene timer, camera target, and skip gate. This is an isolated <strong>direct-write projection</strong>: twelve earlier routines plus $D047/$D073/$C91A/audio remain unported. Inputs below are <em>post-external-call research snapshots</em>, not actual Classic gameplay.</p>
+        <div class="lab-field-controls">
+          <label>Timer $05E2 <input id="labGoalTimer" type="number" min="0" max="255" value="31" style="width:5rem"></label>
+          <label><input id="labGoalCameraFlag" type="checkbox" checked> Game script bit $02 (camera follow)</label>
+          <label><input id="labGoalSkip" type="checkbox"> New Start press (skip)</label>
+          <label>Brightness $05B2 <select id="labGoalBrightness"><option value="0">$00</option><option value="64">$40</option><option value="128">$80</option><option value="192">$C0 (complete)</option></select></label>
+          <button id="labGoalTraceBtn" type="button">STEP GOAL CUTSCENE</button><button id="labGoalResetBtn" type="button">Reset goal trace</button>
+        </div>
+        <p id="labGoalStatus" role="status">Goal cutscene research not yet run. No original match transitions are executed.</p>
+      </article>
+      <article class="lab-field" id="labOriginalPlayerAction"><h3>Original player action selection — bank 04 research</h3>
+        <p>Bank 04 $B8AB–$B9E2 selects an action byte and sometimes a facing angle from player state, NES button edges and auxiliary buffers. This is a <strong>post-$C07A snapshot evaluator</strong>: the original $C07A <em>trampoline</em> now has a separately ported target ($FAEE–$FBA8), but subsequent action execution, ball physics and gameplay are <strong>not</strong> implemented. Enter byte values as decimal (0–255); default player state $80 with a new A press $80 should select action $04. The action codes are raw NES values, not confirmed English football move names.</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Player ID <input id="labActionPlayerId" type="number" min="0" max="11" value="0"></label>
+          <label>Control position $0650 <input id="labActionControlPosition" type="number" min="0" max="255" value="0"></label>
+          <label>Initial action $0479 <input id="labActionInitialAction" type="number" min="0" max="255" value="128"></label>
+          <label>Player state $0486 <input id="labActionPlayerState" type="number" min="0" max="255" value="128"></label>
+          <label>Held $0004 <input id="labActionHeld" type="number" min="0" max="255" value="0"></label>
+          <label>New press $0008 <input id="labActionPressed" type="number" min="0" max="255" value="128"></label>
+          <label>Buffer $0570 <input id="labActionBuffer20" type="number" min="0" max="255" value="0"></label>
+          <label>Buffer $057C <input id="labActionBuffer21" type="number" min="0" max="255" value="0"></label>
+          <label>Facing $04A3 <input id="labActionFacing" type="number" min="0" max="255" value="0"></label>
+          <label>Initial angle $04B0 <input id="labActionInitialAngle" type="number" min="0" max="255" value="255"></label>
+          <label>Kickoff script $005C <input id="labActionScript" type="number" min="0" max="255" value="0"></label>
+          <button id="labActionTraceBtn" type="button">TRACE PLAYER ACTION</button><button id="labActionResetBtn" type="button">Reset action trace</button>
+        </div>
+        <div class="lab-field-controls"><button id="labBufferStepBtn" type="button">STEP $FAEE BUTTON BUFFERS</button><button id="labBufferResetBtn" type="button">Reset button buffers</button></div>
+        <p id="labBufferStatus" role="status">The original $FAEE–$FBA8 helper is now ported. Step it repeatedly with the Held/New press inputs above; it updates buffer $0570/$057C and can feed the action trace. No original NES execution is performed.</p>
+        <p id="labActionStatus" role="status">Player action research not yet run. The downstream action executor remains unported.</p>
+      </article>
+      <article class="lab-field" id="labOriginalPossession"><h3>Original script-bit0 possession control — bank 04 $B850</h3>
+        <p>Source-derived direct RAM writes for the <strong>$B4B2 → $B850</strong> path. This legacy single-branch preview leaves $B4C9 unexecuted; the new full controller selector lab below executes that path on an independent RAM fixture. This branch may write an action at the <em>matched controller slot</em> instead of the ball owner's index. The $B8A8 three-byte angle table also reads the next instruction byte ($86) for index 3. Enter decimal bytes; this is <strong>not</strong> original runtime parity or a playable Classic match.</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Script $005C <input id="labPossScript" type="number" min="0" max="255" value="1"></label>
+          <label>Ball owner $04D6 <input id="labPossOwner" type="number" min="0" max="255" value="2"></label>
+          <label>Frame $0300 <input id="labPossFrame" type="number" min="0" max="255" value="0"></label>
+          <label>Matched slot $0568 <select id="labPossSlot"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="none">None</option></select></label>
+          <label>Slot held $0004+X <input id="labPossHeld" type="number" min="0" max="255" value="0"></label>
+          <label>Slot press $0008+X <input id="labPossPressed" type="number" min="0" max="255" value="128"></label>
+          <label>Channel 0 press (other slot) <input id="labPossPress0" type="number" min="0" max="255" value="0"></label>
+          <label>Control 0 $0650 <input id="labPossControl0" type="number" min="0" max="255" value="0"></label>
+          <label>Control 1 $0651 <input id="labPossControl1" type="number" min="0" max="255" value="0"></label>
+          <button id="labPossTraceBtn" type="button">STEP $B4B2 SCRIPT BRANCH</button><button id="labPossResetBtn" type="button">Reset possession trace</button>
+        </div>
+        <p id="labPossStatus" role="status">No possession branch executed. Source-local RAM fixture only; original gameplay remains disabled.</p>
+      </article>
+      <article class="lab-field" id="labOriginalAlternate"><h3>Original four-controller action selector — bank 04 $B4C9–$B724</h3>
+        <p>The <strong>new native controller selector</strong> executes the $C07A/$FAEE buffer helper, seven group pointers, four state classes and twelve-entry raw action tables. When script bit 0 is clear it processes all four controller slots in original order; otherwise it dispatches the separately reconstructed $B850 possession branch. Only synthetic RAM bytes are used. <strong>Action IDs have no verified football meaning and Classic gameplay is not running.</strong></p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Script $005C <input id="labAltScript" type="number" min="0" max="255" value="0"></label>
+          <label>Controller slot <select id="labAltSlot"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></label>
+          <label>Player $0568 <input id="labAltPlayer" type="number" min="0" max="255" value="2"></label>
+          <label>State $0486 <input id="labAltState" type="number" min="0" max="255" value="128"></label>
+          <label>Action $0479 <input id="labAltAction" type="number" min="0" max="255" value="128"></label>
+          <label>Held $0004 <input id="labAltHeld" type="number" min="0" max="255" value="0"></label>
+          <label>Pressed $0008 <input id="labAltPressed" type="number" min="0" max="255" value="128"></label>
+          <label>Owner $04D6 <input id="labAltOwner" type="number" min="0" max="255" value="12"></label>
+          <label>Movement $0459 <input id="labAltMovement" type="number" min="0" max="255" value="0"></label>
+          <label>Timer $04BD <input id="labAltTimer" type="number" min="0" max="255" value="0"></label>
+          <label>Team 0 flag $052A <input id="labAltTeam0" type="number" min="0" max="255" value="0"></label>
+          <label>Team 1 flag $052B <input id="labAltTeam1" type="number" min="0" max="255" value="0"></label>
+          <label>Pass direction 0 $067A <input id="labAltPass0" type="number" min="0" max="255" value="15"></label>
+          <button id="labAltTraceBtn" type="button">EXECUTE NATIVE CONTROLLER SELECTOR</button>
+          <button id="labAltResetBtn" type="button">Reset selector fixture</button>
+        </div>
+        <p id="labAltStatus" role="status">Controller selector not yet stepped. Original action execution and NES parity remain unverified.</p>
+      </article>
+      <article class="lab-field" id="labOriginalArbitration"><h3>Original action → movement arbitration — bank 06 $AA14</h3>
+        <p>New native source-local action arbitration from <strong>$AA14–$AAAB</strong>. It reads the pending action at $0479, the movement at $0459, player state and the original $AC69/$AC87 two-byte metadata tables. Accepted actions can replace a movement ID; rejected actions are cleared to $FF. This does <strong>not</strong> animate or physically execute football moves. Use decimal RAM bytes below, or chain the latest controller selector fixture (set its movement byte to 128 for the ready gate).</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Player <input id="labArbPlayer" type="number" min="0" max="11" value="2"></label>
+          <label>Pending action $0479 <input id="labArbAction" type="number" min="0" max="255" value="53"></label>
+          <label>Movement $0459 <input id="labArbMovement" type="number" min="0" max="255" value="128"></label>
+          <label>Player state $0486 <input id="labArbState" type="number" min="0" max="255" value="128"></label>
+          <label>Weather $0466 <input id="labArbWeather" type="number" min="0" max="255" value="0"></label>
+          <label>Skill $04F1 <input id="labArbSkill" type="number" min="0" max="255" value="1"></label>
+          <label>Surface $0130 <input id="labArbSurface" type="number" min="0" max="255" value="0"></label>
+          <label>Metadata table <select id="labArbVariant"><option value="0">$AC87 ($AA14)</option><option value="1">$AC69 ($AA19)</option></select></label>
+          <button id="labArbTraceBtn" type="button">TRACE ACTION ARBITRATION</button>
+          <button id="labArbChainBtn" type="button">CHAIN LAST CONTROLLER RESULT</button>
+          <button id="labArbResetBtn" type="button">Reset arbitration fixture</button>
+        </div>
+        <p id="labArbStatus" role="status">No arbitration step executed. Original NES movement physics and frame parity remain unverified.</p>
+      </article>
+      <article class="lab-field" id="labOriginalMovementTransition"><h3>Original movement-state and ball-action priority — bank 06</h3>
+        <p>Source-local <strong>$AAC3/$AAC8–$AB0A</strong> reconstructs player state flags from a numeric movement ID and Z bytes. <strong>$AB2A–$AB51</strong> compares a pending ball-action type with the current ball-state low nibble, optionally handing that numeric ID to player movement. These are exact audited branch operations on synthetic RAM, <strong>not player motion, shooting physics, sprites, or a verified original frame</strong>. The upstream weather callback $9856 is not implemented.</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Player <input id="labMovePlayer" type="number" min="0" max="11" value="2"></label>
+          <label>Movement ID $0459 <input id="labMoveId" type="number" min="0" max="255" value="53"></label>
+          <label>Old state $0486 <input id="labMoveState" type="number" min="0" max="255" value="128"></label>
+          <label>Z high $0399 <input id="labMoveZHi" type="number" min="0" max="255" value="128"></label>
+          <label>Z low $0386 <input id="labMoveZLo" type="number" min="0" max="255" value="247"></label>
+          <label>Pending ball type $0485 <input id="labMoveShot" type="number" min="0" max="255" value="5"></label>
+          <label>Ball state $0492 <input id="labMoveBallState" type="number" min="0" max="255" value="0"></label>
+          <label>Metadata table <select id="labMoveVariant"><option value="0">$AC87</option><option value="1">$AC69</option></select></label>
+          <button id="labMoveStateBtn" type="button">TRACE MOVEMENT STATE</button>
+          <button id="labMoveShotBtn" type="button">TRACE BALL-ACTION PRIORITY</button>
+        </div>
+        <p id="labMoveStatus" role="status">No source-local transition executed. Classic Mode is still disabled.</p>
+      </article>
+      <p class="legal">Four raw serial channels are shown for source research. The RNG starts from an arbitrary demonstration seed ($12,$34), not a verified original boot seed. Original hardware/controller configurations are not yet verified. Two matching reads are required; the browser adds a bounded retry safeguard.</p>
+    </section>
+    <section id="graphicsLab" class="graphics-lab hidden" aria-label="Original NES CHR binary graphics laboratory">
+      <div class="settings-top"><h2>ORIGINAL NES BINARY GRAPHICS INSPECTOR</h2><button id="graphicsBackBtn">Back to Home</button></div>
+      <p>This tool decodes authentic NES 2bpp tile bytes from a <strong>locally selected</strong> `.nes` or `.chr` binary. No game binary or extracted artwork is bundled or uploaded. A decoded tile is not yet a composed character: original palette tables, OAM/metasprite layout, animation frames and game transitions still require reconstruction.</p>
+      <div class="graphics-toolbar"><label class="graphics-pick">Optional: select a replacement NES / CHR file <input id="graphicsFile" type="file" accept=".nes,.chr,.bin,application/octet-stream"></label><button id="graphicsPrev" disabled>◀ Previous 256 tiles</button><button id="graphicsNext" disabled>Next 256 tiles ▶</button></div>
+      <p id="graphicsStatus" role="status">No original binary loaded. Only file bytes you select locally will be inspected.</p>
+      <article class="lab-field" id="graphicsChrMapperLab"><h3>ORIGINAL MMC3 CHR BANK SWITCH — $EE7D / $EE9A</h3>
+        <p>The original bank FF routines write RAM $05BC/$05BD to MMC3 registers 0/1 and RAM $05B8–$05BB to registers 2–5. This displays the <strong>actual source-selected CHR tile mapping</strong> from a locally imported original ROM, not assembled characters. Values below are <strong>synthetic research RAM</strong>, not a verified original frame. Palette, OAM, animation and sprites remain unconverted.</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>BG $05BC (2 KiB) <input id="graphicsBg0" type="number" min="0" max="255" value="0"></label>
+          <label>BG $05BD (2 KiB) <input id="graphicsBg1" type="number" min="0" max="255" value="2"></label>
+          <label>Sprite $05B8 <input id="graphicsSp0" type="number" min="0" max="255" value="4"></label>
+          <label>Sprite $05B9 <input id="graphicsSp1" type="number" min="0" max="255" value="5"></label>
+          <label>Sprite $05BA <input id="graphicsSp2" type="number" min="0" max="255" value="6"></label>
+          <label>Sprite $05BB <input id="graphicsSp3" type="number" min="0" max="255" value="7"></label>
+          <label>PPU table <select id="graphicsPpuTable"><option value="0">$0000–$0FFF</option><option value="1">$1000–$1FFF</option></select></label>
+          <button id="graphicsMapperApply" type="button">APPLY ORIGINAL REGISTER WRITES</button>
+        </div>
+        <p id="graphicsMapperStatus" role="status">Import an original ROM or CHR to inspect its banked PPU pattern tables.</p>
+        <canvas id="graphicsMappedAtlas" width="128" height="128" aria-label="Source-mapped NES PPU CHR pattern table with 256 tiles"></canvas>
+        <p class="legal">Banked tile display uses the MMC3 1 KiB pattern mapping with normal CHR orientation (inversion bit clear). It is not a complete NES PPU, palette, metasprite, or execution reference.</p>
+      </article>
+      <article class="lab-field" id="graphicsPpuTransferLab"><h3>ORIGINAL PPU PALETTE QUEUE / OAM DMA — $F05F / $EE5A</h3>
+        <p>The source-verified NMI palette queue writes CPU RAM $06D9–$06FB to PPU $2000/$2002/$2006/$2007; the original OAM DMA routine copies CPU RAM $0200–$02FF to OAM through $2003/$4014. The values below are <strong>synthetic RAM fixtures, NOT the game's original frame palette or character sprites</strong>. The PPU output is raw indexed bytes, not a claim of exact NES RGB colors.</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Queue count $06DB (1–32) <input id="ppuPaletteCount" type="number" min="1" max="32" value="32"></label>
+          <label>PPU address low $06DA <input id="ppuPaletteLow" type="number" min="0" max="255" value="0"></label>
+          <label>PPUCTRL shadow $004C <input id="ppuPaletteCtrl" type="number" min="0" max="255" value="0"></label>
+          <button id="ppuPaletteApply" type="button">RUN SOURCE PALETTE TRANSFER</button>
+          <button id="ppuOamApply" type="button">RUN SOURCE OAM DMA</button>
+        </div>
+        <p id="ppuPaletteStatus" role="status">Source PPU routines not yet stepped. No original runtime PPU/OAM snapshot is loaded.</p>
+        <pre id="ppuPaletteTrace" class="ppu-trace">No transfer data yet.</pre>
+      </article>
+      <article class="lab-field" id="originalWeatherSpriteLab"><h3>ORIGINAL WEATHER-EFFECT SPRITE PRODUCER — $D993–$DA45</h3>
+        <p>This source-derived routine initializes and updates <strong>12 actual NES OAM entries</strong> using the original PRG tables $DA46/$DA52/$DA5E/$DA6A/$DA76. Select your <strong>verified original .nes</strong> in the graphics file selector above; the PRG is used only in browser memory and is never bundled in the public build. This is a weather-effect OAM producer, <strong>not original player metasprites or an emulator frame</strong>.</p>
+        <div class="lab-field-controls lab-action-controls"><button id="weatherInitBtn" type="button">INITIALIZE SOURCE WEATHER OAM</button><button id="weatherStepBtn" type="button">STEP SOURCE WEATHER OAM</button></div>
+        <p id="weatherStatus" role="status">Awaiting authenticated original NES PRG. Synthetic RAM fixture only; Classic Mode disabled.</p>
+        <pre id="weatherTrace" class="ppu-trace">No source OAM entries generated.</pre>
+      </article>
+      <div class="graphics-workspace"><div><h3>Loaded 2bpp tiles — 16 × 16 page</h3><canvas id="graphicsAtlas" width="128" height="128" aria-label="Exact pixel-index decode of 256 NES tiles; click a tile to inspect"></canvas><p id="graphicsPageLabel">Load an original binary to inspect the 8×8 tile patterns.</p></div><div><h3>Selected CHR tile</h3><canvas id="graphicsTile" width="8" height="8" aria-label="Magnified NES tile"></canvas><p id="graphicsTileLabel">No tile selected.</p><p class="legal">Four grayscale inspection tones show exact 2-bit pixel indices (0–3). <strong>These are NOT asserted to be the original game's PPU colors.</strong> Character bodies/faces require their original multisprite composition and palette mapping.</p></div></div>
+    </section>
+    <section id="settings" class="settings hidden"><div class="settings-top"><h2>CONTROL MAPPINGS</h2><button id="closeSettings">Back</button></div><p>Click a keyboard binding, then press a key. Duplicate key assignments are rejected. Saved on this browser. Gamepad buttons use standard mapping indices.</p><div class="settings-grid"><div><h3>Keyboard</h3><div id="keyboardBindings"></div></div><div><h3>Gamepad</h3><div id="gamepadBindings"></div></div><div><h3>Touch button assignments</h3><div id="touchBindings"></div></div></div><p id="settingsNotice" role="status"></p><button id="resetControls">Reset defaults</button></section>
+  </main>
+  <div id="replayNotice" class="replay-notice" role="status" aria-live="polite"></div><footer>OPEN ENGINE FOUNDATION • CLASSIC FIDELITY PENDING • <span id="status">READY</span></footer>
+</div>
+<script type="module" src="./src/main.js"></script></body></html>
