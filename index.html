@@ -1,0 +1,2689 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#111b2b"><title>Kunio Soccer — Native Development Foundation</title><style>:root{color-scheme:dark;--bg:#0d1625;--panel:#18263a;--accent:#ffe593;--ink:#e6eff6;--soft:#a7bbcc}*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}button{font:inherit;cursor:pointer;color:inherit;background:#253851;border:1px solid #435b70;border-radius:9px;padding:10px 15px;font-weight:750}button:hover{background:#314b68}button:focus-visible{outline:3px solid var(--accent)}.app{min-height:100vh;max-width:1520px;margin:auto;display:flex;flex-direction:column}.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:17px clamp(15px,4vw,56px);border-bottom:1px solid #273748}.brand{font-size:19px;font-weight:950;letter-spacing:.035em;display:flex;align-items:center;gap:13px}.brand-icon{font-size:33px}.brand small{display:block;font-size:10px;letter-spacing:.21em;color:#f4d492}.topbar nav{display:flex;gap:7px;flex-wrap:wrap}.topbar button{background:transparent;border:none;font-size:13px;padding:8px 11px}main{flex:1}.home{padding:clamp(30px,5vw,76px) clamp(18px,7vw,100px) 28px;background:radial-gradient(ellipse at 83% 18%,#204c57 0,transparent 36%),var(--bg)}.hero-label{font:800 12px monospace;letter-spacing:.18em;color:#95c8b5}.home h1{margin:17px 0 22px;font-size:clamp(34px,5.8vw,76px);line-height:1.05;letter-spacing:-.055em;font-weight:950}.home h1 em{font-style:normal;color:var(--accent)}.intro{max-width:680px;color:#c0d0db;line-height:1.65;font-size:16px}.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:42px 0 30px}.mode-card{padding:29px;background:#18263acc;border-radius:15px;border:1px solid #385165;min-height:280px}.mode-card.active{border-color:#d4ac62;background:linear-gradient(140deg,#26364a,#1b3441)}.mode-card.locked{opacity:.78}.mode-index{letter-spacing:.15em;font:800 11px monospace;color:#9bb3c1}.mode-card h2{font-size:clamp(21px,3vw,33px);letter-spacing:-.04em;margin:18px 0 12px}.mode-card p{font-size:14px;line-height:1.7;color:#c7d4df;min-height:68px}.coming{display:inline-block;padding:11px 0;color:#e1bd82;font-size:12px;font-weight:800;letter-spacing:.08em}.primary{background:var(--accent);border-color:var(--accent);color:#17283b;font-weight:950}.primary:hover{background:#fff1be}.legal{font-size:12px;color:#8aa5b6}.game{padding:12px clamp(8px,3vw,40px)}.canvas-frame{aspect-ratio:16/9;width:100%;max-height:calc(100vh - 145px);margin:0 auto;position:relative;border:3px solid #405168;border-radius:10px;overflow:hidden;background:#13263a}.canvas-frame canvas{display:block;width:100%;height:100%;object-fit:contain}.below-controls{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px;color:#aec5d4;font-size:12px}.below-controls button{font-size:12px;margin-left:6px}.touch-surface{display:none;justify-content:space-between;align-items:center;gap:10px;margin:10px auto;max-width:850px;touch-action:none;user-select:none;-webkit-user-select:none}.joystick{position:relative;width:120px;height:120px;border:3px solid #89c5c996;border-radius:100%;background:#24495799;touch-action:none;flex:none}.joystick-dot{position:absolute;left:37px;top:37px;width:41px;height:41px;border-radius:100%;background:#8ed7d9;border:2px solid white;pointer-events:none}.touch-actions{display:grid;grid-template-columns:repeat(2,minmax(66px,93px));gap:9px}.touch-actions button{touch-action:none;border:2px solid #e7bf80;background:#6a4e38cf;border-radius:22px;padding:12px 7px;font-size:12px}.touch-actions button.is-down{background:#f8d895;color:#243344;transform:scale(.94)}.settings{padding:35px clamp(16px,5vw,75px)}.settings-top{display:flex;justify-content:space-between;align-items:center}.settings p{max-width:720px;line-height:1.6;color:#bed0dd}.settings-grid{display:grid;grid-template-columns:repeat(3,minmax(210px,1fr));gap:26px}.setting-row{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid #34475b;padding:9px 0;text-transform:capitalize}.setting-row button,.setting-row select{min-width:86px;font-size:12px;background:#283e56;color:#fff;border:1px solid #5f7a8c;border-radius:6px;padding:7px}.settings h3{color:#eacc8b}.hidden{display:none!important}footer{border-top:1px solid #293949;padding:13px 24px;font:700 10px monospace;color:#85a1b4;letter-spacing:.07em;text-align:center}@media (pointer:coarse){.touch-surface{display:flex}.canvas-frame{max-height:56vh}.game{padding:5px 10px}.below-controls{padding:4px}}@media(max-width:650px){.topbar{padding:7px 11px;align-items:flex-start}.brand{font-size:13px}.brand-icon{font-size:24px}.topbar nav{gap:0}.topbar button{padding:8px;font-size:11px}.mode-grid{grid-template-columns:1fr;gap:13px;margin:25px 0}.mode-card{min-height:unset;padding:20px}.mode-card p{min-height:unset}.settings-grid{grid-template-columns:1fr}.joystick{width:99px;height:99px}.joystick-dot{left:29px;top:29px;width:36px;height:36px}.touch-actions button{padding:8px 6px}.below-controls span{display:none}}@media(max-height:570px) and (orientation:landscape){.topbar{padding:4px 12px}.brand{font-size:12px}.brand-icon{font-size:18px}.brand small{font-size:8px}.topbar button{padding:4px 9px}.game{padding:2px 6px;display:grid;grid-template-columns:minmax(0,1fr) 245px;gap:8px;align-items:center}.canvas-frame{max-height:calc(100vh - 75px)}.touch-surface{margin:0;display:flex}.joystick{width:92px;height:92px}.joystick-dot{left:27px;top:27px;width:33px;height:33px}.touch-actions{grid-template-columns:1fr 1fr;gap:3px}.touch-actions button{font-size:9px;padding:9px 4px}.below-controls{display:none}footer{padding:4px}}
+
+.replay-notice{min-height:17px;text-align:center;font-size:11px;color:#9bd9c7;padding:1px 10px}.topbar button:disabled{opacity:.4;cursor:not-allowed}
+
+/* Source-derived NES controller laboratory (not a playable Classic mode). */
+.lab{padding:clamp(15px,4vw,50px);max-width:1200px;margin:0 auto;width:100%}
+.lab p{color:#bed0dd;line-height:1.55;max-width:900px}
+.lab-toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.lab-channels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.lab-channel{border:1px solid #486178;background:#1c2d42;padding:17px;border-radius:13px}
+.lab-channel h3{font-size:16px;margin:0 0 12px;color:#ffe593}
+.lab-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.lab-buttons button{padding:11px 4px;font-size:12px;touch-action:manipulation}
+.lab-buttons button[aria-pressed="true"]{background:#f3d488;color:#182a3a;border-color:#f3d488}
+.lab-bytes{font:600 12px/1.7 ui-monospace,monospace;color:#b4e5d4;margin-top:12px;word-break:break-word}
+@media(max-width:720px){.lab-channels{grid-template-columns:1fr}.lab-channel{padding:12px}}
+
+.lab-field{margin-top:20px;border:1px solid #8c7553;border-radius:13px;background:#263447;padding:16px 20px}
+.lab-field h3{margin:0;color:#ffe593}
+.lab-field-controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:12px 0}
+.lab-field-controls label{display:flex;align-items:center;gap:7px;font-size:13px}
+.lab-field-controls select{background:#1b3046;color:#fff;border:1px solid #7b96a9;padding:8px;border-radius:7px}
+.lab-field-controls input{accent-color:#e9c477}
+#labFieldStatus,#labKickoffStatus{font:600 13px/1.7 ui-monospace,monospace;color:#c5e8d8;word-break:break-word}
+
+.lab-field-controls input[type=number]{background:#1b3046;color:#fff;border:1px solid #7b96a9;padding:8px;border-radius:7px;max-width:6rem}
+
+#labActionStatus{font:600 13px/1.7 ui-monospace,monospace;color:#c5e8d8;word-break:break-word}
+.lab-action-controls input[type=number]{width:5rem}
+.lab-action-controls label{flex-wrap:wrap}
+
+#labBufferStatus{font:600 13px/1.7 ui-monospace,monospace;color:#c5e8d8;word-break:break-word}
+
+/* Original binary CHR inspector: faithful 8x8 index decode, neutral palette only. */
+.graphics-lab{padding:clamp(15px,4vw,50px);max-width:1200px;margin:0 auto;width:100%}
+.graphics-lab>p{max-width:940px;line-height:1.65;color:#bcd0dc}
+.graphics-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:20px 0}
+.graphics-pick{display:flex;flex-direction:column;gap:6px;font-size:13px;color:#e4cf9a}
+.graphics-pick input{max-width:320px;font:inherit;color:#c7e3df}
+.graphics-workspace{display:grid;grid-template-columns:minmax(0,580px) minmax(220px,330px);gap:26px}
+.graphics-workspace>div{border:1px solid #3a586d;background:#192a3c;border-radius:13px;padding:18px}
+.graphics-workspace h3{margin-top:0;font-size:15px;color:#ffe593}
+#graphicsAtlas{display:block;width:min(100%,512px);aspect-ratio:1;image-rendering:pixelated;image-rendering:crisp-edges;cursor:crosshair;border:1px solid #7896a3;background:#152332}
+#graphicsTile{display:block;width:min(100%,192px);aspect-ratio:1;image-rendering:pixelated;border:1px solid #7896a3;background:#152332}
+#graphicsPageLabel,#graphicsTileLabel,#graphicsStatus{font:500 13px/1.65 ui-monospace,monospace;color:#b9e9d3;overflow-wrap:anywhere}
+@media(max-width:720px){.graphics-workspace{grid-template-columns:1fr}}
+#graphicsChrMapperLab{margin:20px 0 26px}
+#graphicsMappedAtlas{display:block;width:min(100%,512px);aspect-ratio:1;image-rendering:pixelated;image-rendering:crisp-edges;border:1px solid #7896a3;background:#152332;margin:12px 0}
+#graphicsMapperStatus{font:500 13px/1.65 ui-monospace,monospace;color:#b9e9d3;overflow-wrap:anywhere}
+/* Original raw PPU register trace; values are deliberately not colorized. */
+.ppu-trace{white-space:pre-wrap;overflow-wrap:anywhere;max-height:240px;overflow:auto;padding:12px;background:#101c29;color:#d5e5ef;font:12px/1.55 ui-monospace,monospace;border-radius:6px}
+</style></head>
+<body>
+<div class="app">
+  <header class="topbar"><div class="brand"><span class="brand-icon">⚽</span><span>KUNIO SOCCER <small>BINARY RECONSTRUCTION / v0.13</small></span></div><nav><button id="homeBtn">Home</button><button id="controlsBtn">Controls</button><button id="restartBtn">Restart</button><button id="pauseBtn">Pause</button><button id="saveReplayBtn" disabled>Save Replay</button><button id="loadReplayBtn">Load Replay</button><input type="file" id="replayFile" accept=".json,application/json" hidden></nav></header>
+  <main>
+    <section id="home" class="home">
+      <div class="hero-label">ORIGINAL NES BINARY • SOURCE-DRIVEN RECONSTRUCTION</div>
+      <h1>ORIGINAL NES FOOTBALL<br><em>FAITHFUL RECONSTRUCTION.</em></h1>
+      <p class="intro">Classic Mode is being rebuilt directly from original NES machine code, binary graphics, and verified game data. Original 8×8 graphics tiles can be decoded from your own NES binary, or viewed immediately when a privately imported original ROM is available. The separate development match is provisional, not a version of the original game.</p>
+      <div class="mode-grid"><article class="mode-card locked"><div class="mode-index">01 / ORIGINAL</div><h2>CLASSIC NES</h2><p>Fidelity conversion in progress. Original rules, sprites, menus, teams and animation must be verified first.</p><span class="coming">NOT YET PLAYABLE</span><div><button id="classicGraphicsLabBtn" type="button">INSPECT ORIGINAL CHR GRAPHICS →</button> <button id="classicInputLabBtn" type="button">ORIGINAL INPUT LAB →</button></div></article>
+      <article class="mode-card active"><div class="mode-index">02 / ENGINE PREVIEW</div><h2>DEVELOPMENT MATCH</h2><p>Unverified mechanics and provisional artwork; preserved as an internal engine testbed, NOT the original NES game.</p><button id="playBtn" class="primary">PLAY DEVELOPMENT MATCH →</button></article></div>
+      <p class="legal">Original NES ROM/PRG/audio are not included. A private owner-specific build may contain only the verified CHR tiles extracted from the provided ROM. These are source tile patterns, NOT fully composed original character sprites. Source pinned to <code>df2c8e55</code>; do not distribute copyrighted data without rights.</p>
+    </section>
+    <section id="game" class="game hidden" aria-label="Football development match">
+      <div class="canvas-frame"><canvas id="field" width="960" height="540" aria-label="Football pitch; use keyboard, gamepad, or touch controls"></canvas></div>
+      <div id="touchSurface" class="touch-surface"><div class="joystick" id="joystick" aria-label="Touch joystick"><div class="joystick-dot" id="joystickDot"></div></div><div class="touch-actions" id="touchActions"><button data-touch="shoot">SHOOT</button><button data-touch="pass">PASS</button><button data-touch="tackle">TACKLE</button><button data-touch="sprint">SPRINT</button></div></div>
+      <div class="below-controls"><span>Single-player development ruleset • 60Hz fixed-step</span><div><button id="switchBtn">Switch player</button><button id="gamePauseBtn">Pause / Resume</button></div></div>
+    </section>
+    <section id="lab" class="lab hidden" aria-label="Original NES controller research lab">
+      <div class="settings-top"><h2>ORIGINAL NES CONTROLLER LAB</h2><button id="labBackBtn">Back to Home</button></div>
+      <p>This research tool ports the controller serial-read and new-press detection from original assembly at $EE06 and $EDCD, plus the two-byte random update at $EE35. Toggle any NES buttons, then select <strong>Scan frame</strong>. It does not run original football gameplay. The original field-screen Start-to-pause mapping and a kickoff gate are traced separately below.</p>
+      <div class="lab-toolbar"><button id="labScanBtn" class="primary">SCAN FRAME</button><button id="labResetBtn">Reset controller state</button></div>
+      <div id="labChannels" class="lab-channels"></div><p id="labStatus" role="status"></p>
+      <article class="lab-field"><h3>Original match-state logic — source-derived, isolated</h3>
+        <p>When the <strong>field</strong> subscreen ($C615) is active, a <strong>new Start press on channel 1</strong> toggles game-script pause bit $80. Select Start above, scan, release and scan, then press and scan again. Audio command bytes are recorded, not played; the research music ID is an arbitrary $12.</p>
+        <p id="labFieldStatus" role="status"></p>
+        <div class="lab-field-controls">
+          <label><input id="labFoulPending" type="checkbox"> Foul pending (game-script bit $20)</label>
+          <label>Ball state flags <select id="labBallFlags"><option value="0">$00 (neither)</option><option value="64">$40</option><option value="128">$80</option><option value="192">$C0</option></select></label>
+          <label><input id="labBrightnessReady" type="checkbox" checked> Brightness complete (bit $80)</label>
+          <button id="labKickoffTraceBtn" type="button">TRACE KICKOFF GATE</button><button id="labFieldResetBtn" type="button">Reset field bytes</button>
+        </div>
+        <p id="labKickoffStatus" role="status">Kickoff trace not yet run. The downstream original state transition is not implemented.</p>
+      </article>
+      <article class="lab-field" id="labGoalCutscene"><h3>Original goal cutscene — source-derived RAM trace</h3>
+        <p>The original match subscreen 03 ($C699) updates the goal cutscene timer, camera target, and skip gate. This is an isolated <strong>direct-write projection</strong>: twelve earlier routines plus $D047/$D073/$C91A/audio remain unported. Inputs below are <em>post-external-call research snapshots</em>, not actual Classic gameplay.</p>
+        <div class="lab-field-controls">
+          <label>Timer $05E2 <input id="labGoalTimer" type="number" min="0" max="255" value="31" style="width:5rem"></label>
+          <label><input id="labGoalCameraFlag" type="checkbox" checked> Game script bit $02 (camera follow)</label>
+          <label><input id="labGoalSkip" type="checkbox"> New Start press (skip)</label>
+          <label>Brightness $05B2 <select id="labGoalBrightness"><option value="0">$00</option><option value="64">$40</option><option value="128">$80</option><option value="192">$C0 (complete)</option></select></label>
+          <button id="labGoalTraceBtn" type="button">STEP GOAL CUTSCENE</button><button id="labGoalResetBtn" type="button">Reset goal trace</button>
+        </div>
+        <p id="labGoalStatus" role="status">Goal cutscene research not yet run. No original match transitions are executed.</p>
+      </article>
+      <article class="lab-field" id="labOriginalPlayerAction"><h3>Original player action selection — bank 04 research</h3>
+        <p>Bank 04 $B8AB–$B9E2 selects an action byte and sometimes a facing angle from player state, NES button edges and auxiliary buffers. This is a <strong>post-$C07A snapshot evaluator</strong>: the original $C07A <em>trampoline</em> now has a separately ported target ($FAEE–$FBA8), but subsequent action execution, ball physics and gameplay are <strong>not</strong> implemented. Enter byte values as decimal (0–255); default player state $80 with a new A press $80 should select action $04. The action codes are raw NES values, not confirmed English football move names.</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Player ID <input id="labActionPlayerId" type="number" min="0" max="11" value="0"></label>
+          <label>Control position $0650 <input id="labActionControlPosition" type="number" min="0" max="255" value="0"></label>
+          <label>Initial action $0479 <input id="labActionInitialAction" type="number" min="0" max="255" value="128"></label>
+          <label>Player state $0486 <input id="labActionPlayerState" type="number" min="0" max="255" value="128"></label>
+          <label>Held $0004 <input id="labActionHeld" type="number" min="0" max="255" value="0"></label>
+          <label>New press $0008 <input id="labActionPressed" type="number" min="0" max="255" value="128"></label>
+          <label>Buffer $0570 <input id="labActionBuffer20" type="number" min="0" max="255" value="0"></label>
+          <label>Buffer $057C <input id="labActionBuffer21" type="number" min="0" max="255" value="0"></label>
+          <label>Facing $04A3 <input id="labActionFacing" type="number" min="0" max="255" value="0"></label>
+          <label>Initial angle $04B0 <input id="labActionInitialAngle" type="number" min="0" max="255" value="255"></label>
+          <label>Kickoff script $005C <input id="labActionScript" type="number" min="0" max="255" value="0"></label>
+          <button id="labActionTraceBtn" type="button">TRACE PLAYER ACTION</button><button id="labActionResetBtn" type="button">Reset action trace</button>
+        </div>
+        <div class="lab-field-controls"><button id="labBufferStepBtn" type="button">STEP $FAEE BUTTON BUFFERS</button><button id="labBufferResetBtn" type="button">Reset button buffers</button></div>
+        <p id="labBufferStatus" role="status">The original $FAEE–$FBA8 helper is now ported. Step it repeatedly with the Held/New press inputs above; it updates buffer $0570/$057C and can feed the action trace. No original NES execution is performed.</p>
+        <p id="labActionStatus" role="status">Player action research not yet run. The downstream action executor remains unported.</p>
+      </article>
+      <article class="lab-field" id="labOriginalPossession"><h3>Original script-bit0 possession control — bank 04 $B850</h3>
+        <p>Source-derived direct RAM writes for the <strong>$B4B2 → $B850</strong> path. This legacy single-branch preview leaves $B4C9 unexecuted; the new full controller selector lab below executes that path on an independent RAM fixture. This branch may write an action at the <em>matched controller slot</em> instead of the ball owner's index. The $B8A8 three-byte angle table also reads the next instruction byte ($86) for index 3. Enter decimal bytes; this is <strong>not</strong> original runtime parity or a playable Classic match.</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Script $005C <input id="labPossScript" type="number" min="0" max="255" value="1"></label>
+          <label>Ball owner $04D6 <input id="labPossOwner" type="number" min="0" max="255" value="2"></label>
+          <label>Frame $0300 <input id="labPossFrame" type="number" min="0" max="255" value="0"></label>
+          <label>Matched slot $0568 <select id="labPossSlot"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="none">None</option></select></label>
+          <label>Slot held $0004+X <input id="labPossHeld" type="number" min="0" max="255" value="0"></label>
+          <label>Slot press $0008+X <input id="labPossPressed" type="number" min="0" max="255" value="128"></label>
+          <label>Channel 0 press (other slot) <input id="labPossPress0" type="number" min="0" max="255" value="0"></label>
+          <label>Control 0 $0650 <input id="labPossControl0" type="number" min="0" max="255" value="0"></label>
+          <label>Control 1 $0651 <input id="labPossControl1" type="number" min="0" max="255" value="0"></label>
+          <button id="labPossTraceBtn" type="button">STEP $B4B2 SCRIPT BRANCH</button><button id="labPossResetBtn" type="button">Reset possession trace</button>
+        </div>
+        <p id="labPossStatus" role="status">No possession branch executed. Source-local RAM fixture only; original gameplay remains disabled.</p>
+      </article>
+      <article class="lab-field" id="labOriginalAlternate"><h3>Original four-controller action selector — bank 04 $B4C9–$B724</h3>
+        <p>The <strong>new native controller selector</strong> executes the $C07A/$FAEE buffer helper, seven group pointers, four state classes and twelve-entry raw action tables. When script bit 0 is clear it processes all four controller slots in original order; otherwise it dispatches the separately reconstructed $B850 possession branch. Only synthetic RAM bytes are used. <strong>Action IDs have no verified football meaning and Classic gameplay is not running.</strong></p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Script $005C <input id="labAltScript" type="number" min="0" max="255" value="0"></label>
+          <label>Controller slot <select id="labAltSlot"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></label>
+          <label>Player $0568 <input id="labAltPlayer" type="number" min="0" max="255" value="2"></label>
+          <label>State $0486 <input id="labAltState" type="number" min="0" max="255" value="128"></label>
+          <label>Action $0479 <input id="labAltAction" type="number" min="0" max="255" value="128"></label>
+          <label>Held $0004 <input id="labAltHeld" type="number" min="0" max="255" value="0"></label>
+          <label>Pressed $0008 <input id="labAltPressed" type="number" min="0" max="255" value="128"></label>
+          <label>Owner $04D6 <input id="labAltOwner" type="number" min="0" max="255" value="12"></label>
+          <label>Movement $0459 <input id="labAltMovement" type="number" min="0" max="255" value="0"></label>
+          <label>Timer $04BD <input id="labAltTimer" type="number" min="0" max="255" value="0"></label>
+          <label>Team 0 flag $052A <input id="labAltTeam0" type="number" min="0" max="255" value="0"></label>
+          <label>Team 1 flag $052B <input id="labAltTeam1" type="number" min="0" max="255" value="0"></label>
+          <label>Pass direction 0 $067A <input id="labAltPass0" type="number" min="0" max="255" value="15"></label>
+          <button id="labAltTraceBtn" type="button">EXECUTE NATIVE CONTROLLER SELECTOR</button>
+          <button id="labAltResetBtn" type="button">Reset selector fixture</button>
+        </div>
+        <p id="labAltStatus" role="status">Controller selector not yet stepped. Original action execution and NES parity remain unverified.</p>
+      </article>
+      <article class="lab-field" id="labOriginalArbitration"><h3>Original action → movement arbitration — bank 06 $AA14</h3>
+        <p>New native source-local action arbitration from <strong>$AA14–$AAAB</strong>. It reads the pending action at $0479, the movement at $0459, player state and the original $AC69/$AC87 two-byte metadata tables. Accepted actions can replace a movement ID; rejected actions are cleared to $FF. This does <strong>not</strong> animate or physically execute football moves. Use decimal RAM bytes below, or chain the latest controller selector fixture (set its movement byte to 128 for the ready gate).</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Player <input id="labArbPlayer" type="number" min="0" max="11" value="2"></label>
+          <label>Pending action $0479 <input id="labArbAction" type="number" min="0" max="255" value="53"></label>
+          <label>Movement $0459 <input id="labArbMovement" type="number" min="0" max="255" value="128"></label>
+          <label>Player state $0486 <input id="labArbState" type="number" min="0" max="255" value="128"></label>
+          <label>Weather $0466 <input id="labArbWeather" type="number" min="0" max="255" value="0"></label>
+          <label>Skill $04F1 <input id="labArbSkill" type="number" min="0" max="255" value="1"></label>
+          <label>Surface $0130 <input id="labArbSurface" type="number" min="0" max="255" value="0"></label>
+          <label>Metadata table <select id="labArbVariant"><option value="0">$AC87 ($AA14)</option><option value="1">$AC69 ($AA19)</option></select></label>
+          <button id="labArbTraceBtn" type="button">TRACE ACTION ARBITRATION</button>
+          <button id="labArbChainBtn" type="button">CHAIN LAST CONTROLLER RESULT</button>
+          <button id="labArbResetBtn" type="button">Reset arbitration fixture</button>
+        </div>
+        <p id="labArbStatus" role="status">No arbitration step executed. Original NES movement physics and frame parity remain unverified.</p>
+      </article>
+      <article class="lab-field" id="labOriginalMovementTransition"><h3>Original movement-state and ball-action priority — bank 06</h3>
+        <p>Source-local <strong>$AAC3/$AAC8–$AB0A</strong> reconstructs player state flags from a numeric movement ID and Z bytes. <strong>$AB2A–$AB51</strong> compares a pending ball-action type with the current ball-state low nibble, optionally handing that numeric ID to player movement. These are exact audited branch operations on synthetic RAM, <strong>not player motion, shooting physics, sprites, or a verified original frame</strong>. The upstream weather callback $9856 is not implemented.</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Player <input id="labMovePlayer" type="number" min="0" max="11" value="2"></label>
+          <label>Movement ID $0459 <input id="labMoveId" type="number" min="0" max="255" value="53"></label>
+          <label>Old state $0486 <input id="labMoveState" type="number" min="0" max="255" value="128"></label>
+          <label>Z high $0399 <input id="labMoveZHi" type="number" min="0" max="255" value="128"></label>
+          <label>Z low $0386 <input id="labMoveZLo" type="number" min="0" max="255" value="247"></label>
+          <label>Pending ball type $0485 <input id="labMoveShot" type="number" min="0" max="255" value="5"></label>
+          <label>Ball state $0492 <input id="labMoveBallState" type="number" min="0" max="255" value="0"></label>
+          <label>Metadata table <select id="labMoveVariant"><option value="0">$AC87</option><option value="1">$AC69</option></select></label>
+          <button id="labMoveStateBtn" type="button">TRACE MOVEMENT STATE</button>
+          <button id="labMoveShotBtn" type="button">TRACE BALL-ACTION PRIORITY</button>
+        </div>
+        <p id="labMoveStatus" role="status">No source-local transition executed. Classic Mode is still disabled.</p>
+      </article>
+      <p class="legal">Four raw serial channels are shown for source research. The RNG starts from an arbitrary demonstration seed ($12,$34), not a verified original boot seed. Original hardware/controller configurations are not yet verified. Two matching reads are required; the browser adds a bounded retry safeguard.</p>
+    </section>
+    <section id="graphicsLab" class="graphics-lab hidden" aria-label="Original NES CHR binary graphics laboratory">
+      <div class="settings-top"><h2>ORIGINAL NES BINARY GRAPHICS INSPECTOR</h2><button id="graphicsBackBtn">Back to Home</button></div>
+      <p>This tool decodes authentic NES 2bpp tile bytes from a <strong>locally selected</strong> `.nes` or `.chr` binary. No game binary or extracted artwork is bundled or uploaded. A decoded tile is not yet a composed character: original palette tables, OAM/metasprite layout, animation frames and game transitions still require reconstruction.</p>
+      <div class="graphics-toolbar"><label class="graphics-pick">Optional: select a replacement NES / CHR file <input id="graphicsFile" type="file" accept=".nes,.chr,.bin,application/octet-stream"></label><button id="graphicsPrev" disabled>◀ Previous 256 tiles</button><button id="graphicsNext" disabled>Next 256 tiles ▶</button></div>
+      <p id="graphicsStatus" role="status">No original binary loaded. Only file bytes you select locally will be inspected.</p>
+      <article class="lab-field" id="graphicsChrMapperLab"><h3>ORIGINAL MMC3 CHR BANK SWITCH — $EE7D / $EE9A</h3>
+        <p>The original bank FF routines write RAM $05BC/$05BD to MMC3 registers 0/1 and RAM $05B8–$05BB to registers 2–5. This displays the <strong>actual source-selected CHR tile mapping</strong> from a locally imported original ROM, not assembled characters. Values below are <strong>synthetic research RAM</strong>, not a verified original frame. Palette, OAM, animation and sprites remain unconverted.</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>BG $05BC (2 KiB) <input id="graphicsBg0" type="number" min="0" max="255" value="0"></label>
+          <label>BG $05BD (2 KiB) <input id="graphicsBg1" type="number" min="0" max="255" value="2"></label>
+          <label>Sprite $05B8 <input id="graphicsSp0" type="number" min="0" max="255" value="4"></label>
+          <label>Sprite $05B9 <input id="graphicsSp1" type="number" min="0" max="255" value="5"></label>
+          <label>Sprite $05BA <input id="graphicsSp2" type="number" min="0" max="255" value="6"></label>
+          <label>Sprite $05BB <input id="graphicsSp3" type="number" min="0" max="255" value="7"></label>
+          <label>PPU table <select id="graphicsPpuTable"><option value="0">$0000–$0FFF</option><option value="1">$1000–$1FFF</option></select></label>
+          <button id="graphicsMapperApply" type="button">APPLY ORIGINAL REGISTER WRITES</button>
+        </div>
+        <p id="graphicsMapperStatus" role="status">Import an original ROM or CHR to inspect its banked PPU pattern tables.</p>
+        <canvas id="graphicsMappedAtlas" width="128" height="128" aria-label="Source-mapped NES PPU CHR pattern table with 256 tiles"></canvas>
+        <p class="legal">Banked tile display uses the MMC3 1 KiB pattern mapping with normal CHR orientation (inversion bit clear). It is not a complete NES PPU, palette, metasprite, or execution reference.</p>
+      </article>
+      <article class="lab-field" id="graphicsPpuTransferLab"><h3>ORIGINAL PPU PALETTE QUEUE / OAM DMA — $F05F / $EE5A</h3>
+        <p>The source-verified NMI palette queue writes CPU RAM $06D9–$06FB to PPU $2000/$2002/$2006/$2007; the original OAM DMA routine copies CPU RAM $0200–$02FF to OAM through $2003/$4014. The values below are <strong>synthetic RAM fixtures, NOT the game's original frame palette or character sprites</strong>. The PPU output is raw indexed bytes, not a claim of exact NES RGB colors.</p>
+        <div class="lab-field-controls lab-action-controls">
+          <label>Queue count $06DB (1–32) <input id="ppuPaletteCount" type="number" min="1" max="32" value="32"></label>
+          <label>PPU address low $06DA <input id="ppuPaletteLow" type="number" min="0" max="255" value="0"></label>
+          <label>PPUCTRL shadow $004C <input id="ppuPaletteCtrl" type="number" min="0" max="255" value="0"></label>
+          <button id="ppuPaletteApply" type="button">RUN SOURCE PALETTE TRANSFER</button>
+          <button id="ppuOamApply" type="button">RUN SOURCE OAM DMA</button>
+        </div>
+        <p id="ppuPaletteStatus" role="status">Source PPU routines not yet stepped. No original runtime PPU/OAM snapshot is loaded.</p>
+        <pre id="ppuPaletteTrace" class="ppu-trace">No transfer data yet.</pre>
+      </article>
+      <article class="lab-field" id="originalWeatherSpriteLab"><h3>ORIGINAL WEATHER-EFFECT SPRITE PRODUCER — $D993–$DA45</h3>
+        <p>This source-derived routine initializes and updates <strong>12 actual NES OAM entries</strong> using the original PRG tables $DA46/$DA52/$DA5E/$DA6A/$DA76. Select your <strong>verified original .nes</strong> in the graphics file selector above; the PRG is used only in browser memory and is never bundled in the public build. This is a weather-effect OAM producer, <strong>not original player metasprites or an emulator frame</strong>.</p>
+        <div class="lab-field-controls lab-action-controls"><button id="weatherInitBtn" type="button">INITIALIZE SOURCE WEATHER OAM</button><button id="weatherStepBtn" type="button">STEP SOURCE WEATHER OAM</button></div>
+        <p id="weatherStatus" role="status">Awaiting authenticated original NES PRG. Synthetic RAM fixture only; Classic Mode disabled.</p>
+        <pre id="weatherTrace" class="ppu-trace">No source OAM entries generated.</pre>
+      </article>
+      <div class="graphics-workspace"><div><h3>Loaded 2bpp tiles — 16 × 16 page</h3><canvas id="graphicsAtlas" width="128" height="128" aria-label="Exact pixel-index decode of 256 NES tiles; click a tile to inspect"></canvas><p id="graphicsPageLabel">Load an original binary to inspect the 8×8 tile patterns.</p></div><div><h3>Selected CHR tile</h3><canvas id="graphicsTile" width="8" height="8" aria-label="Magnified NES tile"></canvas><p id="graphicsTileLabel">No tile selected.</p><p class="legal">Four grayscale inspection tones show exact 2-bit pixel indices (0–3). <strong>These are NOT asserted to be the original game's PPU colors.</strong> Character bodies/faces require their original multisprite composition and palette mapping.</p></div></div>
+    </section>
+    <section id="settings" class="settings hidden"><div class="settings-top"><h2>CONTROL MAPPINGS</h2><button id="closeSettings">Back</button></div><p>Click a keyboard binding, then press a key. Duplicate key assignments are rejected. Saved on this browser. Gamepad buttons use standard mapping indices.</p><div class="settings-grid"><div><h3>Keyboard</h3><div id="keyboardBindings"></div></div><div><h3>Gamepad</h3><div id="gamepadBindings"></div></div><div><h3>Touch button assignments</h3><div id="touchBindings"></div></div></div><p id="settingsNotice" role="status"></p><button id="resetControls">Reset defaults</button></section>
+  </main>
+  <div id="replayNotice" class="replay-notice" role="status" aria-live="polite"></div><footer>OPEN ENGINE FOUNDATION • CLASSIC FIDELITY PENDING • <span id="status">READY</span></footer>
+</div>
+<script>window.__kunioLocalCHRBase64=null;window.__kunioLocalCHRVerified=false;
+
+// SOURCE: src/core/Match.js
+/**
+ * Headless development ruleset. This is NOT an NES physics conversion.
+ * Inspired by the verified *object count* in bank_ram.inc only.
+ * All gameplay constants here are provisional Enhanced development values.
+ */
+const TICK_RATE = 60;
+const FIELD = Object.freeze({left: 45, right: 915, top: 63, bottom: 477, midY: 270,
+  goalTop: 211, goalBottom: 329});
+const RULES_VERSION = 'enhanced-dev-0.1';
+const MAX_TICKS = TICK_RATE * 180;
+const PLAYER_SPEED = 2.65;
+const SPRINT_MULTIPLIER = 1.48;
+const BALL_DRAG = 0.987;
+const rngStep = s => (Math.imul(1664525, s) + 1013904223) >>> 0;
+const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
+const distance = (a,b) => Math.hypot(a.x-b.x, a.y-b.y);
+const vector = (dx,dy) => { const d=Math.hypot(dx,dy); return d > 0 ? {x:dx/d,y:dy/d} : {x:0,y:0}; };
+const newInput = () => ({dx:0,dy:0,shoot:false,pass:false,tackle:false,sprint:false,switch:false,pause:false});
+const EMPTY_INPUT = Object.freeze(newInput());
+
+function createMatch(seed = 2026) {
+  const players=[];
+  const rows = [ [230,270], [350,143], [350,396], [493,193], [493,347] ];
+  for(let side=0;side<2;side++) {
+    for(let i=0;i<5;i++) {
+      const [x,y]=rows[i];
+      players.push({id:`${side}-${i}`, side, number:i+1, keeper:false,
+        x:side===0?x:960-x, y, vx:0, vy:0, facing:side===0?1:-1, cooldown:0, stun:0});
+    }
+    players.push({id:`${side}-gk`,side,number:0,keeper:true,
+      x:side===0?79:881,y:270,vx:0,vy:0,facing:side===0?1:-1,cooldown:0,stun:0});
+  }
+  return {schemaVersion:1, mode:'enhanced-dev', rulesVersion:RULES_VERSION,
+    seed:seed>>>0,rng:seed>>>0,tick:0,remainingTicks:MAX_TICKS,phase:'ready',
+    score:[0,0], players,ball:{x:480,y:270,vx:0,vy:0,owner:null,lastTouch:null},
+    controlled:'0-0', selectedUntil:0, kickoffTicks:45, message:'KICKOFF',messageTicks:75,
+    lastEvent:'match-created', previousButtons:{shoot:false,pass:false,tackle:false,switch:false,pause:false}};
+}
+function random(state) {state.rng = rngStep(state.rng); return state.rng/4294967296;}
+function findPlayer(state,id) {return state.players.find(p=>p.id===id) || null;}
+function nearest(state,side,pt,includeKeeper=false) {
+  let answer=null,best=Infinity;
+  for(const p of state.players) {
+    if(p.side!==side || (!includeKeeper&&p.keeper)) continue;
+    const d=distance(p,pt);
+    if(d<best) {best=d;answer=p;}
+  }
+  return answer;
+}
+function pushPlayer(p,dx,dy,speed) {
+  const d=vector(dx,dy);
+  p.vx = d.x*speed;
+  p.vy = d.y*speed;
+  p.x = clamp(p.x+p.vx, FIELD.left+10, FIELD.right-10);
+  p.y = clamp(p.y+p.vy, FIELD.top+9, FIELD.bottom-9);
+  if(Math.abs(d.x)>0.1)p.facing=Math.sign(d.x);
+}
+function givePossession(s,p) {
+  s.ball.owner=p.id;s.ball.x=p.x+p.facing*15;s.ball.y=p.y+5;
+  s.ball.vx=0;s.ball.vy=0;s.ball.lastTouch=p.side;
+}
+function kick(s,p,type,aim) {
+  if(s.ball.owner!==p.id || p.cooldown>0) return false;
+  let d, speed;
+  if(type==='pass') {
+    const mates=s.players.filter(q=>q.side===p.side&&!q.keeper&&q.id!==p.id);
+    let target=mates[0],score=-Infinity;
+    for(const q of mates) {
+      const ahead=(q.x-p.x)*(p.side===0?1:-1), dist=distance(p,q);
+      const quality=ahead*1.1-dist*0.38+(aim.dy||0)*(q.y-p.y)*0.5;
+      if(quality>score){score=quality;target=q;}
+    }
+    d=vector(target.x-p.x,target.y-p.y);speed=7.8;
+  } else {
+    const tx=p.side===0?FIELD.right+40:FIELD.left-40;
+    const ty=FIELD.midY+(aim.dy||0)*70+(p.y-FIELD.midY)*0.18;
+    d=vector(tx-p.x,ty-p.y);speed=12.8;
+  }
+  s.ball.owner=null;s.ball.x=p.x+p.facing*17;s.ball.y=p.y+3;
+  s.ball.vx=d.x*speed;s.ball.vy=d.y*speed;s.ball.lastTouch=p.side;
+  p.cooldown=type==='pass'?15:26;
+  s.lastEvent=type;
+  s.message=type==='pass'?'PASS!':'SHOT!'; s.messageTicks=22;
+  return true;
+}
+function resetKickoff(s,scoringSide) {
+  const all=createMatch(s.seed);s.players=all.players;
+  s.ball={x:480,y:270,vx:0,vy:0,owner:null,lastTouch:null};
+  s.controlled='0-0';s.kickoffTicks=72;
+  s.message=scoringSide===null?'KICKOFF':`GOAL! ${scoringSide===0?'BLUE':'RED'} SCORES`;
+  s.messageTicks=100;s.lastEvent=scoringSide===null?'kickoff':'goal';
+}
+function togglePause(s) {
+  if(s.phase==='playing') {s.phase='paused';s.lastEvent='paused';}
+  else if(s.phase==='paused') {s.phase='playing';s.lastEvent='resumed';}
+  return s;
+}
+function buttonEdges(s,input) {
+  const edges={};for(const k of ['shoot','pass','tackle','switch','pause']) {
+    edges[k]=!!input[k]&&!s.previousButtons[k];s.previousButtons[k]=!!input[k];
+  }
+  return edges;
+}
+function stepMatch(s, raw=EMPTY_INPUT) {
+  const input={...EMPTY_INPUT,...raw};
+  const edges=buttonEdges(s,input);
+  if(edges.pause)togglePause(s);
+  if(s.phase==='paused'||s.phase==='ended')return s;
+  if(s.phase==='ready'){s.phase='playing';s.lastEvent='kickoff';}
+  s.tick++;
+  s.remainingTicks=Math.max(0,s.remainingTicks-1);
+  if(s.messageTicks>0)s.messageTicks--;
+  for(const p of s.players){p.cooldown=Math.max(0,p.cooldown-1);p.stun=Math.max(0,p.stun-1);}
+  if(s.kickoffTicks>0){s.kickoffTicks--;if(s.remainingTicks===0)s.phase='ended';return s;}
+  if(edges.switch) {
+    const candidate=nearest(s,0,s.ball.owner?findPlayer(s,s.ball.owner):s.ball);
+    if(candidate)s.controlled=candidate.id;
+    s.selectedUntil=s.tick+110;
+  }
+  // Auto-switch to current owner or closest field player, unless recent manual selection.
+  const humanOwner=s.ball.owner?findPlayer(s,s.ball.owner):null;
+  if(humanOwner?.side===0&&!humanOwner.keeper)s.controlled=humanOwner.id;
+  else if(s.tick>s.selectedUntil) {
+    const selected=nearest(s,0,s.ball);
+    if(selected)s.controlled=selected.id;
+  }
+  for(const p of s.players) {
+    if(p.stun>0)continue;
+    if(p.id===s.controlled){
+      const speed=PLAYER_SPEED*(input.sprint?SPRINT_MULTIPLIER:1);
+      pushPlayer(p,clamp(input.dx,-1,1),clamp(input.dy,-1,1),speed);
+    } else if(p.keeper) {
+      const targetY=clamp(s.ball.y,FIELD.goalTop+10,FIELD.goalBottom-10);
+      const anchor=p.side===0?80:880;
+      pushPlayer(p,(anchor-p.x)*0.1,(targetY-p.y)*0.16,1.6);
+    } else {
+      const teammateHasBall=s.ball.owner&&findPlayer(s,s.ball.owner)?.side===p.side;
+      const nearestChaser=nearest(s,p.side,s.ball);
+      const shouldChase=nearestChaser?.id===p.id && !teammateHasBall;
+      let target;
+      if(shouldChase)target=s.ball;
+      else if(teammateHasBall){
+        const dir=p.side===0?1:-1;
+        target={x:clamp(p.x+dir*20,100,860),y:p.y+(270-p.y)*0.04};
+      }else {
+        const shift=clamp((s.ball.x-480)*0.24,-85,85);
+        const own=(p.side===0?1:-1);
+        const formation=[ [230,270], [350,143], [350,396], [493,193], [493,347] ][p.number-1];
+        target={x:(p.side===0?formation[0]:960-formation[0])+shift,y:formation[1]+(s.ball.y-270)*0.16};
+      }
+      pushPlayer(p,target.x-p.x,target.y-p.y,shouldChase?2.15:1.36);
+    }
+  }
+  const controlled=findPlayer(s,s.controlled);
+  if(controlled){
+    if(edges.tackle && s.ball.owner!==controlled.id){
+      const holder=findPlayer(s,s.ball.owner);
+      if(holder?.side===1&&distance(holder,controlled)<34){
+        holder.stun=25;givePossession(s,controlled);s.lastEvent='tackle';
+      } else if(!holder && distance(s.ball,controlled)<27){givePossession(s,controlled);}
+    }
+    if(edges.shoot)kick(s,controlled,'shot',input);
+    if(edges.pass)kick(s,controlled,'pass',input);
+  }
+  // Possession is evaluated after movement and deliberate kicks.
+  if(s.ball.owner){
+    const owner=findPlayer(s,s.ball.owner);
+    if(owner){s.ball.x=owner.x+owner.facing*15;s.ball.y=owner.y+4;}
+    // CPU dribbler occasionally passes or shoots; seeded and therefore replayable.
+    if(owner?.keeper&&owner.cooldown===0){
+      // Provisional clearing behavior. A keeper must not freeze possession indefinitely.
+      kick(s,owner,'shot',{dy:(random(s)-0.5)*0.9});
+    }else if(owner?.side===1&&owner.cooldown===0){
+      const nearGoal=owner.x<FIELD.left+250;
+      if(nearGoal && (s.tick%35===0))kick(s,owner,'shot',{dy:(random(s)-0.5)*1.2});
+      else if(s.tick%115===0&&random(s)>0.35)kick(s,owner,'pass',{dy:0});
+    }
+  } else {
+    s.ball.x+=s.ball.vx;s.ball.y+=s.ball.vy;
+    s.ball.vx*=BALL_DRAG;s.ball.vy*=BALL_DRAG;
+    if(s.ball.y<FIELD.top+7){s.ball.y=FIELD.top+7;s.ball.vy=Math.abs(s.ball.vy)*0.64;}
+    if(s.ball.y>FIELD.bottom-7){s.ball.y=FIELD.bottom-7;s.ball.vy=-Math.abs(s.ball.vy)*0.64;}
+    const inGoalMouth=s.ball.y>=FIELD.goalTop&&s.ball.y<=FIELD.goalBottom;
+    if(s.ball.x>FIELD.right+9&&inGoalMouth){s.score[0]++;resetKickoff(s,0);}
+    else if(s.ball.x<FIELD.left-9&&inGoalMouth){s.score[1]++;resetKickoff(s,1);}
+    else {
+      if(s.ball.x<FIELD.left+6){s.ball.x=FIELD.left+6;s.ball.vx=Math.abs(s.ball.vx)*0.55;}
+      if(s.ball.x>FIELD.right-6){s.ball.x=FIELD.right-6;s.ball.vx=-Math.abs(s.ball.vx)*0.55;}
+      // Recently kicked ball can't be recaptured by the kicker until cooldown elapses.
+      const candidates=s.players.filter(p=>distance(p,s.ball)<(p.keeper?24:18)&&p.cooldown===0&&p.stun===0);
+      candidates.sort((a,b)=>distance(a,s.ball)-distance(b,s.ball)||a.id.localeCompare(b.id));
+      if(candidates[0]){
+        const p=candidates[0];givePossession(s,p);
+        if(p.keeper){p.cooldown=22;s.lastEvent='keeper-claim';}
+      }
+    }
+  }
+  // Keeper may intercept a held ball near own goal; eliminates unstoppable walk-ins.
+  if(s.ball.owner){
+    const holder=findPlayer(s,s.ball.owner);
+    if(holder&&!holder.keeper){
+      const keeper=s.players.find(p=>p.side!==holder.side&&p.keeper);
+      if(distance(holder,keeper)<26){holder.stun=12;givePossession(s,keeper);keeper.cooldown=25;s.lastEvent='keeper-save';}
+    }
+  }
+  if(s.remainingTicks===0){s.phase='ended';s.message='FULL TIME';s.lastEvent='full-time';s.messageTicks=Infinity;}
+  return s;
+}
+function stepMany(s,inputs) {for(const input of inputs)stepMatch(s,input);return s;}
+function stateSnapshot(s) {
+  return JSON.stringify({rulesVersion:s.rulesVersion,rng:s.rng,tick:s.tick,phase:s.phase,remainingTicks:s.remainingTicks,
+    score:s.score,ball:s.ball,controlled:s.controlled,kickoffTicks:s.kickoffTicks,
+    players:s.players.map(p=>[p.id,p.x,p.y,p.cooldown,p.stun])});
+}
+
+
+// SOURCE: src/core/Replay.js
+/**
+ * Deterministic input-tape infrastructure for the provisional development match.
+ * This does NOT establish parity with the original NES game. No ROM data is used.
+ * Replays are versioned and deliberately rejected if rules change.
+ */
+
+const REPLAY_FORMAT='kunio-soccer-input-replay';
+const REPLAY_SCHEMA=1;
+const CHECKPOINT_INTERVAL=120;
+const MAX_REPLAY_FRAMES=24000;
+const BUTTONS=['shoot','pass','tackle','sprint','switch','pause'];
+const UINT32_MAX=4294967295;
+const isUInt32=n=>Number.isInteger(n)&&n>=0&&n<=UINT32_MAX;
+const hex=x=>x.toString(16).padStart(8,'0');
+
+/** Stable, portable checksum of the entire simulation state, not just the score. */
+function stateDigest(state){
+  const json=JSON.stringify(state);
+  let hash=2166136261;
+  for(let i=0;i<json.length;i++){
+    hash^=json.charCodeAt(i);
+    hash=Math.imul(hash,16777619)>>>0;
+  }
+  return hex(hash>>>0);
+}
+
+/** Canonicalize physical inputs before *both* simulation and recording. */
+function canonicalFrame(raw={}){
+  if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new TypeError('Input frame must be an object');
+  const axis=key=>{
+    const n=raw[key]??0;
+    if(typeof n!=='number'||!Number.isFinite(n))throw new TypeError(`Invalid input axis ${key}`);
+    const v=Math.round(Math.max(-1,Math.min(1,n))*1e6)/1e6;
+    return v===0?0:v;
+  };
+  const out={dx:axis('dx'),dy:axis('dy')};
+  for(const key of BUTTONS)out[key]=!!raw[key];
+  return out;
+}
+
+function assertFrame(frame){
+  if(!frame||typeof frame!=='object'||Array.isArray(frame))throw new Error('Invalid replay frame');
+  if(Object.keys(frame).sort().join(',')!==['dx','dy',...BUTTONS].sort().join(','))throw new Error('Replay frame has missing/extra actions');
+  for(const key of ['dx','dy'])if(typeof frame[key]!=='number'||!Number.isFinite(frame[key])||Math.abs(frame[key])>1)throw new Error('Replay axis out of range');
+  for(const key of BUTTONS)if(typeof frame[key]!=='boolean')throw new Error('Replay action must be boolean');
+}
+function assertHash(hash){return typeof hash==='string'&&/^[a-f0-9]{8}$/.test(hash);}
+
+function createRecorder(initialState){
+  if(!initialState||initialState.tick!==0||initialState.phase!=='ready'||initialState.mode!=='enhanced-dev'||initialState.rulesVersion!==RULES_VERSION)
+    throw new Error('Recording must begin with a new development match');
+  return {format:REPLAY_FORMAT,schemaVersion:REPLAY_SCHEMA,mode:initialState.mode,
+    rulesVersion:initialState.rulesVersion,tickRate:TICK_RATE,seed:initialState.seed,
+    frames:[],checkpoints:[],finalHash:stateDigest(initialState)};
+}
+
+/** Mutates the match and appends exactly the input consumed by that step. */
+function recordStep(recorder,state,raw={}){
+  if(recorder.frames.length>=MAX_REPLAY_FRAMES)throw new Error('Replay frame limit reached');
+  if(state.seed!==recorder.seed||state.mode!==recorder.mode||state.rulesVersion!==recorder.rulesVersion)
+    throw new Error('Recording state does not match tape');
+  const frame=canonicalFrame(raw);
+  stepMatch(state,frame);
+  recorder.frames.push(frame);
+  recorder.finalHash=stateDigest(state);
+  if(recorder.frames.length%CHECKPOINT_INTERVAL===0)
+    recorder.checkpoints.push({frame:recorder.frames.length,hash:recorder.finalHash});
+  return state;
+}
+
+/** A detached serializable snapshot: continued recording cannot mutate downloads. */
+function exportReplay(recorder){
+  const replay={format:recorder.format,schemaVersion:recorder.schemaVersion,mode:recorder.mode,
+    rulesVersion:recorder.rulesVersion,tickRate:recorder.tickRate,seed:recorder.seed,
+    frames:recorder.frames.map(frame=>({...frame})),checkpoints:recorder.checkpoints.map(c=>({...c})),
+    finalHash:recorder.finalHash};
+  validateReplay(replay);
+  return replay;
+}
+
+/** Reject incompatible, malformed and oversized user-supplied replay files. */
+function validateReplay(replay){
+  if(!replay||typeof replay!=='object'||Array.isArray(replay))throw new Error('Invalid replay file');
+  if(replay.format!==REPLAY_FORMAT||replay.schemaVersion!==REPLAY_SCHEMA)throw new Error('Unsupported replay format');
+  if(replay.mode!=='enhanced-dev'||replay.rulesVersion!==RULES_VERSION||replay.tickRate!==TICK_RATE)
+    throw new Error('Replay belongs to an incompatible mode or rules version');
+  if(!isUInt32(replay.seed))throw new Error('Invalid replay seed');
+  if(!Array.isArray(replay.frames)||replay.frames.length>MAX_REPLAY_FRAMES)throw new Error('Invalid replay length');
+  for(const frame of replay.frames)assertFrame(frame);
+  if(!Array.isArray(replay.checkpoints)||replay.checkpoints.length!==Math.floor(replay.frames.length/CHECKPOINT_INTERVAL))
+    throw new Error('Invalid checkpoint count');
+  for(let i=0;i<replay.checkpoints.length;i++){
+    const c=replay.checkpoints[i];
+    if(!c||c.frame!==(i+1)*CHECKPOINT_INTERVAL||!assertHash(c.hash))throw new Error('Invalid replay checkpoint');
+  }
+  if(!assertHash(replay.finalHash))throw new Error('Invalid final checksum');
+  return replay;
+}
+
+function createPlayback(replay){
+  validateReplay(replay);
+  return {replay,state:createMatch(replay.seed),index:0,done:false};
+}
+
+/** Returns true if a recorded input was consumed; throws on deterministic drift. */
+function playbackStep(player){
+  if(player.done)return false;
+  const {replay,state}=player;
+  if(player.index===replay.frames.length){
+    if(stateDigest(state)!==replay.finalHash)throw new Error('Replay desync at final checksum');
+    player.done=true;
+    return false;
+  }
+  stepMatch(state,replay.frames[player.index]);
+  player.index++;
+  if(player.index%CHECKPOINT_INTERVAL===0){
+    const expected=replay.checkpoints[player.index/CHECKPOINT_INTERVAL-1];
+    if(stateDigest(state)!==expected.hash)throw new Error(`Replay desync at frame ${player.index}`);
+  }
+  if(player.index===replay.frames.length){
+    if(stateDigest(state)!==replay.finalHash)throw new Error('Replay desync at final checksum');
+    player.done=true;
+  }
+  return true;
+}
+
+function verifyReplay(replay){
+  const player=createPlayback(replay);
+  while(playbackStep(player)){}
+  return {frames:player.index,tick:player.state.tick,score:[...player.state.score],finalHash:stateDigest(player.state)};
+}
+
+
+// SOURCE: src/classic/OriginalStateIds.js
+/**
+ * Source-confirmed identifiers ONLY, not a Classic simulation implementation.
+ * Verified against pinned upstream bank_ram.inc and bank_val.inc on 2026-10-19.
+ * Comments in the disassembly document values; their runtime semantics remain
+ * unverified until control flow and reference frame traces are reconstructed.
+ */
+const SOURCE_SHA='df2c8e55e7f13e5792482527db9e7c9e4a84c6e1';
+const ORIGINAL_RAM=Object.freeze({
+  BUTTON_HOLD:0x0004,BUTTON_PRESS:0x0008,
+  SCREEN:0x0058,SCREEN_SUBTYPE:0x0059,GAME_SCRIPT:0x005c
+});
+const ORIGINAL_OBJECT_SLOTS=Object.freeze({
+  FIRST_FIELD_PLAYER:0x00,LAST_FIELD_PLAYER:0x09,
+  FIRST_KEEPER:0x0a,LAST_KEEPER:0x0b,BALL:0x0c,WEATHER:0x0d
+});
+const ORIGINAL_SCREEN=Object.freeze({MATCH:0x00,INTRO:0x01,MENU:0x02,CUP:0x03});
+const ORIGINAL_MATCH_SUBSCREEN=Object.freeze({KICKOFF:0x01,FIELD:0x02,GOAL:0x03,OUT:0x06});
+const ORIGINAL_GAME_SCRIPT=Object.freeze({
+  NORMAL:0x00,KICKOFF:0x01,FOUL:0x20,TIME_EXPIRED:0x40,
+  GOAL:0x42,OUT:0x44,CORNER_OR_GOAL_KICK:0x48,PENALTIES:0x60,PAUSE:0x80
+});
+
+
+// SOURCE: src/classic/OriginalInput.js
+/**
+ * Native JavaScript port of the original controller sampling/edge transform.
+ * Source: pinned upstream bank_FF.asm $EE06-$EE27 (serial reads),
+ * $EDCD-$EE05 (stable reread and edge update), called at $C48F.
+ * No 6502 emulator, NES ROM, original assets, or original gameplay logic.
+ *
+ * The four logical channels correspond to serial bits 0 and 1 from $4016
+ * and $4017. Whether every channel is exposed by the original hardware is
+ * NOT established. Inputs are low-two-bit read samples, not hardware access.
+ */
+const NES_BUTTONS=Object.freeze({
+  A:0x80,B:0x40,SELECT:0x20,START:0x10,
+  UP:0x08,DOWN:0x04,LEFT:0x02,RIGHT:0x01
+});
+const NES_BUTTON_ORDER=Object.freeze(Object.keys(NES_BUTTONS));
+const ORIGINAL_CONTROLLER_CHANNELS=4;
+const BYTE_MAX=0xff;
+const isByte=v=>Number.isInteger(v)&&v>=0&&v<=BYTE_MAX;
+const checkHeld=held=>{
+  if(!Array.isArray(held)||held.length!==4||!held.every(isByte))
+    throw new TypeError('expected exactly four 8-bit controller values');
+};
+function createOriginalControllerState(){return {held:[0,0,0,0],pressed:[0,0,0,0],samples:0};}
+
+/**
+ * Decode the eight successive $4016/$4017 reads used by sub_EE06.
+ * The first serial read becomes bit 7 (A), the eighth bit 0 (Right),
+ * exactly as eight 6502 ROL instructions build each byte.
+ */
+function decodeOriginalSerialRead(sample){
+  if(!sample||!Array.isArray(sample.port4016)||!Array.isArray(sample.port4017)||
+     sample.port4016.length!==8||sample.port4017.length!==8||
+     ![...sample.port4016,...sample.port4017].every(isByte))
+    throw new TypeError('serial sample must contain eight byte reads from each port');
+  const raw=[0,0,0,0];
+  for(let i=0;i<8;i++){
+    const a=sample.port4016[i],b=sample.port4017[i];
+    raw[0]=((raw[0]<<1)|(a&1))&BYTE_MAX;
+    raw[1]=((raw[1]<<1)|(b&1))&BYTE_MAX;
+    raw[2]=((raw[2]<<1)|((a>>1)&1))&BYTE_MAX;
+    raw[3]=((raw[3]<<1)|((b>>1)&1))&BYTE_MAX;
+  }
+  return raw;
+}
+
+/** Adapter for the interactive research lab and tests; not original hardware. */
+function encodeOriginalSerialRead(held){
+  checkHeld(held);
+  const port4016=[],port4017=[];
+  for(let bit=7;bit>=0;bit--){
+    port4016.push(((held[0]>>bit)&1)|(((held[2]>>bit)&1)<<1));
+    port4017.push(((held[1]>>bit)&1)|(((held[3]>>bit)&1)<<1));
+  }
+  return {port4016,port4017};
+}
+
+/** Exact source-derived edge equation: pressed = new & (new XOR old). */
+function updateOriginalControllerEdges(state,raw){
+  if(!state||!Array.isArray(state.held)||!Array.isArray(state.pressed))
+    throw new TypeError('invalid controller state');
+  checkHeld(state.held);checkHeld(state.pressed);checkHeld(raw);
+  if(!Number.isSafeInteger(state.samples)||state.samples<0)throw new TypeError('invalid sample counter');
+  for(let i=0;i<4;i++){
+    state.pressed[i]=(raw[i]^(state.held[i]))&raw[i];
+    state.held[i]=raw[i];
+  }
+  state.samples++;
+  return {held:[...state.held],pressed:[...state.pressed]};
+}
+
+/**
+ * The original $EDCD loop repeats $EE06 until two consecutive four-channel
+ * snapshots agree. For browser safety we bound retries (the NES loop does not).
+ * A failure is atomic: previous held/pressed values are preserved.
+ * readPorts(attempt) supplies eight serial reads for each of two ports.
+ */
+function stepOriginalControllerInput(state,readPorts,{maxAttempts=8}={}){
+  if(typeof readPorts!=='function')throw new TypeError('readPorts must be a function');
+  if(!Number.isInteger(maxAttempts)||maxAttempts<2||maxAttempts>64)
+    throw new RangeError('maxAttempts must be an integer from 2 to 64');
+  let previous=null;
+  for(let attempt=0;attempt<maxAttempts;attempt++){
+    const raw=decodeOriginalSerialRead(readPorts(attempt));
+    if(previous&&raw.every((v,i)=>v===previous[i])){
+      const next=updateOriginalControllerEdges(state,raw);
+      return {...next,attempts:attempt+1,raw};
+    }
+    previous=raw;
+  }
+  throw new Error(`controller serial reads did not stabilize after ${maxAttempts} attempts`);
+}
+
+
+// SOURCE: src/classic/OriginalRandom.js
+/**
+ * Source-derived two-byte random update, native JavaScript.
+ * Pinned upstream bank_FF.asm sub_EE35 ($EE35-$EE59), RAM $0045/$0046.
+ * Called in the main loop at $C48C immediately before input read $C48F.
+ * Seed initialization and original distribution are NOT yet verified.
+ */
+function createOriginalRandomState(byte45=0,byte46=0){
+ if(![byte45,byte46].every(v=>Number.isInteger(v)&&v>=0&&v<=255))
+  throw new TypeError('random state requires two 8-bit bytes');
+ return {byte45,byte46};
+}
+/**
+ * Original sequence: feedback = bit1($45) XOR bit1($46), clear/set carry;
+ * ROR $45, then ROR $46 with carry from old bit0($45). Return new $45.
+ */
+function stepOriginalRandom(state){
+ if(!state||![state.byte45,state.byte46].every(v=>Number.isInteger(v)&&v>=0&&v<=255))
+  throw new TypeError('invalid original random state');
+ const a=state.byte45,b=state.byte46;
+ const feedback=((a^b)>>1)&1;
+ state.byte45=(a>>>1)|(feedback<<7);
+ state.byte46=(b>>>1)|((a&1)<<7);
+ return state.byte45;
+}
+
+
+// SOURCE: src/classic/OriginalFieldLogic.js
+/**
+ * Native ports of SMALL, source-confirmed NES match-state routines.
+ * Pinned source: bank_FF.asm at df2c8e55e7f13e5792482527db9e7c9e4a84c6e1.
+ * $C615-$C63A: Start new-press toggles game-script pause bit.
+ * $C87B-$C89B: pending foul bit and cutscene timer update.
+ * $C5B3-$C5C9: kickoff-to-field BRANCH ONLY (not the full transition).
+ * This does NOT implement the original full field update, audio engine,
+ * state initialization, game physics, or frame-level NES parity.
+ */
+
+const isFieldByte=n=>Number.isInteger(n)&&n>=0&&n<=255;
+const assertByte=(n,name)=>{if(!isFieldByte(n))throw new TypeError(`${name} must be a byte (0..255)`);};
+const ORIGINAL_FIELD_FLAGS=Object.freeze({PAUSED:0x80,FOUL_PENDING:0x20,BALL_HIGH:0x80,BALL_AIR:0x40});
+
+/** Research state: byte fields are RAM values, NOT a complete NES memory image. */
+function createOriginalFieldResearchState({gameScript=0,musicId=0,ram06fd=0,ballState=0,cutsceneTimer=0,formationVariant=0}={}){
+ const fields={gameScript,musicId,ram06fd,ballState,cutsceneTimer,formationVariant};
+ for(const [name,value] of Object.entries(fields))assertByte(value,name);
+ return fields;
+}
+function validateField(s){
+ if(!s||typeof s!=='object')throw new TypeError('field state is required');
+ for(const name of ['gameScript','musicId','ram06fd','ballState','cutsceneTimer','formationVariant'])assertByte(s[name],name);
+}
+
+/**
+ * CPU $C615-$C63A, field subscreen 02 only.
+ * $0008 bit $10 (NEW Start press) XORs $005C with $80.
+ * Enter pause: $06FD=0; original calls audio dispatcher $C2E4 with A=0 then A=$2D.
+ * Leave pause: original calls audio dispatcher $C2E4 with A=$055A music ID.
+ * Commands are logged as BYTES, not played: audio engine has not been ported.
+ * The following paused/active frame routines are not part of this function.
+ */
+function stepOriginalFieldPause(s,pressed0){
+ validateField(s);assertByte(pressed0,'pressed0');
+ if(!(pressed0&NES_BUTTONS.START))return {changed:false,paused:!!(s.gameScript&0x80),audioCommands:[]};
+ s.gameScript^=0x80;
+ if(s.gameScript&0x80){s.ram06fd=0;return {changed:true,paused:true,audioCommands:[0,0x2d]};}
+ return {changed:true,paused:false,audioCommands:[s.musicId]};
+}
+
+/**
+ * Complete local $C87B-$C89B branch: if bit $20 set, clear it and reset
+ * formation/timer when ball flags $C0 are nonzero, or when INC timer sets N.
+ * Otherwise INC timer (8-bit wrap) and leave the pending bit in place.
+ * The original $C5B9 call site invokes this conditionally during kickoff.
+ */
+function stepOriginalFoulFlag(s){
+ validateField(s);
+ if(!(s.gameScript&0x20))return {hadPending:false,cleared:false,timerIncremented:false};
+ let incremented=false;
+ if(!(s.ballState&0xc0)){
+  s.cutsceneTimer=(s.cutsceneTimer+1)&0xff;
+  incremented=true;
+  if(!(s.cutsceneTimer&0x80))return {hadPending:true,cleared:false,timerIncremented:true};
+ }
+ s.gameScript&=0xdf;
+ s.formationVariant=0;
+ s.cutsceneTimer=0;
+ return {hadPending:true,cleared:true,timerIncremented:incremented};
+}
+
+/**
+ * Kickoff gate at $C58F-$C5C9. Inputs are POST-$C2AD values; that routine
+ * and brightness/music side effects have NOT been ported.
+ * When foul is pending, the caller must run stepOriginalFoulFlag first.
+ * If it clears, the original skips the ball-bit-$40 check. Otherwise the
+ * original stays in kickoff. If no foul was pending, bit $40 holds kickoff.
+ * Returns a BRANCH decision only: downstream transition writes/calls are absent.
+ */
+function evaluateOriginalKickoffGate({brightnessFlag,gameScript,ballState}, {foulWasPending=false}={}){
+ for(const [name,value] of Object.entries({brightnessFlag,gameScript,ballState}))assertByte(value,name);
+ if(typeof foulWasPending!=='boolean')throw new TypeError('foulWasPending must be boolean');
+ if(!(brightnessFlag&0x80))return {advance:false,reason:'await-brightness'};
+ if(gameScript&0x20)return {advance:false,reason:'await-foul-clear'};
+ if(!foulWasPending&&(ballState&0x40))return {advance:false,reason:'await-ball-flag'};
+ return {advance:true,reason:'gate-open; transition side effects not implemented'};
+}
+
+
+// SOURCE: src/classic/OriginalScreenDispatch.js
+/**
+ * Pure lookup of original fixed-bank jump tables, NOT a 6502 interpreter.
+ * Pinned upstream bank_FF.asm $C492-$C4C2 and $C50E-$C537.
+ * Source table entries are CPU addresses of original subroutine handlers.
+ * They are reference metadata; handlers are not yet ported to JavaScript.
+ */
+const ORIGINAL_SCREEN_HANDLERS=Object.freeze([0xc4ab,0xc4b1,0xc4b7,0xc4bd]);
+const ORIGINAL_MATCH_SUBSCREEN_HANDLERS=Object.freeze([
+ 0xc539,0xc57d,0xc615,0xc699,0xc71e,0xc77d,0xc7d0,
+ 0xc743,0xc77d,0xc75d,0xc777,0xc743,0xc77d
+]);
+const lookup=(arr,id,label)=>{
+ if(!Number.isInteger(id)||id<0||id>=arr.length)throw new RangeError(`unverified ${label} index: ${id}`);
+ return arr[id];
+};
+const resolveOriginalScreenHandler=id=>lookup(ORIGINAL_SCREEN_HANDLERS,id,'screen');
+const resolveOriginalMatchSubscreenHandler=id=>lookup(ORIGINAL_MATCH_SUBSCREEN_HANDLERS,id,'match subscreen');
+
+
+// SOURCE: src/classic/OriginalGoalCutscene.js
+/**
+ * Source-derived, isolated RAM projection for the original goal subscreen 03.
+ * Pinned upstream: bank_FF.asm, df2c8e55e7f13e5792482527db9e7c9e4a84c6e1
+ *   $C699-$C69E: entry flag mask (BEFORE 12 external routines)
+ *   $C6C5-$C706: camera/timer/skip branch (AFTER those routines)
+ *   $C709-$C71B: brightness gate (AFTER unported $D073)
+ *
+ * NOT a complete Classic frame: external routines and their side effects
+ * are NOT simulated, including $D047, $D073, $C91A and the audio dispatcher.
+ * Caller must provide byte state as observed at the indicated boundaries.
+ * No ROM, 6502 interpreter or original graphics/audio are used.
+ */
+
+const GOAL_BYTE = n => Number.isInteger(n) && n >= 0 && n <= 255;
+const FIELDS = ['tileUpdateFlag','cutsceneTimer','gameScript','ballOwner','cameraObject','weatherEffect','brightnessFlag'];
+function assertGoalByte(n,name){if(!GOAL_BYTE(n))throw new TypeError(`${name} must be a byte (0..255)`);}
+function validateGoal(s){
+ if(!s || typeof s !== 'object')throw new TypeError('cutscene state is required');
+ for(const field of FIELDS)assertGoalByte(s[field],field);
+}
+const ORIGINAL_GOAL_PRE_UPDATE_CALLS=Object.freeze([
+ '$DE0B','$DE47','$CAEE','$C2AD','$C24E','$C271','$BD6A (banked)',
+ '$C2A3','$C285','$F3A5','$C29E','$C299'
+]);
+function createOriginalGoalCutsceneState(options={}){
+ const state=Object.fromEntries(FIELDS.map(name=>[name,options[name]??0]));
+ validateGoal(state);
+ return state;
+}
+/** CPU $C699-$C6A1: clear $05AB bits $30, then return the unported call list. */
+function prepareOriginalGoalCutsceneFrame(s){
+ validateGoal(s);
+ s.tileUpdateFlag &= 0xcf;
+ return {pendingExternalCalls:[...ORIGINAL_GOAL_PRE_UPDATE_CALLS],nextBoundary:'$C6C5'};
+}
+/**
+ * Direct byte writes from $C6C5-$C71B. `s` is a snapshot AFTER all 12
+ * entry routines and `brightnessFlag` is the value AFTER $D073.
+ * This intentionally does not execute the external calls returned below.
+ */
+function stepOriginalGoalCutscenePostUpdates(s,pressed0){
+ validateGoal(s);assertGoalByte(pressed0,'pressed0');
+ const externalCalls=[];
+ let cameraRetargeted=false,skipTriggered=false,brightnessComplete=false,timerIncremented=false;
+ // $C6C5-$C6DC: camera target changes only after timer >= $20 and bit1 set.
+ if(s.cutsceneTimer>=0x20 && (s.gameScript&0x02)){
+  s.cameraObject=(s.ballOwner&0x0f)|0x40;
+  cameraRetargeted=true;
+ }
+ // $C6DC-$C706: below $40, Start/Select new press ($30) skips the scene.
+ // At $40..$FE it finishes automatically; at $FF it stays latched.
+ if(s.cutsceneTimer<0x40){
+  if(pressed0&(NES_BUTTONS.START|NES_BUTTONS.SELECT))skipTriggered=true;
+  else {s.cutsceneTimer=(s.cutsceneTimer+1)&0xff;timerIncremented=true;}
+ }else if(s.cutsceneTimer!==0xff)skipTriggered=true;
+ if(skipTriggered){
+  externalCalls.push({address:'$D047',executed:false});
+  externalCalls.push({address:'$C2E4',argument:0,executed:false});
+  s.cutsceneTimer=0xff;
+  s.weatherEffect=0;
+ }
+ // $C706: this routine is ALWAYS called. Its side effects are unknown.
+ externalCalls.push({address:'$D073',executed:false});
+ // $C709-$C71B: both bits $80 and $40 required to call $C91A and reset.
+ if((s.brightnessFlag&0xc0)===0xc0){
+  brightnessComplete=true;
+  externalCalls.push({address:'$C91A',executed:false});
+  s.gameScript=0;
+  s.cutsceneTimer=0;
+ }
+ return {cameraRetargeted,skipTriggered,timerIncremented,brightnessComplete,externalCalls};
+}
+
+
+// SOURCE: src/classic/OriginalPlayerAction.js
+/**
+ * Source-local native JavaScript projection of original bank04 $B8AB-$B9E2.
+ * Pinned source: cyneprepou4uk/NES-Games-Disassembly
+ * commit df2c8e55e7f13e5792482527db9e7c9e4a84c6e1, bank_04.asm.
+ *
+ * This is NOT a complete Classic player controller. The entry path calls
+ * fixed-bank $C07A (whose $FAEE target is ported separately). Supply button-buffer and
+ * player-state bytes as snapshots AFTER that call. The entry gate is exposed
+ * separately because it runs BEFORE $C07A. Only the action number at $0479
+ * and new angle at $04B0 are written here; movement/ball effects are absent.
+ * This code does not execute a ROM or 6502 instructions.
+ */
+
+const isActionByte=n=>Number.isInteger(n)&&n>=0&&n<=255;
+function byte(n,name){if(!isActionByte(n))throw new TypeError(`${name} must be a byte (0..255)`);}
+
+/** $B9E5-$B9F4: held directional nibble -> new angle (includes $FF). */
+const ORIGINAL_ACTION_ANGLES=Object.freeze([
+ 0xff,0x40,0xc0,0x00,0x80,0x60,0xa0,0x00,
+ 0x00,0x20,0xe0,0x00,0x00,0x00,0x00,0x00
+]);
+/** $BA05-$BA0F: lookup used by reachable $B8AB action classes 0..3. */
+const ORIGINAL_ACTION_LOOKUP=Object.freeze([
+ 0x0a,0x08,0x09,0x08,0x04,0x04,0x04,0x05,0x05,0x05,0x05
+]);
+
+/**
+ * $B8AB-$B8BE before unported $C07A: the selected player's control
+ * position must be nonnegative and its existing action byte negative.
+ * selected player ID comes from $0568[controllerSlot]; this function takes
+ * the dereferenced bytes, not a complete NES RAM image.
+ */
+function evaluateOriginalPlayerActionEntry({controlPosition,action}){
+ byte(controlPosition,'controlPosition');byte(action,'action');
+ if(controlPosition&0x80)return {dispatch:false,reason:'control-position-negative'};
+ if(!(action&0x80))return {dispatch:false,reason:'existing-action-nonnegative'};
+ return {dispatch:true,reason:'enter-$C07A-then-$B8C3'};
+}
+
+const ACTION_FIELDS=['playerId','playerState','held','pressed','buffer20','buffer21','facing','action','angle'];
+function createOriginalPlayerActionState(options={}){
+ const defaults={playerId:0,playerState:0x80,held:0,pressed:0,buffer20:0,buffer21:0,facing:0,action:0x80,angle:0xff};
+ const s=Object.fromEntries(ACTION_FIELDS.map(name=>[name,options[name]??defaults[name]]));
+ validateActionState(s);return s;
+}
+function validateActionState(s){
+ if(!s||typeof s!=='object')throw new TypeError('player action state is required');
+ for(const name of ACTION_FIELDS)byte(s[name],name);
+ if(s.playerId>11)throw new RangeError('playerId must be 0..11 (10 field players and 2 goalkeepers)');
+}
+
+/**
+ * $B8C3-$B9E2, after the UNPORTED $C07A helper has returned.
+ * `buffer20`=$0570[slot], `buffer21`=$057C[slot], held=$0004[slot],
+ * pressed=$0008[slot], playerState=$0486[player], facing=$04A3[player].
+ * `action`=$0479[player], `angle`=$04B0[player]. The original first copies
+ * $056C[slot] to $001F too, but this branch never reads $001F.
+ *
+ * The caller must separately evaluate the entry gate and provide genuine
+ * post-helper state; this function cannot establish original frame parity.
+ */
+function stepOriginalPlayerActionPostHelper(s){
+ validateActionState(s);const {playerState,held,pressed,buffer20,buffer21,facing,playerId}=s;
+ const classIndex=(playerState&0xb0)?1+((playerState&0x80)?0:1+((playerState&0x20)?0:1)):0;
+ // $B8E5-$B910 selects one of $B9F5 pointers; reachable classes 0..3
+ // all resolve to $BA05. Class 5 points to $BA10 but is unreachable here.
+ const lookup=ORIGINAL_ACTION_LOOKUP;
+ const setAction=(value,path)=>{s.action=value;return {path,classIndex,actionWritten:true,angleWritten:false,action:s.action,angle:s.angle};};
+ const setAngle=(path,actionWritten=false)=>{
+  s.angle=ORIGINAL_ACTION_ANGLES[held&0x0f];
+  return {path,classIndex,actionWritten,angleWritten:true,action:s.action,angle:s.angle};
+ };
+ // $B913-$B919: negative player state uses new-press bits 7 and 6.
+ // $B91C-$B94C: nonnegative state can force immediate 08/09/0A.
+ if(!(playerState&0x80)&&(buffer20&0x80)){
+  if(held&0x03){
+   // Two ROLs at $B92B-$B92C: bit0 of result = original facing bit7.
+   const action=((facing>>7)^(held&1))&1?0x09:0x0a;
+   return setAction(action,'$B928-horizontal-facing');
+  }
+  return setAction(playerState&0x08?0x09:0x08,'$B93E-stationary');
+ }
+ // $B913: negative state uses pressed>>1 before $B94F ASL; otherwise
+ // $B91C reads buffer20 directly before that ASL. Normalize to the value
+ // AFTER $B94F ASL so the next two sign checks read the right bits.
+ const actionBits=(playerState&0x80)?pressed:((buffer20<<1)&0xff);
+ // $B94F-$B96B: first priority bit7 -> table offsets 5/6 (both $04).
+ if(actionBits&0x80){
+  const offset=(held&0x0c)?5:6;
+  return setAction(lookup[offset],`$B952-lookup-${offset}`);
+ }
+ // $B96B-$B9A8: second priority bit6 -> offsets 7..10 (all $05).
+ if(actionBits&0x40){
+  const offset=!(held&0x0f)?7:(held&0x0c)?8:((playerId^held)&1)?10:9;
+  return setAction(lookup[offset],`$B96E-lookup-${offset}`);
+ }
+ // $B9A8-$B9D0: negative player state skips action update.
+ if(playerState&0x80)return setAngle('$B9A8-negative-state-angle-only');
+ // $B9AD-$B9CD: action depends on $057C low nibble and held direction.
+ if(!(buffer21&0x0f)){
+  s.action=(held&0x0f)?0x06:0x01;
+ }else{
+  s.action=(buffer21&0x03)?0x07:0x0d;
+ }
+ return setAngle('$B9AD-fallback-action-and-angle',true);
+}
+
+/**
+ * $B4B2-$B4C8 kickoff dispatch ONLY. Does not run $B850 or $B4C9.
+ * If script bit0 set: call $B850 once; else call $B4C9 with X=0,1,2,3.
+ */
+function scheduleOriginalKickoffControllerCalls(gameScript){
+ byte(gameScript,'gameScript');
+ if(gameScript&1)return [{address:'$B850',executed:false}];
+ return Array.from({length:4},(_,slot)=>({address:'$B4C9',controllerSlot:slot,executed:false}));
+}
+
+
+// SOURCE: src/classic/OriginalActionBuffers.js
+/**
+ * Native, source-local port of fixed bank $FAEE-$FBA8 (including $FB5F).
+ * Upstream: bank_FF.asm, pinned df2c8e55e7f13e5792482527db9e7c9e4a84c6e1.
+ * This routine is called by bank04 $B8AB and $B4C9 through trampoline $C07A.
+ * It transforms raw NES held/new-press bytes into delayed button and
+ * directional-repeat buffers; it does NOT perform football actions.
+ * No original runtime frame trace has verified the result yet.
+ */
+const isBufferByte=n=>Number.isInteger(n)&&n>=0&&n<=255;
+const ACTION_BUFFER_FIELDS=['held','pressed','buffer56c','buffer570','buffer574','buffer578','buffer57c','buffer580','buffer584'];
+function validateBuffer(s){
+ if(!s||typeof s!=='object')throw new TypeError('action buffer state is required');
+ for(const key of ACTION_BUFFER_FIELDS){
+  if(!isBufferByte(s[key]))throw new TypeError(`${key} must be a byte (0..255)`);
+ }
+}
+function createOriginalActionBufferState(options={}){
+ const s=Object.fromEntries(ACTION_BUFFER_FIELDS.map(key=>[key,options[key]??0]));
+ validateBuffer(s);return s;
+}
+/**
+ * $FAEE-$FBA8 for ONE controller slot X; values are the slot's RAM bytes.
+ * 0570: transformed action press, 057C: repeated directional press,
+ * 056C/0574/0578/0580/0584: persistent timing and edge buffers.
+ * $001C is temporary scratch. The source uses 8-bit wrap and a 127 cap.
+ */
+function stepOriginalActionBuffers(s){
+ validateBuffer(s);
+ let scratch=s.held>>1;
+ let actionPath='';
+ // $FAEE-$FB5C: action-button hold/delay/edge logic.
+ if(!(scratch&0xe0)){
+  if(s.buffer574){
+   scratch=s.buffer574;
+   s.buffer574=0;
+   s.buffer570=(scratch^s.buffer56c)&scratch;
+   s.buffer56c=scratch;
+   actionPath='released-pending-action';
+  }else{
+   s.buffer574=0;s.buffer578=0;s.buffer56c=0;s.buffer570=0;
+   actionPath='no-action-hold';
+  }
+ }else if(((((scratch&0xe0)<<2)&0xff)&s.held)&0x80){
+  scratch|=0x80;
+  s.buffer570=(scratch^s.buffer56c)&scratch;
+  s.buffer56c=scratch;
+  actionPath='simultaneous-A-B';
+ }else if(scratch&s.buffer574){
+  s.buffer578=(s.buffer578+1)&0xff;
+  if(s.buffer578>=2){
+   scratch=s.buffer574&scratch;
+   s.buffer570=(scratch^s.buffer56c)&scratch;
+   s.buffer56c=scratch;
+   actionPath='held-action-delay-complete';
+  }else actionPath='held-action-delay-pending';
+ }else{
+  s.buffer574=scratch;
+  s.buffer578=0;
+  actionPath='new-action-hold';
+ }
+ // $FB5F-$FBA8: directional new-press and rapid repeat detection.
+ s.buffer57c=0;
+ const direction=s.pressed&0x0f;
+ let directionPath='';
+ if(!direction){
+  s.buffer584=(s.buffer584+1)&0xff;
+  if(s.buffer584&0x80)s.buffer584=0x7f;
+  directionPath='direction-timer';
+ }else{
+  const repeat=direction&s.buffer580;
+  if(repeat&&s.buffer584<6){
+   s.buffer57c=repeat; // $FB7C-$FB83, high nibble is zero after entry clear.
+   directionPath='quick-direction-repeat';
+  }else{
+   s.buffer584=0;
+   s.buffer580=(s.buffer580&0xf0)|direction;
+   directionPath='new-direction-edge';
+  }
+ }
+ return {actionPath,directionPath,buffer20:s.buffer570,buffer21:s.buffer57c};
+}
+
+
+// SOURCE: src/classic/OriginalPossessionControl.js
+/**
+ * Source-local native port of bank_04.asm $B850-$B8AA, selected by $B4B2
+ * when game-script $005C bit 0 is set.
+ * Upstream cyneprepou4uk/NES-Games-Disassembly @
+ * df2c8e55e7f13e5792482527db9e7c9e4a84c6e1 (bank_04.asm:13290-13334).
+ *
+ * The RAM image models CPU $0000-$07FF bytes only. It is NOT an NES emulator;
+ * the code executes source-derived branch semantics directly in JavaScript.
+ * This routine alone does not implement original football actions, the
+ * alternate $B4C9 path, frame sequencing or original-runtime parity.
+ */
+const POSSESSION_RAM_SIZE=0x800;
+const possessionByte=(value,name)=>{if(!Number.isInteger(value)||value<0||value>255)throw new TypeError(`${name} must be an unsigned byte`);return value;};
+const possessionArray=(value,count,name)=>{if(!Array.isArray(value)||value.length!==count)throw new TypeError(`${name} must have ${count} bytes`);return value.map((v,i)=>possessionByte(v,`${name}[${i}]`));};
+function validateRam(ram){if(!(ram instanceof Uint8Array)||ram.length<POSSESSION_RAM_SIZE)throw new TypeError('RAM must be a Uint8Array of at least $0800 bytes');}
+
+/**
+ * $B8A8-$B8AB. The source declares three table bytes; a fourth index reads
+ * $B8AB's first instruction byte ($86, STX zero-page), NOT a fourth .byte.
+ * Preserving this is essential for a byte-faithful, source-local projection.
+ */
+const ORIGINAL_POSSESSION_ANGLE_BYTES=Object.freeze([0x00,0x80,0x00,0x86]);
+const ORIGINAL_POSSESSION_RAM=Object.freeze({
+ SCRIPT:0x005c,FRAME:0x0300,ACTION:0x0479,OWNER:0x04d6,SELECTED:0x0568,
+ CONTROL:0x0650,ANGLE:0x04b0,FLAG:0x067e,HELD:0x0004,PRESSED:0x0008
+});
+
+/** Create a small, explicit RAM fixture; all values are arbitrary test seeds. */
+function createOriginalPossessionRam({
+ gameScript=1,frame=0,owner=2,controlPositions=[0,0],
+ selectedPlayers=[2,0xff,0xff,0xff],held=[0,0,0,0],pressed=[0x80,0,0,0],
+ initialAction=0x80,initialAngle=0xff,initialFlag=0
+}={}){
+ const control=possessionArray(controlPositions,2,'controlPositions');
+ const selected=possessionArray(selectedPlayers,4,'selectedPlayers');
+ const hold=possessionArray(held,4,'held');const press=possessionArray(pressed,4,'pressed');
+ for(const [k,v] of Object.entries({gameScript,frame,owner,initialAction,initialAngle,initialFlag}))possessionByte(v,k);
+ const ram=new Uint8Array(POSSESSION_RAM_SIZE);
+ ram[0x005c]=gameScript;ram[0x0300]=frame;ram[0x04d6]=owner;
+ control.forEach((v,i)=>ram[0x0650+i]=v);
+ selected.forEach((v,i)=>ram[0x0568+i]=v);
+ hold.forEach((v,i)=>ram[0x0004+i]=v);
+ press.forEach((v,i)=>ram[0x0008+i]=v);
+ ram[0x0479+owner]=initialAction;ram[0x04b0+owner]=initialAngle;ram[0x067e+owner]=initialFlag;
+ return ram;
+}
+
+/**
+ * Port $B850-$B8A7. Mutates ONLY the bytes written by the assembly branch.
+ * Crucial: matched A/B writes action[controllerSlot], not action[ballOwner].
+ * Fallback writes action[ballOwner] and flag[ballOwner] every 32 frames.
+ * Does not claim to know what numeric actions $09/$0A mean in gameplay.
+ */
+function stepOriginalPossessionControl(ram){
+ validateRam(ram);
+ const owner=ram[0x04d6];
+ const writes=[];
+ const put=(address,value)=>{ram[address]=value;writes.push({address,value});};
+ const result=(branch,controllerSlot=null)=>({source:'bank04:$B850-$B8A7',branch,controllerSlot,owner,writes});
+ if(!((ram[0x0650]&ram[0x0651])&0x80)){
+  for(let slot=0;slot<4;slot++){
+   if(ram[0x0568+slot]!==owner)continue;
+   const pressed=ram[0x0008+slot];
+   if(pressed&0x80){put(0x0479+slot,0x0a);return result('$B87E-A-new-press',slot);}
+   if(pressed&0x40){put(0x0479+slot,0x09);return result('$B882-B-new-press',slot);}
+   // The $B885 test deliberately uses channel zero, not the matched slot.
+   if(ram[0x0008]&0x30){put(0x0479+slot,0x0a);return result('$B885-channel-zero-Start-Select',slot);}
+   const tableIndex=(ram[0x0004+slot]>>2)&3;
+   put(0x04b0+owner,ORIGINAL_POSSESSION_ANGLE_BYTES[tableIndex]);
+   return {...result('$B88B-held-angle',slot),tableIndex};
+  }
+ }
+ // $B867: the fallback is gated by the low five bits of frame counter.
+ if(ram[0x0300]&0x1f)return result('$B867-frame-not-multiple-of-32');
+ put(0x067e+owner,owner|0x12);
+ put(0x0479+owner,0x0a);
+ return result('$B86E-fallback-every-32-frames');
+}
+
+/**
+ * Only execute the verified script-bit0 branch of $B4B2. The four $B4C9
+ * controller calls are deliberately left unexecuted, not approximated.
+ */
+function stepOriginalScriptBit0ControlBranch(ram){
+ validateRam(ram);
+ if(!(ram[0x005c]&1))return {
+  dispatch:'$B4C9',implemented:false,
+  pendingCalls:[0,1,2,3].map(controllerSlot=>({address:'$B4C9',controllerSlot,executed:false})),
+  reason:'The alternate four-slot $B4C9 controller routine is not ported.'
+ };
+ return {dispatch:'$B850',implemented:true,...stepOriginalPossessionControl(ram)};
+}
+
+
+// SOURCE: src/classic/OriginalAlternateController.js
+/**
+ * Native, source-local reconstruction of bank_04.asm $B4C9-$B724 and
+ * its $B727-$B84F lookup data. Upstream pinned commit:
+ * df2c8e55e7f13e5792482527db9e7c9e4a84c6e1.
+ *
+ * Operates on a byte-addressed $0000-$07FF RAM snapshot. The fixed-bank
+ * $C07A -> $FAEE button-buffer helper is invoked via its native JS port.
+ * No NES interpreter, ROM, original game loop or football action executor.
+ * Original runtime/frame parity remains UNVERIFIED.
+ */
+
+
+const alternateRAMSize=0x800;
+const alternateByte=(value,name)=>{if(!Number.isInteger(value)||value<0||value>255)throw new TypeError(`${name} must be an unsigned byte`);return value;};
+const alternateRAM=ram=>{if(!(ram instanceof Uint8Array)||ram.length<alternateRAMSize)throw new TypeError('RAM must contain at least $0800 bytes');};
+const alternateNegative=value=>(value&0x80)!==0;
+
+/** Source pointers: $B737 -> group, $B745-$B77C -> state class. */
+const ORIGINAL_ALTERNATE_POINTERS=Object.freeze([
+ Object.freeze([0xb77d,0xb789,0xb795,0xb801]),
+ Object.freeze([0xb7d1,0xb7dd,0xb7c5,0xb801]),
+ Object.freeze([0xb7ad,0xb7b9,0xb7a1,0xb801]),
+ Object.freeze([0xb7e9,0xb7f5,0xb7e9,0xb801]),
+ Object.freeze([0xb831,0xb7b9,0xb831,0xb801]),
+ Object.freeze([0xb80d,0xb819,0xb825,0xb801]),
+ Object.freeze([0xb83d,0xb844,0xb83d,0xb801])
+]);
+/** $B727-$B736, indexed by the low nibble of the controller's held buttons. */
+const ORIGINAL_ALTERNATE_ANGLES=Object.freeze([
+ 0xff,0x40,0xc0,0,0x80,0x60,0xa0,0,0,0x20,0xe0,0,0,0,0,0
+]);
+
+// Literal bytes from bank04 $B77D-$B84F. Entries at $B83D-$B843 are
+// deliberately only seven bytes: the 12-byte lookup crosses into $B844.
+const alternateChunks=Object.freeze([
+ [0xb77d,[0x30,0x30,0x30,0x30,0x0d,0x08,0x08,0x07,0x07,0x31,0x31,0x31]],
+ [0xb789,[0xff,0xff,0xff,0xff,0x35,0x35,0x35,0x33,0x34,0x32,0x34,0x34]],
+ [0xb795,[0x44,0x44,0x44,0x44,0x08,0x08,0x08,0x07,0x07,0x07,0x07,0x07]],
+ [0xb7a1,[0x44,0x44,0x44,0x44,0x0a,0x0a,0x0a,0x09,0x09,0x09,0x09,0x09]],
+ [0xb7ad,[0x10,0x30,0x30,0x0e,0x0d,0x0a,0x0a,0x09,0x09,0x09,0x09,0x09]],
+ [0xb7b9,[0xff,0xff,0xff,0xff,0x39,0x39,0x39,0x37,0x38,0x46,0x38,0x38]],
+ [0xb7c5,[0x44,0x44,0x44,0x44,0x23,0x23,0x23,0x22,0x22,0x22,0x22,0x19]],
+ [0xb7d1,[0x30,0x30,0x30,0x30,0x23,0x23,0x23,0x22,0x22,0x22,0x22,0x19]],
+ [0xb7dd,[0xff,0xff,0xff,0xff,0x42,0x42,0x42,0x3b,0x3b,0x3b,0x3b,0x3b]],
+ [0xb7e9,[0x30,0x30,0x30,0x30,0x11,0x11,0x11,0x11,0x11,0x11,0x11,0x11]],
+ [0xb7f5,[0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30]],
+ [0xb801,[0x10,0x30,0x30,0x30,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff]],
+ [0xb80d,[0x52,0x3e,0x52,0x52,0x22,0x29,0x22,0x22,0x28,0x41,0x41,0x41]],
+ [0xb819,[0xff,0xff,0xff,0xff,0x54,0x54,0x54,0x54,0x54,0x54,0x54,0x54]],
+ [0xb825,[0x52,0x3e,0x52,0x52,0x22,0x29,0x22,0x22,0x28,0x41,0x41,0x41]],
+ [0xb831,[0x30,0x30,0x30,0x30,0x0a,0x0a,0x0a,0x09,0x09,0x09,0x09,0x09]],
+ [0xb83d,[0x30,0x30,0x30,0x30,0x17,0x17,0x17]],
+ [0xb844,[0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x30]]
+]);
+const alternateTableBytes=new Uint8Array(0xb850-0xb77d);
+for(const [address,bytes] of alternateChunks)alternateTableBytes.set(bytes,address-0xb77d);
+function readOriginalAlternateActionTable(group,classIndex,offset){
+ if(!Number.isInteger(group)||group<0||group>6)throw new RangeError('group must be 0..6');
+ if(!Number.isInteger(classIndex)||classIndex<0||classIndex>3)throw new RangeError('classIndex must be 0..3');
+ if(!Number.isInteger(offset)||offset<0||offset>11)throw new RangeError('offset must be 0..11');
+ const address=ORIGINAL_ALTERNATE_POINTERS[group][classIndex]+offset;
+ return alternateTableBytes[address-0xb77d];
+}
+
+/** Construct an independent, arbitrary synthetic fixture, NOT a real NES save. */
+function createOriginalAlternateControllerRam({
+ slot=0,player=2,gameScript=0,controlPosition=0,playerState=0,action=0x80,
+ held=0,pressed=0,owner=0x0c,ballState=0,ballMovement=0,playerMovement=0,
+ playerTimer=0,playerFlag=0,ownerFlag=null,teamPossession=[0,0],passDirections=[0x0f,0x0f],
+ buffer56c=0,buffer570=0,buffer574=0,buffer578=0,buffer57c=0,buffer580=0,buffer584=0
+}={}){
+ if(!Number.isInteger(slot)||slot<0||slot>3)throw new RangeError('slot must be 0..3');
+ for(const [key,value] of Object.entries({player,gameScript,controlPosition,playerState,action,held,pressed,owner,ballState,ballMovement,playerMovement,playerTimer,playerFlag,buffer56c,buffer570,buffer574,buffer578,buffer57c,buffer580,buffer584}))alternateByte(value,key);
+ if(ownerFlag!==null)alternateByte(ownerFlag,'ownerFlag');
+ for(const [key,values] of Object.entries({teamPossession,passDirections})){
+  if(!Array.isArray(values)||values.length!==2)throw new TypeError(`${key} must have 2 bytes`);
+  values.forEach((v,i)=>alternateByte(v,`${key}[${i}]`));
+ }
+ const ram=new Uint8Array(alternateRAMSize);
+ ram.fill(0xff,0x0568,0x056c);
+ ram[0x0568+slot]=player;ram[0x0650+player]=controlPosition;ram[0x0479+player]=action;
+ ram[0x0486+player]=playerState;ram[0x0004+slot]=held;ram[0x0008+slot]=pressed;
+ ram[0x005c]=gameScript;ram[0x04d6]=owner;ram[0x0492]=ballState;
+ ram[0x0465]=ballMovement;ram[0x0459+player]=playerMovement;
+ ram[0x04bd+player]=playerTimer;ram[0x067c+player]=playerFlag;
+ if(ownerFlag!==null)ram[0x067c+owner]=ownerFlag;ram[0x052a]=teamPossession[0];ram[0x052b]=teamPossession[1];
+ ram[0x067a]=passDirections[0];ram[0x067b]=passDirections[1];
+ for(const [address,value] of [[0x056c,buffer56c],[0x0570,buffer570],[0x0574,buffer574],[0x0578,buffer578],[0x057c,buffer57c],[0x0580,buffer580],[0x0584,buffer584]])ram[address+slot]=value;
+ return ram;
+}
+
+/** $B4C9-$B724: one controller slot, with $C07A native buffer update. */
+function stepOriginalAlternateController(ram,slot){
+ alternateRAM(ram);
+ if(!Number.isInteger(slot)||slot<0||slot>3)throw new RangeError('slot must be 0..3');
+ const before=ram.slice();ram[0x0043]=slot; // $B4C9 STX $43, even when gate fails
+ const player=ram[0x0568+slot];
+ const finish=(reason,extras={})=>({source:'bank04:$B4C9-$B724',slot,player,reason,
+  changes:Array.from(ram.keys()).filter(i=>ram[i]!==before[i]).map(address=>({address,before:before[address],after:ram[address]})),...extras});
+ if(alternateNegative(player))return finish('$B4CE-negative-selected-player',{helperInvoked:false});
+ if(alternateNegative(ram[0x0650+player]))return finish('$B4D4-negative-control-position',{helperInvoked:false});
+ if(!alternateNegative(ram[0x0479+player]))return finish('$B4D9-existing-action',{helperInvoked:false});
+ const buffers=createOriginalActionBufferState({
+  held:ram[0x0004+slot],pressed:ram[0x0008+slot],
+  buffer56c:ram[0x056c+slot],buffer570:ram[0x0570+slot],buffer574:ram[0x0574+slot],
+  buffer578:ram[0x0578+slot],buffer57c:ram[0x057c+slot],buffer580:ram[0x0580+slot],buffer584:ram[0x0584+slot]
+ });
+ const bufferTrace=stepOriginalActionBuffers(buffers); // $C07A -> $FAEE
+ for(const [address,key] of [[0x056c,'buffer56c'],[0x0570,'buffer570'],[0x0574,'buffer574'],[0x0578,'buffer578'],[0x057c,'buffer57c'],[0x0580,'buffer580'],[0x0584,'buffer584']])ram[address+slot]=buffers[key];
+ const held=ram[0x0004+slot],pressed=ram[0x0008+slot];
+ for(const [address,value] of [[0x001d,held],[0x001e,pressed],[0x001f,buffers.buffer56c],[0x0020,buffers.buffer570],[0x0021,buffers.buffer57c]])ram[address]=value;
+ const state=ram[0x0486+player];
+ let group=0;
+ if(ram[0x005c]&0x40)group=3;
+ else if(state&1)group=0;
+ else if(player>=0x0a){
+  if(!alternateNegative(ram[0x067c+player]))group=state&0x40?4:5;
+ }else{
+  const owner=ram[0x04d6];
+  const specialOwner=owner>=0x0a&&(ram[0x0492]&0x40)&&!alternateNegative(ram[0x067c+owner]);
+  if(specialOwner||((ram[0x067a+(player&1)]&0x0f)!==0x0f))group=3;
+  else if(alternateNegative(ram[0x052a]|ram[0x052b])){
+   group=1;
+   if(alternateNegative(ram[0x052a+(player&1)])){
+    group=2;
+    if(!(state&0x40))group=3;
+   }
+  }
+ }
+ ram[0x001c]=group;
+ // $B578-$B5AE: two successive 16-bit pointer dereferences.
+ const groupPtr=[0xb745,0xb74d,0xb755,0xb75d,0xb76d,0xb765,0xb775][group];
+ ram[0x002e]=groupPtr&255;ram[0x002f]=groupPtr>>8;
+ const classIndex=(state&0xb0)?1+(state&0x80?0:1+(state&0x20?0:1)):0;
+ ram[0x001c]=classIndex;
+ const tablePtr=ORIGINAL_ALTERNATE_POINTERS[group][classIndex];
+ ram[0x002c]=tablePtr&255;ram[0x002d]=tablePtr>>8;
+ const common={helperInvoked:true,bufferTrace,group,classIndex,groupPtr,tablePtr};
+ const action=(value,reason,offset=null,withAngle=false)=>{
+  ram[0x0479+player]=value;
+  if(withAngle)ram[0x04b0+player]=ORIGINAL_ALTERNATE_ANGLES[held&15];
+  return finish(reason,{...common,actionWritten:true,angleWritten:withAngle,actionValue:value,selectedActionOffset:offset});
+ };
+ const angleOnly=reason=>{ram[0x04b0+player]=ORIGINAL_ALTERNATE_ANGLES[held&15];return finish(reason,{...common,actionWritten:false,angleWritten:true});};
+ const table=(offset,reason)=>{
+  const value=readOriginalAlternateActionTable(group,classIndex,offset);
+  return value<0x80?action(value,reason,offset):null;
+ };
+ let acc;
+ if(state&0x80){
+  if(ram[0x04bd+player]&&((ram[0x0459+player]&0x7f)!==0x58)&&(pressed&0xc0))
+   return action(0x45,'$B5CA-negative-state-timer');
+  acc=pressed>>1; // $B5CF LSR
+ }else{
+  acc=buffers.buffer570;
+  if(acc&0x80){
+   if(held&0x0c){const r=table(1,'$B5E4-table-1');if(r)return r;}
+   if(held&0x03){const r=table(0,'$B5F4-table-0');if(r)return r;}
+   if(state&0x08){const r=table(2,'$B604-table-2');if(r)return r;}
+   const r=table(3,'$B60D-table-3');if(r)return r;
+   acc=readOriginalAlternateActionTable(group,classIndex,3); // BMI $B614 retains A
+  }
+ }
+ acc=(acc<<1)&255; // $B614 ASL, first sign gate
+ if(acc&0x80){
+  if((ram[0x0465]&0x7f)===0x0a&&player===ram[0x04d6]){
+   const r=table(4,'$B627-table-4');if(r)return r;
+  }
+  if(held&0x0c){const r=table(5,'$B637-table-5');if(r)return r;}
+  const r=table(6,'$B640-table-6');if(r)return r;
+  acc=readOriginalAlternateActionTable(group,classIndex,6); // BMI $B647 retains A
+ }
+ acc=(acc<<1)&255; // $B647 ASL, second sign gate
+ if(acc&0x80){
+  if((ram[0x0459+player]&0x7f)===0x02){const r=table(11,'$B655-table-11');if(r)return r;}
+  if(!(held&0x0f)){const r=table(7,'$B665-table-7');if(r)return r;}
+  if(held&0x0c){const r=table(8,'$B675-table-8');if(r)return r;}
+  if(!((player^held)&1)){const r=table(9,'$B686-table-9');if(r)return r;}
+  const r=table(10,'$B68F-table-10');if(r)return r;
+ }
+ if(state&0x80)return angleOnly('$B696-negative-state-angle');
+ if((ram[0x0459+player]&0x7f)===3){
+  if(held&3)return action(0x2a,'$B6B7-movement-3-held-low',null,true);
+  if(held&0x0c)return action(0x27,'$B6B2-movement-3-held-high',null,true);
+ }
+ if(state&8){
+  if((state&0x50)&&(buffers.buffer57c&0x0c))return action(state&0x10?0x25:0x24,'$B6C3-state8-buffer21',null,true);
+  if(buffers.buffer57c&0x0f)return action(0x1d,'$B6FE-state8-buffer21',null,true);
+  return angleOnly('$B6FE-state8-no-buffer21');
+ }
+ if(buffers.buffer57c&0x0f)return action(0x21,'$B70A-direction-repeat',null,true);
+ if(held&0x0f)return action(0x20,'$B6F9-held-direction',null,true);
+ return action(0x01,'$B6F4-no-direction',null,true);
+}
+
+/** $B4B2: execute four $B4C9 calls in source order when script bit0 clear. */
+function stepOriginalFourControllerBranch(ram){
+ alternateRAM(ram);
+ if(ram[0x005c]&1)return {implemented:false,reason:'script bit0 selects separate $B850 branch',calls:[]};
+ return {implemented:true,calls:[0,1,2,3].map(slot=>stepOriginalAlternateController(ram,slot))};
+}
+
+/** Complete $B4B2 dispatch between the two separately ported source branches.
+ * Does NOT run the game's caller, action executor, or frame update loop.
+ */
+function stepOriginalControllerDispatch(ram){
+ alternateRAM(ram);
+ if(ram[0x005c]&1)return {dispatch:'$B850',implemented:true,...stepOriginalPossessionControl(ram)};
+ return {dispatch:'$B4C9',...stepOriginalFourControllerBranch(ram)};
+}
+
+
+// SOURCE: src/classic/OriginalActionArbitration.js
+/**
+ * Native, source-local port of bank_06.asm $AA14-$AAAB: pending player-action
+ * arbitration and movement replacement. Source pinned at
+ * df2c8e55e7f13e5792482527db9e7c9e4a84c6e1.
+ *
+ * The two metadata arrays are literal small source tables at $AC69-$AD40.
+ * They are NOT sprites, gameplay physics, an NES emulator, or proof of parity.
+ * The source table at $AC69 deliberately overlaps $AC87 when indexed past 14.
+ */
+const ARBITRATION_RAM_BYTES=0x800;
+const ORIGINAL_ACTION_METADATA_BASES=Object.freeze([0xac87,0xac69]);
+const METADATA_START=0xac69;
+const METADATA_END=0xad40;
+const METADATA_HEX=[
+ '00002400040324032405240524002802a004a004a004a004',
+ '000f2405a0040000240004032403240f240f240f20042004',
+ '600460046401240f040804042403400404032002240f0102',
+ '000f000f000500052007000f000f000f0803000000002400',
+ '280220070007400420050003240420062006240424072400',
+ '240f240f4004a004a20582058205820580058005c205c205',
+ 'c005c0058005a40fa40fa005a005a007a00580058305a004',
+ 'a00782058305a0058205a0058205a0058205a0058205a005',
+ 'a005a004a005a006a40fa004a0048005a40fa40fa804a005'
+].join('');
+const metadataBytes=Uint8Array.from(METADATA_HEX.match(/../g),x=>parseInt(x,16));
+if(metadataBytes.length!==METADATA_END-METADATA_START+1)throw new Error('Original metadata source table length mismatch');
+const negative=value=>(value&0x80)!==0;
+const validByte=(value,name)=>{if(!Number.isInteger(value)||value<0||value>255)throw new RangeError(`${name} must be an unsigned byte`);};
+const validVariant=variant=>{if(variant!==0&&variant!==1)throw new RangeError('tableVariant must be 0 ($AC87) or 1 ($AC69)');};
+
+/** Read the exact two-byte metadata record used by $AAAC/$AAB4/$AABD. */
+function readOriginalActionMetadata(actionId,tableVariant=0){
+ validByte(actionId,'actionId');validVariant(tableVariant);
+ const address=ORIGINAL_ACTION_METADATA_BASES[tableVariant]+2*actionId;
+ if(address<METADATA_START||address+1>METADATA_END)
+  throw new RangeError(`Action $${actionId.toString(16)} metadata extends outside audited source $AC69-$AD40`);
+ return Object.freeze({address,flags:metadataBytes[address-METADATA_START],priority:metadataBytes[address+1-METADATA_START]});
+}
+
+/** Construct a minimal synthetic RAM fixture; not an original game save. */
+function createOriginalActionArbitrationRam({player=2,action=0x09,movement=0x80,playerState=0,weather=0,skill=1,surface=0}={}){
+ if(!Number.isInteger(player)||player<0||player>11)throw new RangeError('player must be 0..11');
+ for(const [name,value] of Object.entries({action,movement,playerState,weather,skill,surface}))validByte(value,name);
+ const ram=new Uint8Array(ARBITRATION_RAM_BYTES);
+ ram[0x0479+player]=action;ram[0x0459+player]=movement;ram[0x0486+player]=playerState;
+ ram[0x0466]=weather;ram[0x04f1+player]=skill;ram[0x0130+player]=surface;
+ return ram;
+}
+
+/**
+ * Step $AA14 (variant 0) or $AA19 (variant 1) and $AA1B-$AAAB on one player.
+ * Changes pending $0479 and, conditionally, movement $0459. This does not
+ * run animation, collision, player physics, or any other original subroutine.
+ */
+function stepOriginalActionArbitration(ram,player,{tableVariant=0}={}){
+ if(!(ram instanceof Uint8Array)||ram.length<ARBITRATION_RAM_BYTES)throw new TypeError('RAM must contain at least $0800 bytes');
+ if(!Number.isInteger(player)||player<0||player>11)throw new RangeError('player must be 0..11');
+ validVariant(tableVariant);
+ const before=ram.slice();
+ const actionAddress=0x0479+player,movementAddress=0x0459+player,state=ram[0x0486+player];
+ const base=ORIGINAL_ACTION_METADATA_BASES[tableVariant];
+ ram[0x002c]=base&255;ram[0x002d]=base>>8; // $AA1B-$AA23
+ let forcedWeatherAction=false;
+ // $AA25-$AA44: weather effect 1 can force pending action $06.
+ if((ram[0x0466]&0x7f)===1&&!negative(state)&&!(ram[0x04f1+player]&1)&&
+    ram[0x0130+player]>=1&&ram[0x0130+player]<3){
+  ram[actionAddress]=0x06;forcedWeatherAction=true;
+ }
+ const action=ram[actionAddress],movement=ram[movementAddress];
+ const finish=(reason,extras={})=>({source:'bank06:$AA14-$AAAB',tableVariant,player,reason,forcedWeatherAction,
+  actionBefore:before[actionAddress],movementBefore:before[movementAddress],actionAfter:ram[actionAddress],movementAfter:ram[movementAddress],
+  writes:Array.from(ram.keys()).filter(address=>before[address]!==ram[address]).map(address=>({address,before:before[address],after:ram[address]})),...extras});
+ if(negative(action))return finish('$AA4A-no-pending-action');
+ if(!negative(movement))return finish('$AA50-movement-not-ready');
+ const actionMeta=readOriginalActionMetadata(action,tableVariant);
+ const consume=reason=>{ram[actionAddress]=0xff;return finish(reason,{actionMeta});};
+ // $AA55-$AA72: action flags must be compatible with player state.
+ if(!(state&0x40)&&(actionMeta.flags&0x40))return consume('$AA5F-action-flag6-gate');
+ if((state&0x20)&&!(actionMeta.flags&0x20))return consume('$AA70-state-flag5-gate');
+ if(negative(state)&&!negative(actionMeta.flags))return consume('$AA90-negative-state-flag7-gate');
+ // $AA7A-$AA8A: compare priority byte (second table byte) for
+ // the current movement and the candidate action. Movement high bit is
+ // masked before lookup, as in $AA97.
+ const currentId=movement&0x7f;
+ const currentMeta=readOriginalActionMetadata(currentId,tableVariant);
+ if(currentMeta.priority!==0&&actionMeta.priority<=currentMeta.priority)
+  return consume('$AA84-existing-movement-priority');
+ if(currentId!==action)ram[movementAddress]=action; // $AA94-$AAA1
+ ram[actionAddress]=0xff; // $AAA4-$AAA9
+ return finish('$AA94-accepted-action',{actionMeta,currentMeta});
+}
+
+
+// SOURCE: src/classic/OriginalMovementTransition.js
+/**
+ * Two isolated native JavaScript conversions from pinned bank_06.asm:
+ *   $AAC3/$AAC8/$AACA-$AB0A: movement-ID metadata -> player-state byte
+ *   $AB2A-$AB51: pending ball-shot priority -> player movement ID
+ * Pinned source: df2c8e55e7f13e5792482527db9e7c9e4a84c6e1
+ *
+ * These do NOT run player motion, ball physics, sprite animations, weather
+ * callback $9856, or an original NES frame. They accept synthetic RAM and
+ * refuse source reads beyond the audited literal tables.
+ */
+
+// bank_06.asm $AC4D-$AC64, exactly 24 raw bytes; not image/audio assets.
+const ORIGINAL_BALL_MOVEMENT_FLAGS=Object.freeze([
+ 0x00,0x00,0x40,0x40,0x80,0x84,0x80,0x00,
+ 0x00,0xc0,0x80,0x00,0x00,0x80,0x80,0x48,
+ 0x48,0x50,0x50,0x40,0xc0,0xc0,0x84,0x00,
+]);
+const MOVEMENT_TRANSITION_RAM_SIZE=0x800;
+function validateMovementRam(ram,player){
+ if(!(ram instanceof Uint8Array)||ram.length<MOVEMENT_TRANSITION_RAM_SIZE)
+  throw new TypeError('Expected at least $0800 bytes of NES RAM');
+ if(!Number.isInteger(player)||player<0||player>11)
+  throw new RangeError('Player slot must be an integer 0..11');
+}
+function movementChanges(before,ram){
+ const writes=[];
+ for(let i=0;i<before.length;i++)if(before[i]!==ram[i])writes.push({address:i,before:before[i],after:ram[i]});
+ return writes;
+}
+
+/** Source $AAC3/$AAC8 -> $AACA. Recalculate state flags for movement ID.
+ * $0459 is ASL'd as an 8-bit byte; the high bit is discarded by the 6502.
+ * tableVariant 0 chooses $AC87, 1 chooses $AC69.
+ */
+function stepOriginalMovementState(ram,player,{tableVariant=0}={}){
+ validateMovementRam(ram,player);
+ if(tableVariant!==0&&tableVariant!==1)throw new RangeError('tableVariant must be 0 or 1');
+ const movement=ram[0x0459+player];
+ const metadata=readOriginalActionMetadata(movement&0x7f,tableVariant);
+ const before=ram.slice();
+ const base=ORIGINAL_ACTION_METADATA_BASES[tableVariant];
+ ram[0x002c]=base&0xff;ram[0x002d]=base>>>8; // $AACA-$AAD2
+ ram[0x001c]=0;
+ if((ram[0x0399+player]&0x80)!==0 && ram[0x0386+player]<0xf8)ram[0x001c]=0x20;
+ const oldState=ram[0x0486+player];
+ ram[0x001d]=oldState&0x08;
+ ram[0x001d]=(((metadata.flags&0x04)<<1)&ram[0x001d])^ram[0x001d];
+ ram[0x0486+player]=(metadata.flags&0x89)|ram[0x001c]|ram[0x001d];
+ return {source:'bank06:$AAC3/$AAC8-$AB0A',player,tableVariant,
+  movement,metadataAddress:metadata.address,metadataFlags:metadata.flags,
+  stateBefore:oldState,stateAfter:ram[0x0486+player],
+  writes:movementChanges(before,ram)};
+}
+
+/** Source $AB2A-$AB51 only: process pending ball-shot type $0485.
+ * The caller MUST separately execute/verify $AB0B-$AB29 (including the
+ * external weather helper $9856) before treating this as part of a frame.
+ * In particular this function does not pretend to implement electric-ball
+ * weather effects. $AC4D table indices >= 24 are deliberately rejected.
+ */
+function stepOriginalBallShotPriority(ram,player){
+ validateMovementRam(ram,player);
+ const pending=ram[0x0485];
+ const before=ram.slice();
+ if(pending&0x80)return {source:'bank06:$AB2A-$AB51',player,
+  reason:'$AB2D-negative-pending-shot',pendingBefore:pending,pendingAfter:pending,
+  movementAfter:ram[0x0459+player],writes:[]};
+ if(pending>=ORIGINAL_BALL_MOVEMENT_FLAGS.length)
+  throw new RangeError(`Ball shot type $${pending.toString(16)} is outside audited $AC4D-$AC64 table`);
+ const incoming=ORIGINAL_BALL_MOVEMENT_FLAGS[pending]&0x0f;
+ const current=ram[0x0492]&0x0f;
+ ram[0x001c]=incoming;
+ const accepted=current<=incoming; // $AB40 BCC / $AB42 BEQ
+ if(accepted)ram[0x0459+player]=pending;
+ ram[0x0485]=0xff; // $AB4C, even if priority rejected
+ return {source:'bank06:$AB2A-$AB51',player,
+  reason:accepted?'$AB46-shot-movement-selected':'$AB4C-shot-movement-rejected',
+  incomingPriority:incoming,currentPriority:current,
+  pendingBefore:pending,pendingAfter:ram[0x0485],
+  movementAfter:ram[0x0459+player],writes:movementChanges(before,ram)};
+}
+
+
+// SOURCE: src/classic/NesBinaryAssets.js
+/** NES iNES 1.0 / NES 2.0 binary inspection and exact 2bpp CHR decoder.
+ * No emulator, CPU or original gameplay runtime is bundled.
+ * NES 2.0 supports linear and exponent/multiplier PRG/CHR sizes.
+ * Source provenance: original project CHR_ROM.chr is 131072 bytes at pinned commit
+ * df2c8e55e7f13e5792482527db9e7c9e4a84c6e1, Git blob
+ * e62db8eeaa386d65ff741847bd8d01cecdada00f.
+ */
+const ORIGINAL_CHR_BYTES=131072;
+const ORIGINAL_CHR_GIT_BLOB='e62db8eeaa386d65ff741847bd8d01cecdada00f';
+const ORIGINAL_ROM_SHA1='edf933eee8d6b99b7743367eda089b9850ce51ec'; // pinned assemble.sh
+const NES_TILE_BYTES=16;
+const NES_TILE_PIXELS=64;
+const MAGIC=[0x4e,0x45,0x53,0x1a];
+function bytesOf(input){
+ if(input instanceof Uint8Array)return input;
+ if(input instanceof ArrayBuffer)return new Uint8Array(input);
+ throw new TypeError('Expected a Uint8Array or ArrayBuffer of binary data');
+}
+function isINes(bytes){
+ const b=bytesOf(bytes);
+ return b.length>=4 && MAGIC.every((x,i)=>b[i]===x);
+}
+/** Read iNES v1 / NES2.0 with exact program and graphics boundaries. */
+function parseINes(buffer){
+ const bytes=bytesOf(buffer);
+ if(bytes.length<16||!isINes(bytes))throw new Error('Expected a complete iNES header (NES\\x1A)');
+ const nes2=(bytes[7]&0x0c)===0x08,trainer=!!(bytes[6]&0x04);
+ function nes2Size(lo,hi,unit){
+  if(hi!==0x0f)return (lo+(hi<<8))*unit;
+  const value=2**(lo>>2)*(2*(lo&3)+1);
+  if(!Number.isSafeInteger(value))throw new Error('NES 2.0 size exceeds safe bounds');
+  return value;
+ }
+ const prgBytes=nes2?nes2Size(bytes[4],bytes[9]&15,16384):bytes[4]*16384;
+ const chrBytes=nes2?nes2Size(bytes[5],bytes[9]>>4,8192):bytes[5]*8192;
+ const offset=16+(trainer?512:0),chrOffset=offset+prgBytes;
+ const required=chrOffset+chrBytes;
+ if(!Number.isSafeInteger(required)||required<offset)throw new Error('NES ROM size exceeds safe bounds');
+ if(bytes.length<required)throw new Error(`Truncated iNES image: requires ${required} bytes; found ${bytes.length}`);
+ return Object.freeze({
+  format:nes2?'NES 2.0':'iNES 1.0',mapper:(bytes[6]>>4)|(bytes[7]&0xf0)|(nes2?((bytes[8]&15)<<8):0),
+  submapper:nes2?(bytes[8]>>4):0,trainer,
+  prgBytes,chrBytes,prgOffset:offset,chrOffset,requiredBytes:required,
+  trailingBytes:bytes.length-required,chrRam:chrBytes===0,
+ });
+}
+/** Extract raw CHR-ROM, not a PPU framebuffer or a character sprite atlas.
+ * An iNES image must contain CHR-ROM; a standalone .chr is also accepted.
+ * Returns a copy, so input mutation cannot silently affect the decoded view.
+ */
+function extractCHR(buffer,{raw=false}={}){
+ const bytes=bytesOf(buffer);
+ if(!raw&&isINes(bytes)){
+  const header=parseINes(bytes);
+  if(!header.chrBytes)throw new Error('Cartridge declares CHR-RAM; no embedded CHR-ROM tiles to decode');
+  return {chr:bytes.slice(header.chrOffset,header.chrOffset+header.chrBytes),source:'iNES',header};
+ }
+ if(!raw && bytes.length>=4 && bytes[0]===0x4e && bytes[1]===0x45 && bytes[2]===0x53)
+  throw new Error('Invalid or truncated NES header; explicitly select raw CHR only for a known .chr file');
+ if(bytes.length===0||bytes.length%16!==0)throw new Error('Raw CHR length must be a non-zero multiple of 16 bytes');
+ return {chr:bytes.slice(),source:'raw CHR',header:null};
+}
+/** Exact NES planar 2bpp decode: planes 0/1 are at offsets 0..7/8..15,
+ * MSB is the leftmost pixel, low plane contributes bit 0, high bit 1.
+ */
+function decodeTile(chrInput,tileIndex){
+ const chr=bytesOf(chrInput);
+ if(chr.length%16!==0)throw new RangeError('CHR byte length must be a multiple of 16');
+ if(!Number.isInteger(tileIndex)||tileIndex<0||tileIndex>=chr.length/16)throw new RangeError('Tile index outside CHR data');
+ const pixels=new Uint8Array(NES_TILE_PIXELS);
+ const base=tileIndex*16;
+ for(let y=0;y<8;y++){
+  const lo=chr[base+y],hi=chr[base+8+y];
+  for(let x=0;x<8;x++){
+   const bit=7-x;
+   pixels[y*8+x]=((lo>>bit)&1)|(((hi>>bit)&1)<<1);
+  }
+ }
+ return pixels;
+}
+/** Palette is a caller-chosen RGBA table, not a claim about game PPU palettes. */
+const INSPECTION_GRAY=Object.freeze([
+ Object.freeze([25,36,51,255]),Object.freeze([91,107,119,255]),
+ Object.freeze([174,191,199,255]),Object.freeze([245,244,232,255]),
+]);
+function colorizeTile(pixels,palette=INSPECTION_GRAY){
+ if(!(pixels instanceof Uint8Array)||pixels.length!==64)throw new TypeError('Expected 64 decoded tile pixels');
+ if(!Array.isArray(palette)||palette.length!==4||palette.some(p=>!Array.isArray(p)||p.length!==4||p.some(x=>!Number.isInteger(x)||x<0||x>255)))
+  throw new TypeError('Expected four 4-byte RGBA palette entries');
+ const out=new Uint8ClampedArray(256);
+ for(let i=0;i<64;i++)out.set(palette[pixels[i]],i*4);
+ return out;
+}
+function chrTileCount(chr){return bytesOf(chr).length/16;}
+function inspectOriginalCHR(chr){
+ const bytes=bytesOf(chr);
+ if(bytes.length%16!==0)throw new Error('CHR length not tile-aligned');
+ return {byteCount:bytes.length,tileCount:bytes.length/16,patternsPer8k:512,
+  bankCount:Math.floor(bytes.length/8192),partialBankBytes:bytes.length%8192,expectedSourceSize:bytes.length===ORIGINAL_CHR_BYTES};
+}
+
+
+// SOURCE: src/classic/OriginalChrBanking.js
+/** Original Kunio Soccer MMC3 CHR bank register writes and 1 KiB PPU mapping.
+ * Original fixed bank bank_FF.asm, pinned SHA df2c8e55e7f13e5792482527db9e7c9e4a84c6e1:
+ *   $EE7D-$EE99: RAM $05BC/$05BD -> MMC3 R0/R1 ($8000/$8001)
+ *   $EE9A-$EED2: RAM $05B8-$05BB -> MMC3 R2-R5 ($8000/$8001)
+ *   $004E mirrors the last $8000 register selection in both routines.
+ * This is a source-local bank-register/CHR-address port, NOT PPU rendering,
+ * character sprite composition, palette extraction, or NES frame parity.
+ */
+const MMC3_CHR_KIB = 1024;
+const MMC3_PATTERN_BYTES = 8192;
+const BG_RAM = 0x05bc, SPR_RAM = 0x05b8, SELECT_SHADOW = 0x004e;
+
+function createOriginalChrMapper() {
+ return {bankSelect:0, registers:new Uint8Array(8)};
+}
+function checkByte(n, name){
+ if(!Number.isInteger(n)||n<0||n>255)throw new RangeError(`${name} must be an 8-bit value`);
+}
+function checkMapper(mapper){
+ if(!mapper||!(mapper.registers instanceof Uint8Array)||mapper.registers.length!==8||!Number.isInteger(mapper.bankSelect))
+  throw new TypeError('Expected an MMC3 CHR register state');
+}
+/** Mapper 4 $8000 (even) selects target register + CHR inversion bit;
+ * $8001 (odd) writes selected register. Other MMC3 addresses are outside this slice.
+ */
+function writeOriginalMmc3Chr(mapper,address,value){
+ checkMapper(mapper);checkByte(value,'MMC3 data');
+ if(address===0x8000){mapper.bankSelect=value;return;}
+ if(address===0x8001){
+  const r=mapper.bankSelect&7;
+  if(r>5)throw new RangeError('MMC3 PRG registers R6/R7 are outside this CHR-only slice');
+  mapper.registers[r]=r<2?(value&0xfe):value;
+  return;
+ }
+ throw new RangeError('Only $8000 and $8001 MMC3 bank-register writes are supported');
+}
+function checkRam(ram){
+ if(!(ram instanceof Uint8Array)||ram.length<=BG_RAM+1)
+  throw new TypeError('Expected a Uint8Array containing original RAM through $05BD');
+}
+function sourceRegisterWrite(ram,mapper,r,value,trace){
+ // LDA #r / STA $004E / STA $8000 / LDA $05B8.. / STA $8001.
+ ram[SELECT_SHADOW]=r;
+ writeOriginalMmc3Chr(mapper,0x8000,r);
+ writeOriginalMmc3Chr(mapper,0x8001,value);
+ trace.push([0x8000,r],[0x8001,value]);
+}
+/** Exact register-write order of fixed-bank sub_EE7D; does not invoke it per frame. */
+function stepOriginalBackgroundChrBanks(ram,mapper){
+ checkRam(ram);checkMapper(mapper);
+ const trace=[];
+ sourceRegisterWrite(ram,mapper,0,ram[BG_RAM],trace);
+ sourceRegisterWrite(ram,mapper,1,ram[BG_RAM+1],trace);
+ return trace;
+}
+/** Exact register-write order of fixed-bank sub_EE9A; does not invoke it per frame. */
+function stepOriginalSpriteChrBanks(ram,mapper){
+ checkRam(ram);checkMapper(mapper);
+ const trace=[];
+ for(let i=0;i<4;i++)sourceRegisterWrite(ram,mapper,i+2,ram[SPR_RAM+i],trace);
+ return trace;
+}
+/** Resolve PPU $0000-$1FFF to the physical 1 KiB CHR-ROM bank. MMC3
+ * register 0/1 select aligned 2 KiB pairs; bit 7 of $8000 swaps the halves.
+ * This original ROM has 128 physical 1 KiB banks; bank numbers wrap by ROM size.
+ */
+function resolveOriginalChrBank(mapper,ppuAddress,chrBytes){
+ checkMapper(mapper);
+ if(!Number.isInteger(ppuAddress)||ppuAddress<0||ppuAddress>=MMC3_PATTERN_BYTES)
+  throw new RangeError('PPU CHR address must be $0000-$1FFF');
+ if(!Number.isInteger(chrBytes)||chrBytes<MMC3_CHR_KIB||chrBytes%MMC3_CHR_KIB)
+  throw new RangeError('CHR ROM must be a nonzero multiple of 1 KiB');
+ const slot=ppuAddress>>10, invert=!!(mapper.bankSelect&0x80),r=mapper.registers;
+ const mapping=invert
+  ?[r[2],r[3],r[4],r[5],r[0],r[0]+1,r[1],r[1]+1]
+  :[r[0],r[0]+1,r[1],r[1]+1,r[2],r[3],r[4],r[5]];
+ return mapping[slot]%(chrBytes/MMC3_CHR_KIB);
+}
+/** Convert a live 8x8 PPU tile address to the matching original CHR_ROM tile index.
+ * This does not apply sprite attribute palettes, flips, OAM, or PPUCTRL settings.
+ */
+function originalPpuTileToChrIndex(mapper,ppuTileIndex,chrBytes){
+ if(!Number.isInteger(ppuTileIndex)||ppuTileIndex<0||ppuTileIndex>=512)
+  throw new RangeError('PPU pattern tile index must be 0..511');
+ const addr=ppuTileIndex*16;
+ return resolveOriginalChrBank(mapper,addr,chrBytes)*64+(ppuTileIndex%64);
+}
+
+
+// SOURCE: src/classic/OriginalPpuTransfers.js
+/** Original fixed-bank PPU transfer routines, pinned upstream
+ * df2c8e55e7f13e5792482527db9e7c9e4a84c6e1, bank_FF.asm:
+ *   $EE5A-$EE64 OAM DMA from CPU page $02;
+ *   $F05F-$F0B3 palette update queue (continuation of NMI PPU updates).
+ * Source-local register and byte semantics only; no NES frame schedule,
+ * metasprite interpretation, accurate RGB palette or sprite rasterizer.
+ */
+const PALETTE_QUEUE = Object.freeze({hi:0x06d9,lo:0x06da,count:0x06db,data:0x06dc,ctrl:0x004c,ctrlMask:0x0692});
+function assertRam(ram){if(!(ram instanceof Uint8Array)||ram.length<0x0800)throw new TypeError('Expected NES 2 KiB CPU RAM fixture');}
+function createOriginalPpuTransferState(){
+ return {ctrl:0,addr:0,addrLatch:0,addrHigh:0,oamAddr:0,oam:new Uint8Array(256),palette:new Uint8Array(32),registerTrace:[],dataTrace:[]};
+}
+function assertPpu(ppu){if(!ppu||!(ppu.oam instanceof Uint8Array)||ppu.oam.length!==256||!(ppu.palette instanceof Uint8Array)||ppu.palette.length!==32||!Array.isArray(ppu.registerTrace)||!Array.isArray(ppu.dataTrace))throw new TypeError('Expected original PPU transfer state');}
+function writeReg(ppu,address,value){ppu.registerTrace.push([address,value]);}
+function readStatus(ppu){ppu.addrLatch=0;ppu.registerTrace.push([0x2002,null]);}
+function writeAddress(ppu,value){
+ writeReg(ppu,0x2006,value);
+ if(!ppu.addrLatch){ppu.addrHigh=value&0x3f;ppu.addrLatch=1;}
+ else{ppu.addr=((ppu.addrHigh<<8)|value)&0x3fff;ppu.addrLatch=0;}
+}
+/** NES palette mirrors: $3F10/$3F14/$3F18/$3F1C alias universal BG entries.
+ * This routine tracks only palette bytes, not CHR/nametable writes.
+ */
+function originalPaletteIndex(ppuAddress){
+ if(!Number.isInteger(ppuAddress)||ppuAddress<0||ppuAddress>0x3fff)throw new RangeError('PPU address must be 0..$3FFF');
+ if(ppuAddress<0x3f00)return null;
+ const index=ppuAddress&31;
+ return (index&0x13)===0x10?index-0x10:index;
+}
+function writeData(ppu,value){
+ const address=ppu.addr,idx=originalPaletteIndex(address);
+ if(idx!==null)ppu.palette[idx]=value&0x3f; // PPU palette memory stores 6-bit indices
+ writeReg(ppu,0x2007,value);
+ ppu.dataTrace.push({address,value,paletteIndex:idx});
+ ppu.addr=(ppu.addr+(ppu.ctrl&0x04?32:1))&0x3fff;
+}
+/** Exact $EE5A: STA $2003 = 0; STA $4014 = $02; RTS.
+ * RAM page $0200-$02FF is transferred to OAM in its original byte order.
+ * Does not infer tile grouping or original sprite animation.
+ */
+function stepOriginalOamDma(ram,ppu){
+ assertRam(ram);assertPpu(ppu);
+ ppu.oamAddr=0;writeReg(ppu,0x2003,0);
+ writeReg(ppu,0x4014,2);
+ ppu.oam.set(ram.subarray(0x0200,0x0300));
+ return {page:2,bytesCopied:256,oamAddress:0};
+}
+/** Exact fixed-bank $F05F-$F0B3 palette buffer branch. No emulator.
+ * If high bit of $06D9 is set, routine returns immediately. Otherwise
+ * the code updates PPUCTRL bit 2, resets PPUADDR latch by reading PPUSTATUS,
+ * writes queued data to $2007, restores $2006 to $0000 if high byte=$3F,
+ * and sets $06D9=$FF. A zero byte count means 256 writes (8-bit DEY loop).
+ * Counts >= $21 loop forever in the original; this JS research port rejects
+ * them rather than hanging the browser, without claiming parity for that case.
+ */
+function stepOriginalPaletteQueue(ram,ppu){
+ assertRam(ram);assertPpu(ppu);
+ const q=PALETTE_QUEUE,hi=ram[q.hi],count=ram[q.count];
+ if(hi&0x80)return {skipped:true,reason:'negative queue high byte',bytesWritten:0};
+ if(count>=0x21)throw new RangeError('Original $F070 retry loop never terminates for palette count >= $21');
+ const ctrl=((ram[q.ctrl]&0xfb)|ram[q.ctrlMask])&0xff;
+ ram[q.ctrl]=ctrl;ppu.ctrl=ctrl;writeReg(ppu,0x2000,ctrl);
+ ram[q.ctrlMask]=0;
+ readStatus(ppu);writeAddress(ppu,hi);writeAddress(ppu,ram[q.lo]);
+ const n=count===0?256:count;
+ for(let i=0;i<n;i++)writeData(ppu,ram[(q.data+i)&0x7ff]);
+ if(hi===0x3f){
+  writeAddress(ppu,0x3f);writeAddress(ppu,0);
+  writeAddress(ppu,0);writeAddress(ppu,0);
+ }
+ ram[q.hi]=0xff;
+ return {skipped:false,bytesWritten:n,ppuCtrl:ctrl,finalAddress:ppu.addr,restoredAddress:hi===0x3f};
+}
+
+
+// SOURCE: src/classic/OriginalWeatherSprites.js
+/** Source-faithful fixed-bank $D993-$DA45 original weather-effect OAM producer.
+ * Pinned upstream SHA df2c8e55e7f13e5792482527db9e7c9e4a84c6e1,
+ * bank_FF.asm blob d9b5307a83f022c17deb0cec82b2bea2249c5484.
+ * Table bytes are read from the user's locally supplied 128 KiB PRG image;
+ * copyrighted ROM/CHR data are NOT embedded in this source.
+ * This routine only produces OAM entries for one original weather effect.
+ * It does not establish the actual NES frame schedule, CHR bank, palettes,
+ * sprite size, gameplay rendering, or frame parity.
+ */
+const ORIGINAL_WEATHER_SPRITES=Object.freeze({
+ effect:0x0466, phase:0x03ae, count:12, y:0x010c, x:0x0100,
+ oam:0x0200, offsetX:0x013d, clipY:0x013e,
+ tableX:0xda46, tableY:0xda5e, tableTile:0xda6a,
+ tableStepX:0xda52, tableStepY:0xda76,
+});
+function assertState(ram,prg){
+ if(!(ram instanceof Uint8Array)||ram.length<0x800)throw new TypeError('Expected 2 KiB NES CPU RAM');
+ if(!(prg instanceof Uint8Array)||prg.length!==0x20000)throw new TypeError('Expected authenticated original 128 KiB PRG ROM (private local input)');
+}
+function fixed(prg,cpuAddress){
+ // Original MMC3 fixed final 16 KiB PRG bank: CPU $C000-$FFFF maps
+ // physical PRG offset $1C000-$1FFFF, independent of switchable banks.
+ return prg[0x1c000+cpuAddress-0xc000];
+}
+/** Source $D993: effect $81 initializes twelve OAM weather sprites and
+ * transitions to effect $01; effect $01 updates those twelve sprites.
+ * All arithmetic and compares use 6502 8-bit behavior. Other effect values
+ * return without touching RAM, as the original routine does.
+ * A synthetic RAM fixture is NOT a captured original-game frame.
+ */
+function stepOriginalWeatherSprites(ram,prg){
+ assertState(ram,prg);
+ const w=ORIGINAL_WEATHER_SPRITES,mode=ram[w.effect];
+ if(mode!==0x81&&mode!==0x01)return {mode:'inactive',entriesWritten:0};
+ if(mode===0x81){
+  ram[0x0c]=0;
+  for(let i=0;i<w.count;i++){
+   const o=w.oam+i*4;
+   const y=fixed(prg,w.tableY+i),tile=fixed(prg,w.tableTile+i);
+   const x=(fixed(prg,w.tableX+i)+ram[w.offsetX])&255;
+   ram[o]=y;ram[w.y+i]=y;
+   ram[o+1]=tile;ram[o+2]=1;ram[o+3]=x;ram[w.x+i]=x;
+   ram[0x0c]=(i+1)&255;
+  }
+  ram[w.effect]=1;
+  return {mode:'initialize',entriesWritten:12,effectAfter:ram[w.effect]};
+ }
+ // Original $D9D8-$DA1A. $03AE increments once per sprite, wraps at $0B.
+ // For the first sprite the source deliberately reads RAM $010B (previous
+ // sprite X); remaining sprites read RAM $0100..$010A as updated in-loop.
+ for(let i=0;i<w.count;i++){
+  let phase=(ram[w.phase]+1)&255;
+  if(phase>=11)phase=0;
+  ram[w.phase]=phase;
+  let y=(ram[w.y+i]+0x40)&255;
+  if(y>=0xbd)y=(y-0xbd)&255;
+  ram[w.y+i]=y;
+  const previousX=ram[i===0?0x010b:0x0100+i-1];
+  ram[w.x+i]=(previousX+fixed(prg,w.tableStepX+i)+fixed(prg,w.tableStepY+phase))&255;
+ }
+ // Original $DA1A-$DA45 writes 12 consecutive OAM quadruplets.
+ for(let i=0;i<w.count;i++){
+  const o=w.oam+i*4;
+  ram[o]=ram[w.y+i]<ram[w.clipY]?ram[w.y+i]:0xf8;
+  ram[o+1]=fixed(prg,w.tableTile+i);
+  ram[o+2]=0;
+  ram[o+3]=ram[w.x+i];
+ }
+ return {mode:'update',entriesWritten:12,effectAfter:ram[w.effect],phaseAfter:ram[w.phase]};
+}
+
+
+// SOURCE: src/classic/OriginalRomSha1.js
+/** Dependency-free SHA-1 for local, offline original ROM provenance checks.
+ * Used solely to compare user-supplied bytes with the pinned assembly hash.
+ * SHA-1 is NOT a collision-resistant signature or licensing proof.
+ */
+function sha1Hex(bytes){
+ if(!(bytes instanceof Uint8Array))throw new TypeError('Expected binary bytes');
+ if(bytes.length>4*1024*1024)throw new RangeError('ROM larger than 4 MiB research limit');
+ const n=bytes.length,paddedLength=Math.ceil((n+9)/64)*64;
+ const msg=new Uint8Array(paddedLength);msg.set(bytes);msg[n]=0x80;
+ const view=new DataView(msg.buffer);const bits=n*8;
+ view.setUint32(paddedLength-8,Math.floor(bits/0x100000000));view.setUint32(paddedLength-4,bits>>>0);
+ let h0=0x67452301,h1=0xefcdab89,h2=0x98badcfe,h3=0x10325476,h4=0xc3d2e1f0;
+ const w=new Uint32Array(80),rot=(x,n)=>(x<<n)|(x>>>(32-n));
+ for(let start=0;start<paddedLength;start+=64){
+  for(let i=0;i<16;i++)w[i]=view.getUint32(start+i*4);
+  for(let i=16;i<80;i++)w[i]=rot(w[i-3]^w[i-8]^w[i-14]^w[i-16],1);
+  let a=h0,b=h1,c=h2,d=h3,e=h4;
+  for(let i=0;i<80;i++){
+   let f,k;
+   if(i<20){f=(b&c)|(~b&d);k=0x5a827999;}
+   else if(i<40){f=b^c^d;k=0x6ed9eba1;}
+   else if(i<60){f=(b&c)|(b&d)|(c&d);k=0x8f1bbcdc;}
+   else{f=b^c^d;k=0xca62c1d6;}
+   const t=(rot(a,5)+f+e+k+w[i])>>>0;
+   e=d;d=c;c=rot(b,30);b=a;a=t;
+  }
+  h0=(h0+a)>>>0;h1=(h1+b)>>>0;h2=(h2+c)>>>0;h3=(h3+d)>>>0;h4=(h4+e)>>>0;
+ }
+ return [h0,h1,h2,h3,h4].map(x=>x.toString(16).padStart(8,'0')).join('');
+}
+
+
+// SOURCE: src/input/InputManager.js
+/** Logical actions, independent of rendering and simulation. */
+const ACTIONS=['shoot','pass','tackle','sprint'];
+const KEY_DEFAULTS={up:'ArrowUp',down:'ArrowDown',left:'ArrowLeft',right:'ArrowRight',
+ shoot:'KeyZ',pass:'KeyX',tackle:'KeyC',sprint:'ShiftLeft',switch:'Space',pause:'Escape'};
+const PAD_DEFAULTS={shoot:0,pass:1,tackle:2,sprint:5,switch:3,pause:9};
+const KEY='kunio-soccer-input-v1';
+const copy=x=>JSON.parse(JSON.stringify(x));
+function validSettings(x){
+  if(!x||typeof x!=='object')return false;
+  if(!x.keyboard||!x.gamepad||!x.touch)return false;
+  const keys=Object.values(x.keyboard);
+  if(keys.some(k=>typeof k!=='string'||!k)||new Set(keys).size!==keys.length)return false;
+  if(Object.values(x.gamepad).some(i=>!Number.isInteger(i)||i<0||i>20))return false;
+  return ACTIONS.every(a=>ACTIONS.includes(x.touch[a])) && new Set(Object.values(x.touch)).size===4;
+}
+function defaults(){return {keyboard:copy(KEY_DEFAULTS),gamepad:copy(PAD_DEFAULTS),touch:Object.fromEntries(ACTIONS.map(a=>[a,a])),deadZone:0.22};}
+function combineFrames(...frames) {
+  const out={dx:0,dy:0,shoot:false,pass:false,tackle:false,sprint:false,switch:false,pause:false};
+  for(const f of frames){if(!f)continue;
+    out.dx+=Number(f.dx)||0;out.dy+=Number(f.dy)||0;
+    for(const a of ['shoot','pass','tackle','sprint','switch','pause'])out[a] ||=!!f[a];
+  }
+  const n=Math.hypot(out.dx,out.dy);
+  if(n>1){out.dx/=n;out.dy/=n;}
+  return out;
+}
+function keyboardFrame(pressed,map){
+  const down=a=>pressed.has(map[a]);
+  return {dx:Number(down('right'))-Number(down('left')),
+    dy:Number(down('down'))-Number(down('up')),
+    shoot:down('shoot'),pass:down('pass'),tackle:down('tackle'),
+    sprint:down('sprint'),switch:down('switch'),pause:down('pause')};
+}
+function gamepadFrame(gp,map,deadZone=.22) {
+  if(!gp)return null;
+  const x=gp.axes?.[0]||0,y=gp.axes?.[1]||0;
+  const down=i=>!!gp.buttons?.[i]?.pressed;
+  return {dx:(Math.abs(x)>deadZone?x:0)+Number(down(15))-Number(down(14)),
+    dy:(Math.abs(y)>deadZone?y:0)+Number(down(13))-Number(down(12)),
+    ...Object.fromEntries(Object.entries(map).map(([a,i])=>[a,down(i)]))};
+}
+class InputManager{
+  constructor(storage=null){
+    try{this.storage=storage||globalThis.localStorage;}catch{this.storage=storage;}
+    try{const saved=JSON.parse(this.storage?.getItem(KEY)||'null');this.settings=validSettings(saved)?saved:defaults();}
+    catch{this.settings=defaults();}
+    this.held=new Set();this.touchHeld=new Map();this.joystick={dx:0,dy:0};
+    this.attached=false;
+    this.onKeyDown=e=>{if(e.code==='Tab' || Object.values(this.settings.keyboard).includes(e.code))e.preventDefault();this.held.add(e.code);};
+    this.onKeyUp=e=>{this.held.delete(e.code);};
+    this.onBlur=()=>this.release();
+  }
+  attach(){if(this.attached)return;window.addEventListener('keydown',this.onKeyDown,{passive:false});
+    window.addEventListener('keyup',this.onKeyUp);window.addEventListener('blur',this.onBlur);this.attached=true;}
+  dispose(){if(!this.attached)return;window.removeEventListener('keydown',this.onKeyDown);
+    window.removeEventListener('keyup',this.onKeyUp);window.removeEventListener('blur',this.onBlur);this.attached=false;}
+  release(){this.held.clear();this.touchHeld.clear();this.joystick={dx:0,dy:0};}
+  save(){if(!validSettings(this.settings))throw new Error('invalid input settings');
+    try{this.storage?.setItem(KEY,JSON.stringify(this.settings));}catch{/* private browsing */}}
+  rebindKeyboard(action,code){
+    if(!(action in this.settings.keyboard))throw new Error('unknown keyboard action');
+    const existing=Object.entries(this.settings.keyboard).find(([k,v])=>k!==action&&v===code);
+    if(existing)throw new Error(`Key already bound to ${existing[0]}`);
+    this.settings.keyboard[action]=code;this.save();this.release();
+  }
+  setPadButton(action,index){if(!(action in this.settings.gamepad))throw new Error('invalid action');
+    if(!Number.isInteger(index)||index<0||index>20)throw new Error('invalid button');
+    this.settings.gamepad[action]=index;this.save();}
+  setTouchAction(button,action){if(!ACTIONS.includes(button)||!ACTIONS.includes(action))throw new Error('invalid touch action');
+    const other=Object.entries(this.settings.touch).find(([,a])=>a===action)?.[0];
+    if(other)this.settings.touch[other]=this.settings.touch[button];
+    this.settings.touch[button]=action;this.save();}
+  setJoystick(dx,dy){const len=Math.hypot(dx,dy);this.joystick={dx:len>1?dx/len:dx,dy:len>1?dy/len:dy};}
+  pressTouch(pointer,button){this.touchHeld.set(pointer,button);}
+  releaseTouch(pointer){this.touchHeld.delete(pointer);}
+  frame(){
+    const touch={...this.joystick};
+    for(const button of this.touchHeld.values()) touch[this.settings.touch[button]||button]=true;
+    const pads=[];try{for(const gp of navigator.getGamepads?.()||[])if(gp?.connected)pads.push(gamepadFrame(gp,this.settings.gamepad,this.settings.deadZone));}catch{/* unsupported */}
+    return combineFrames(keyboardFrame(this.held,this.settings.keyboard),touch,...pads);
+  }
+}
+
+
+// SOURCE: src/rendering/Renderer.js
+
+const W=960,H=540;
+function rounded(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r);}
+function label(ctx,text,x,y,font='700 16px system-ui',color='#fff',align='left'){
+ ctx.font=font;ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='middle';ctx.fillText(text,x,y);
+}
+function player(ctx,p,owner,selected,tick){
+ const team=p.side===0;
+ const ink='#162329',shirt=team?'#49a7e2':'#ef6b78',stripe=team?'#e3f6ff':'#ffe2b8';
+ ctx.save();ctx.translate(Math.round(p.x),Math.round(p.y));
+ // One ground shadow and a three-piece original illustration. NOT traced original NES art.
+ ctx.fillStyle='#073c30a8';ctx.beginPath();ctx.ellipse(0,16,14,5,0,0,Math.PI*2);ctx.fill();
+ if(selected){ctx.strokeStyle='#f9e79c';ctx.lineWidth=3;ctx.setLineDash([5,4]);ctx.beginPath();ctx.ellipse(0,14,20,10,0,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);}
+ const stride=Math.abs(p.vx)+Math.abs(p.vy)>0.35 ?Math.sin(tick*.25+p.number)*4:0;
+ ctx.fillStyle='#24313c';ctx.strokeStyle=ink;ctx.lineWidth=2;
+ ctx.fillRect(-9,8+stride,7,10);ctx.fillRect(3,8-stride,7,10);
+ ctx.fillStyle=shirt;ctx.fillRect(-12,-5,24,17);ctx.strokeRect(-12,-5,24,17);
+ ctx.fillStyle=stripe;ctx.fillRect(-4,-5,8,17);
+ ctx.fillStyle='#f8c794';ctx.fillRect(-17,0,5,10);ctx.fillRect(12,0,5,10);
+ ctx.fillStyle='#f5c397';ctx.fillRect(-12,-22,24,19);ctx.strokeRect(-12,-22,24,19);
+ ctx.fillStyle='#262c34';ctx.fillRect(-12,-24,24,7);ctx.fillRect(-11,-19,5,4);
+ ctx.fillStyle='#20252e';ctx.fillRect(p.facing===1?3:-5,-15,3,3);ctx.fillRect(p.facing===1?8:0,-15,3,3);
+ if(p.keeper){ctx.strokeStyle='#ffe78d';ctx.lineWidth=3;ctx.strokeRect(-15,-25,30,39);}
+ if(p.stun>0){label(ctx,'✦',0,-33,'bold 15px system-ui','#fff38c','center');}
+ if(owner){ctx.fillStyle='#f9dd6d';ctx.beginPath();ctx.moveTo(0,-35);ctx.lineTo(-6,-43);ctx.lineTo(6,-43);ctx.fill();}
+ ctx.restore();
+}
+function crowd(ctx){
+ ctx.fillStyle='#111d2a';ctx.fillRect(0,0,W,48);ctx.fillRect(0,492,W,48);
+ for(let i=0;i<122;i++){
+  const x=(i*53)%W,y=(i*29)%36;
+  ctx.fillStyle=['#739eae','#d8b0a0','#f6d996','#476776'][i%4];ctx.fillRect(x,8+y,5,4);ctx.fillRect(x,502+y,5,4);
+ }
+}
+class Renderer {
+ constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;
+   this.resize=()=>{const ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(W*ratio);canvas.height=Math.round(H*ratio);
+     this.ctx.setTransform(canvas.width/W,0,0,canvas.height/H,0,0);this.ctx.imageSmoothingEnabled=false;};this.resize();window.addEventListener('resize',this.resize);}
+ dispose(){window.removeEventListener('resize',this.resize);}
+ draw(s){const c=this.ctx;
+ c.fillStyle='#142333';c.fillRect(0,0,W,H);crowd(c);
+ c.fillStyle='#3c9b73';c.fillRect(FIELD.left,FIELD.top,FIELD.right-FIELD.left,FIELD.bottom-FIELD.top);
+ for(let i=0;i<10;i++){c.fillStyle=i%2?'#3c9b73':'#43a67c';c.fillRect(FIELD.left+i*87,FIELD.top,87,FIELD.bottom-FIELD.top);}
+ c.strokeStyle='#cfefe0';c.lineWidth=3;c.strokeRect(FIELD.left,FIELD.top,870,414);
+ c.beginPath();c.moveTo(480,FIELD.top);c.lineTo(480,FIELD.bottom);c.stroke();
+ c.beginPath();c.arc(480,270,64,0,Math.PI*2);c.stroke();
+ c.strokeRect(FIELD.left,170,123,200);c.strokeRect(FIELD.right-123,170,123,200);
+ c.strokeRect(FIELD.left,211,48,118);c.strokeRect(FIELD.right-48,211,48,118);
+ c.fillStyle='#f5f5ee';c.beginPath();c.arc(480,270,4,0,Math.PI*2);c.fill();
+ c.fillStyle='#d9eae7';c.fillRect(FIELD.left-12,FIELD.goalTop,12,FIELD.goalBottom-FIELD.goalTop);
+ c.fillRect(FIELD.right,FIELD.goalTop,12,FIELD.goalBottom-FIELD.goalTop);
+ c.strokeStyle='#b8d0ca';c.lineWidth=1;
+ for(let yy=FIELD.goalTop;yy<FIELD.goalBottom;yy+=12){c.beginPath();c.moveTo(FIELD.left-12,yy);c.lineTo(FIELD.left,yy);c.moveTo(FIELD.right,yy);c.lineTo(FIELD.right+12,yy);c.stroke();}
+ for(const p of s.players.filter(x=>x.side===1))player(c,p,s.ball.owner===p.id,false,s.tick);
+ for(const p of s.players.filter(x=>x.side===0))player(c,p,s.ball.owner===p.id,p.id===s.controlled,s.tick);
+ const b=s.ball;
+ c.fillStyle='#13243088';c.beginPath();c.ellipse(b.x+2,b.y+8,8,4,0,0,Math.PI*2);c.fill();
+ c.fillStyle='#fff4dc';c.strokeStyle='#182f38';c.lineWidth=2;c.beginPath();c.arc(b.x,b.y,8,0,2*Math.PI);c.fill();c.stroke();
+ c.fillStyle='#31353f';c.beginPath();c.arc(b.x,b.y,3,0,Math.PI*2);c.fill();
+ // Scoreboard and status bar
+ c.fillStyle='#0e182be9';rounded(c,312,8,336,47,10);c.fill();
+ label(c,'BLUE',350,31,'800 15px system-ui','#94d9ff','center');
+ label(c,String(s.score[0]),439,31,'900 29px system-ui','#fff','center');
+ label(c,':',480,30,'800 25px system-ui','#b9cbd0','center');
+ label(c,String(s.score[1]),521,31,'900 29px system-ui','#fff','center');
+ label(c,'RED',604,31,'800 15px system-ui','#ffb2b9','center');
+ label(c,`${Math.floor(s.remainingTicks/TICK_RATE/60)}:${String(Math.floor(s.remainingTicks/TICK_RATE)%60).padStart(2,'0')}`,902,30,'800 19px monospace','#fff','center');
+ c.fillStyle='#0e182bbd';rounded(c,16,8,234,40,8);c.fill();
+ label(c,'NATIVE DEVELOPMENT MATCH',27,22,'800 12px system-ui','#e5e6b4');
+ label(c,'UNVERIFIED NES PARITY',27,37,'700 10px system-ui','#ffbdab');
+ if(s.messageTicks>0){c.fillStyle='#102638cf';rounded(c,322,89,316,55,9);c.fill();
+   label(c,s.message,480,116,'900 24px system-ui','#fff6c6','center');}
+ if(s.phase==='paused'||s.phase==='ended'){
+   c.fillStyle='#0a1325b8';c.fillRect(0,55,960,440);
+   label(c,s.phase==='paused'?'PAUSED':'FULL TIME',480,222,'900 55px system-ui','#fff8cc','center');
+   label(c,s.phase==='paused'?'Press Esc or Pause to resume':`${s.score[0]} : ${s.score[1]}  •  Press Restart for a new match`,480,280,'600 18px system-ui','#fff','center');
+ }
+ label(c,'Z SHOOT   X PASS   C TACKLE   SHIFT SPRINT   SPACE SWITCH   ESC PAUSE',480,511,'700 12px system-ui','#d4e8f1','center');
+ }
+}
+
+
+// SOURCE: src/main.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const $=id=>document.getElementById(id);
+const input=new InputManager();input.attach();
+const renderer=new Renderer($('field'));
+let match=createMatch();let lastTime=0,accumulator=0,visible='home',lastPanel='home';
+let recorder=null,playback=null,playbackPaused=false,recordingStopped=false;
+const notice=message=>{$('replayNotice').textContent=message;};
+function liveStep(frame){
+ if(recorder&&!recordingStopped&&recorder.frames.length<MAX_REPLAY_FRAMES)recordStep(recorder,match,frame);
+ else {if(recorder)recordingStopped=true;stepMatch(match,frame);}
+}
+function tapButton(action){
+ // Capture release, press, release as reproducible input frames.
+ liveStep({[action]:false});liveStep({[action]:true});liveStep({[action]:false});
+}
+const show=name=>{for(const n of ['home','game','settings','lab','graphicsLab'])$(n).classList.toggle('hidden',n!==name);visible=name;
+ $('status').textContent=name==='game'?`${match.phase.toUpperCase()} | ${match.tick} TICKS`:'READY';
+ if(name!=='game')input.release();};
+const start=()=>{match=createMatch();recorder=createRecorder(match);playback=null;playbackPaused=false;recordingStopped=false;
+ input.release();accumulator=0;lastTime=0;$('saveReplayBtn').disabled=false;notice('Recording deterministic inputs for replay.');show('game');renderer.draw(match);};
+// Isolated, source-derived NES input research tool. Does not drive the development match.
+let labState=createOriginalControllerState();let labSelected=[0,0,0,0];let labAttempts=0;
+let labRandom=createOriginalRandomState(0x12,0x34); // demo seed, NOT original startup seed
+let labField=createOriginalFieldResearchState({musicId:0x12}); // arbitrary research state
+let labLastAudioCommands=[];let labLastKickoffDecision=null;
+let labGoal=createOriginalGoalCutsceneState({tileUpdateFlag:0xff,cutsceneTimer:31,gameScript:0x42,ballOwner:0x1a});let labLastGoalDecision=null;
+const labHex=value=>'0x'+value.toString(16).padStart(2,'0').toUpperCase();
+function renderOriginalInputLab(){
+ const container=$('labChannels');container.replaceChildren();
+ for(let channel=0;channel<4;channel++){
+  const card=document.createElement('article');card.className='lab-channel';
+  const title=document.createElement('h3');title.textContent=`Channel ${channel+1} ($401${channel%2===0?'6':'7'} bit ${channel<2?0:1})`;
+  const buttons=document.createElement('div');buttons.className='lab-buttons';
+  for(const name of NES_BUTTON_ORDER){
+   const button=document.createElement('button');button.type='button';
+   button.textContent=name;button.dataset.channel=String(channel);button.dataset.nesButton=name;
+   button.setAttribute('aria-pressed',String(!!(labSelected[channel]&NES_BUTTONS[name])));
+   button.addEventListener('click',()=>{labSelected[channel]^=NES_BUTTONS[name];renderOriginalInputLab();});
+   buttons.append(button);
+  }
+  const status=document.createElement('div');status.className='lab-bytes';
+  status.textContent=`Selected ${labHex(labSelected[channel])} | Hold ${labHex(labState.held[channel])} | New press ${labHex(labState.pressed[channel])}`;
+  card.append(title,buttons,status);container.append(card);
+ }
+ $('labStatus').textContent=`Scans ${labState.samples} • Last stable read ${labAttempts||'—'} attempts • Original RNG bytes ($0045,$0046) ${labHex(labRandom.byte45)},${labHex(labRandom.byte46)} • Press bits reflect the latest scan.`;
+ $('labFieldStatus').textContent=`Field script $005C: ${labHex(labField.gameScript)} (${labField.gameScript&0x80?'PAUSED':'ACTIVE'}) • cutscene timer $05E2: ${labHex(labField.cutsceneTimer)} • last audio commands: ${labLastAudioCommands.length?labLastAudioCommands.map(labHex).join(', '):'none'}.`;
+}
+// Exact source-tile inspection (not a substitute sprite renderer or runtime ROM execution).
+let graphicsCHR=null,graphicsPage=0,graphicsSelected=0;
+let graphicsPRG=null,weatherRAM=null,weatherPPU=null;
+const graphicsAtlas=$('graphicsAtlas'),graphicsTile=$('graphicsTile');
+function graphicsPaint(){
+ if(!graphicsCHR)return;
+ const info=inspectOriginalCHR(graphicsCHR);
+ const ctx=graphicsAtlas.getContext('2d');const image=ctx.createImageData(128,128);
+ for(let local=0;local<256;local++){
+  const global=graphicsPage*256+local;
+  if(global>=info.tileCount)break;
+  const rgba=colorizeTile(decodeTile(graphicsCHR,global));
+  const sx=(local%16)*8,sy=Math.floor(local/16)*8;
+  for(let y=0;y<8;y++)for(let x=0;x<8;x++){
+   const dest=((sy+y)*128+sx+x)*4,from=(y*8+x)*4;
+   image.data.set(rgba.subarray(from,from+4),dest);
+  }
+ }
+ ctx.putImageData(image,0,0);
+ $('graphicsPageLabel').textContent=`Page ${graphicsPage+1} / ${Math.ceil(info.tileCount/256)} • tile indices ${graphicsPage*256}–${Math.min(info.tileCount-1,graphicsPage*256+255)}`;
+ $('graphicsPrev').disabled=graphicsPage===0;
+ $('graphicsNext').disabled=(graphicsPage+1)*256>=info.tileCount;
+ const global=Math.min(graphicsSelected,info.tileCount-1);
+ const pixelIndices=decodeTile(graphicsCHR,global);
+ const mini=graphicsTile.getContext('2d'),tileImage=mini.createImageData(8,8);
+ tileImage.data.set(colorizeTile(pixelIndices));mini.putImageData(tileImage,0,0);
+ $('graphicsTileLabel').textContent=`Tile ${global} ($${global.toString(16).toUpperCase().padStart(4,'0')}) • 16 exact pattern bytes • no palette/OAM composition`;
+}
+// Pinned bank FF $EE7D/$EE9A register write research, NOT a verified NES frame.
+let graphicsMapper=createOriginalChrMapper();
+const graphicsMappedAtlas=$('graphicsMappedAtlas');
+function graphicsPaintMapper(){
+ if(!graphicsCHR||graphicsCHR.length<8192||graphicsCHR.length%1024){
+  $('graphicsMapperStatus').textContent='Mapped PPU preview requires at least 8 KiB of 1 KiB-aligned CHR data.';return;
+ }
+ const table=Number($('graphicsPpuTable').value),ctx=graphicsMappedAtlas.getContext('2d');
+ const image=ctx.createImageData(128,128);
+ for(let local=0;local<256;local++){
+  const physical=originalPpuTileToChrIndex(graphicsMapper,table*256+local,graphicsCHR.length);
+  const rgba=colorizeTile(decodeTile(graphicsCHR,physical));
+  const sx=(local%16)*8,sy=Math.floor(local/16)*8;
+  for(let y=0;y<8;y++)for(let x=0;x<8;x++){
+   const dest=((sy+y)*128+sx+x)*4,from=(y*8+x)*4;
+   image.data.set(rgba.subarray(from,from+4),dest);
+  }
+ }
+ ctx.putImageData(image,0,0);
+ const banks=Array.from({length:8},(_,i)=>resolveOriginalChrBank(graphicsMapper,i*1024,graphicsCHR.length));
+ $('graphicsMapperStatus').textContent=`Source $EE7D/$EE9A RAM fixture → PPU 1 KiB banks: ${banks.join(', ')} • $004E shadow: $05 • PPU table ${table} displayed in neutral 2bpp colors. Not original character sprites.`;
+}
+function graphicsApplyMapper(){
+ try{
+  const r=new Uint8Array(0x600);
+  for(const [id,address] of [['graphicsBg0',0x5bc],['graphicsBg1',0x5bd],['graphicsSp0',0x5b8],['graphicsSp1',0x5b9],['graphicsSp2',0x5ba],['graphicsSp3',0x5bb]]){
+   const v=Number($(id).value);if(!Number.isInteger(v)||v<0||v>255)throw new RangeError(`${id}: enter a byte 0–255`);
+   r[address]=v;
+  }
+  graphicsMapper=createOriginalChrMapper();
+  stepOriginalBackgroundChrBanks(r,graphicsMapper);stepOriginalSpriteChrBanks(r,graphicsMapper);
+  graphicsPaintMapper();
+ }catch(error){$('graphicsMapperStatus').textContent=`Bank mapping rejected: ${error.message}`;}
+}
+// Original PPU transfer lab uses only synthetic RAM. It never labels those
+// palette bytes or OAM entries as captured from the NES runtime.
+$('ppuPaletteApply').addEventListener('click',()=>{
+ try{
+  const count=Number($('ppuPaletteCount').value),lo=Number($('ppuPaletteLow').value),ctrl=Number($('ppuPaletteCtrl').value);
+  if(!Number.isInteger(count)||count<1||count>32||!Number.isInteger(lo)||lo<0||lo>255||!Number.isInteger(ctrl)||ctrl<0||ctrl>255)throw new RangeError('Count must be 1–32, address low and PPUCTRL 0–255');
+  const ram=new Uint8Array(0x800),ppu=createOriginalPpuTransferState();
+  ram[0x6d9]=0x3f;ram[0x6da]=lo;ram[0x6db]=count;ram[0x4c]=ctrl;
+  for(let i=0;i<32;i++)ram[0x6dc+i]=i;
+  const result=stepOriginalPaletteQueue(ram,ppu);
+  $('ppuPaletteStatus').textContent=`Source $F05F: ${result.bytesWritten} PPU writes, $06D9 now $FF, PPUCTRL $${result.ppuCtrl.toString(16).padStart(2,'0')}, ${result.restoredAddress?'address restored to $0000':'address not restored'}. SYNTHETIC RAM; no original frame parity.`;
+  $('ppuPaletteTrace').textContent=`PPU writes: ${ppu.dataTrace.map(x=>'$'+x.address.toString(16).padStart(4,'0')+'='+x.value.toString(16).padStart(2,'0')).join(' ')}\nMirrored 32-byte palette memory (hex): ${Array.from(ppu.palette,x=>x.toString(16).padStart(2,'0')).join(' ')}\nThese are palette INDEX BYTES, not verified original game colors.`;
+ }catch(error){$('ppuPaletteStatus').textContent=`PPU palette fixture rejected: ${error.message}`;}
+});
+$('ppuOamApply').addEventListener('click',()=>{
+ const ram=new Uint8Array(0x800),ppu=createOriginalPpuTransferState();
+ for(let i=0;i<256;i++)ram[0x200+i]=i;
+ const result=stepOriginalOamDma(ram,ppu);
+ $('ppuPaletteStatus').textContent=`Source $EE5A: DMA page $02, ${result.bytesCopied} OAM bytes, OAM address 0. SYNTHETIC $0200–$02FF bytes, NOT original character metasprites.`;
+ $('ppuPaletteTrace').textContent=`Register writes: ${ppu.registerTrace.map(([a,v])=>'$'+a.toString(16)+'=$'+v.toString(16).padStart(2,'0')).join(', ')}\nFirst 16 OAM bytes: ${Array.from(ppu.oam.slice(0,16),x=>x.toString(16).padStart(2,'0')).join(' ')}\nOAM entries are not yet interpreted into original poses.`;
+});
+// Source $D993-$DA45: weather effect sprite producer using only authenticated
+// PRG bytes selected by the user in this browser. No PRG is embedded/exported.
+const weatherHex=n=>'$'+n.toString(16).padStart(2,'0');
+function weatherShow(result){
+ const w=ORIGINAL_WEATHER_SPRITES;
+ stepOriginalOamDma(weatherRAM,weatherPPU);
+ const entries=Array.from({length:12},(_,i)=>{
+  const off=i*4,o=weatherPPU.oam;
+  return `#${i.toString().padStart(2,'0')}  Y=${weatherHex(o[off])}  tile=${weatherHex(o[off+1])}  attributes=${weatherHex(o[off+2])}  X=${weatherHex(o[off+3])}`;
+ });
+ $('weatherStatus').textContent=`Source $D993: ${result.mode} • 12 original-source OAM entries • effect $0466=${weatherHex(weatherRAM[w.effect])} • phase $03AE=${weatherHex(weatherRAM[w.phase])}. AUTHENTIC PRG TABLES, SYNTHETIC RAM. Not a captured original frame, composed character sprite, or verified original palette.`;
+ $('weatherTrace').textContent=entries.join('\n')+'\nOAM DMA register writes: $2003=$00, $4014=$02';
+}
+$('weatherInitBtn').addEventListener('click',()=>{
+ if(!graphicsPRG){$('weatherStatus').textContent='Select the verified original .nes file in the graphics file input first (CHR alone does not contain the PRG sprite tables).';return;}
+ weatherRAM=new Uint8Array(0x800);weatherPPU=createOriginalPpuTransferState();
+ weatherRAM[ORIGINAL_WEATHER_SPRITES.effect]=0x81;
+ weatherRAM[ORIGINAL_WEATHER_SPRITES.offsetX]=0x20;
+ weatherRAM[ORIGINAL_WEATHER_SPRITES.clipY]=0x80;
+ weatherShow(stepOriginalWeatherSprites(weatherRAM,graphicsPRG));
+});
+$('weatherStepBtn').addEventListener('click',()=>{
+ if(!graphicsPRG||!weatherRAM){$('weatherStatus').textContent='Load an authenticated .nes and run weather initialization first.';return;}
+ weatherShow(stepOriginalWeatherSprites(weatherRAM,graphicsPRG));
+});
+async function importVerifiedOriginalPrg(bytes){
+ graphicsPRG=null;weatherRAM=null;weatherPPU=null;
+ if(!isINes(bytes))return;
+ const header=parseINes(bytes);
+ if(header.prgBytes!==0x20000)throw new Error('Weather source requires the 128 KiB original PRG');
+ const normalized=bytes.slice();normalized.set([0x4e,0x45,0x53,0x1a,0x08,0x10,0x40,0,0,0,0,0,0,0,0,0],0);
+ const sha=sha1Hex(normalized);
+ if(sha!==ORIGINAL_ROM_SHA1)throw new Error('Original PRG verification failed; header-normalized SHA-1 differs from pinned source');
+ graphicsPRG=bytes.slice(header.prgOffset,header.prgOffset+header.prgBytes);
+ $('weatherStatus').textContent='Original PRG verified against pinned assembly by normalized whole-ROM SHA-1. Run source weather OAM initialization; synthetic RAM is not an original gameplay frame.';
+}
+$('graphicsMapperApply').addEventListener('click',graphicsApplyMapper);
+$('graphicsPpuTable').addEventListener('change',graphicsPaintMapper);
+$('classicGraphicsLabBtn').addEventListener('click',()=>show('graphicsLab'));
+$('graphicsBackBtn').addEventListener('click',()=>show('home'));
+$('graphicsPrev').addEventListener('click',()=>{if(graphicsCHR&&graphicsPage>0){graphicsPage--;graphicsSelected=graphicsPage*256;graphicsPaint()}});
+$('graphicsNext').addEventListener('click',()=>{if(graphicsCHR&&(graphicsPage+1)*256<graphicsCHR.length/16){graphicsPage++;graphicsSelected=graphicsPage*256;graphicsPaint()}});
+graphicsAtlas.addEventListener('click',event=>{
+ if(!graphicsCHR)return;
+ const rect=graphicsAtlas.getBoundingClientRect();
+ const x=Math.min(15,Math.max(0,Math.floor((event.clientX-rect.left)/rect.width*16)));
+ const y=Math.min(15,Math.max(0,Math.floor((event.clientY-rect.top)/rect.height*16)));
+ const index=graphicsPage*256+y*16+x;
+ if(index<graphicsCHR.length/16){graphicsSelected=index;graphicsPaint()}
+});
+async function loadOriginalGraphics(bytes,{raw=false,label='local selection'}={}){
+ const {chr,source,header}=extractCHR(bytes,{raw});
+ graphicsCHR=chr;graphicsPage=0;graphicsSelected=0;
+ const info=inspectOriginalCHR(chr);
+ let provenance='Original CHR identity unverified (SHA-1 not available on this page).';
+ if(label.startsWith('Privately supplied original')&&globalThis.__kunioLocalCHRVerified===true)provenance='VERIFIED: CHR graphics exactly match pinned original binary (build-time SHA-1).';
+ if(typeof crypto!=='undefined'&&crypto.subtle){
+  const prefix=new TextEncoder().encode(`blob ${chr.length}\0`);
+  const blob=new Uint8Array(prefix.length+chr.length);blob.set(prefix);blob.set(chr,prefix.length);
+  const digest=await crypto.subtle.digest('SHA-1',blob);
+  const sha=[...new Uint8Array(digest)].map(x=>x.toString(16).padStart(2,'0')).join('');
+  provenance=sha===ORIGINAL_CHR_GIT_BLOB?'VERIFIED: CHR graphics exactly match pinned original binary.':'NOT VERIFIED: CHR differs from pinned source.';
+ }
+ $('graphicsStatus').textContent=`${label} • ${source} • ${info.byteCount} CHR bytes • ${info.tileCount} decoded tile patterns • ${info.bankCount} full 8 KiB banks. ${header?`Mapper ${header.mapper}; ${header.format}; PRG ${header.prgBytes} bytes. `:''}${provenance} This is exact original tile data, NOT reconstructed player sprites/palettes/animation.`;
+ graphicsPaint();graphicsApplyMapper();
+}
+$('graphicsFile').addEventListener('change',async event=>{
+ const file=event.target.files?.[0];if(!file)return;
+ graphicsCHR=null;$('graphicsPrev').disabled=true;$('graphicsNext').disabled=true;
+ try{
+  if(file.size>4_000_000)throw new Error('File larger than 4 MB; use a standard NES/CHR binary');
+  const selectedBytes=new Uint8Array(await file.arrayBuffer());
+  await loadOriginalGraphics(selectedBytes,{raw:/\.chr$/i.test(file.name),label:file.name});
+  await importVerifiedOriginalPrg(selectedBytes);
+ }catch(error){$('graphicsStatus').textContent=`Original graphics import rejected: ${error.message}`}
+ event.target.value='';
+});
+// A private owner-supplied ROM import is bundled with this locally generated build,
+// never in Git. Standalone HTML embeds only its verified CHR, not the NES ROM/PRG.
+async function preloadPrivateOriginalCHR(){
+ try{
+  if(typeof globalThis.__kunioLocalCHRBase64==='string'){
+   const binary=atob(globalThis.__kunioLocalCHRBase64);
+   const bytes=Uint8Array.from(binary,x=>x.charCodeAt(0));
+   await loadOriginalGraphics(bytes,{raw:true,label:'Privately supplied original NES graphics (offline)'});
+  }else if(typeof globalThis.__kunioLocalCHRBase64==='undefined'){
+   const response=await fetch('./local/original.chr');
+   if(response.ok)await loadOriginalGraphics(new Uint8Array(await response.arrayBuffer()),{raw:true,label:'Privately supplied original NES graphics (local modular build)'});
+  }
+ }catch(error){$('graphicsStatus').textContent=`Private original-CHR preload failed: ${error.message}`;}
+}
+void preloadPrivateOriginalCHR();
+$('classicInputLabBtn').addEventListener('click',()=>{show('lab');renderOriginalInputLab();});
+$('labBackBtn').addEventListener('click',()=>show('home'));
+$('labScanBtn').addEventListener('click',()=>{
+ try{
+  const raw=encodeOriginalSerialRead(labSelected);
+  stepOriginalRandom(labRandom); // Source main loop $C48C precedes $C48F. Lab has no game state.
+  const result=stepOriginalControllerInput(labState,()=>raw);
+  labAttempts=result.attempts;
+  const fieldResult=stepOriginalFieldPause(labField,labState.pressed[0]);
+  if(fieldResult.changed)labLastAudioCommands=fieldResult.audioCommands;
+  renderOriginalInputLab();
+ }catch(err){$('labStatus').textContent=`Controller scan failed: ${err.message}`;}
+});
+$('labResetBtn').addEventListener('click',()=>{labState=createOriginalControllerState();labSelected=[0,0,0,0];labAttempts=0;labRandom=createOriginalRandomState(0x12,0x34);labField=createOriginalFieldResearchState({musicId:0x12});labLastAudioCommands=[];labLastKickoffDecision=null;$('labKickoffStatus').textContent='Kickoff trace not yet run. The downstream original state transition is not implemented.';renderOriginalInputLab();});
+$('labFieldResetBtn').addEventListener('click',()=>{labField=createOriginalFieldResearchState({musicId:0x12});labLastAudioCommands=[];labLastKickoffDecision=null;$('labFoulPending').checked=false;$('labBallFlags').value='0';$('labBrightnessReady').checked=true;$('labKickoffStatus').textContent='Field bytes reset; no kickoff transition was executed.';renderOriginalInputLab();});
+$('labKickoffTraceBtn').addEventListener('click',()=>{
+ const brightnessFlag=$('labBrightnessReady').checked?0x80:0;
+ labField.gameScript=labField.gameScript&~0x20|($('labFoulPending').checked?0x20:0);
+ labField.ballState=Number($('labBallFlags').value);
+ const hadFoul=!!(labField.gameScript&0x20);
+ const foulResult=brightnessFlag&0x80&&hadFoul?stepOriginalFoulFlag(labField):null;
+ const gate=evaluateOriginalKickoffGate({brightnessFlag,gameScript:labField.gameScript,ballState:labField.ballState},{foulWasPending:hadFoul});
+ labLastKickoffDecision={...gate,foulResult};
+ $('labFoulPending').checked=!!(labField.gameScript&0x20);
+ $('labKickoffStatus').textContent=`$C5B3 kickoff branch: ${gate.advance?'ADVANCE BRANCH':'STAY IN KICKOFF'} (${gate.reason}); foul helper: ${foulResult?JSON.stringify(foulResult):'not called'}; downstream transition and calls remain unported.`;
+ renderOriginalInputLab();
+});
+
+// Isolated $C699 goal-subscreeen direct RAM trace, never drives Classic gameplay.
+$('labGoalTraceBtn').addEventListener('click',()=>{
+ try{
+  const timer=Number($('labGoalTimer').value);
+  if(!Number.isInteger(timer)||timer<0||timer>255)throw new RangeError('timer must be 0..255');
+  labGoal.cutsceneTimer=timer;
+  labGoal.gameScript=labGoal.gameScript&~2|($('labGoalCameraFlag').checked?2:0);
+  labGoal.brightnessFlag=Number($('labGoalBrightness').value);
+  const prep=prepareOriginalGoalCutsceneFrame(labGoal);
+  const result=stepOriginalGoalCutscenePostUpdates(labGoal,$('labGoalSkip').checked?NES_BUTTONS.START:0);
+  labLastGoalDecision={prep,result};
+  $('labGoalTimer').value=String(labGoal.cutsceneTimer);
+  $('labGoalStatus').textContent=`$C699 / $C6C5: timer ${labHex(labGoal.cutsceneTimer)}, camera ${labHex(labGoal.cameraObject)}, script ${labHex(labGoal.gameScript)}. Skip ${result.skipTriggered?'YES':'NO'}, camera retarget ${result.cameraRetargeted?'YES':'NO'}, brightness complete ${result.brightnessComplete?'YES':'NO'}. ${prep.pendingExternalCalls.length} initial routines and ${result.externalCalls.length} later calls remain UNEXECUTED.`;
+ }catch(err){$('labGoalStatus').textContent=`Goal cutscene trace rejected: ${err.message}`;}
+});
+$('labGoalResetBtn').addEventListener('click',()=>{
+ labGoal=createOriginalGoalCutsceneState({tileUpdateFlag:0xff,cutsceneTimer:31,gameScript:0x42,ballOwner:0x1a});labLastGoalDecision=null;
+ $('labGoalTimer').value='31';$('labGoalCameraFlag').checked=true;$('labGoalSkip').checked=false;$('labGoalBrightness').value='0';
+ $('labGoalStatus').textContent='Goal cutscene research reset. No original match transitions are executed.';
+});
+// Original bank04 $B8AB action branch. Research snapshots are supplied AFTER
+// the separately ported $C07A target; no action executes in the development match.
+let labLastActionTrace=null;
+let labActionBuffers=createOriginalActionBufferState();let labLastBufferTrace=null;
+const ACTION_INPUT_DEFAULTS=Object.freeze({labActionPlayerId:0,labActionControlPosition:0,labActionInitialAction:128,labActionPlayerState:128,labActionHeld:0,labActionPressed:128,labActionBuffer20:0,labActionBuffer21:0,labActionFacing:0,labActionInitialAngle:255,labActionScript:0});
+$('labBufferStepBtn').addEventListener('click',()=>{
+ try{
+  const held=Number($('labActionHeld').value),pressed=Number($('labActionPressed').value);
+  // Validate first, so a malformed UI input cannot partially update persistent state.
+  const next=createOriginalActionBufferState({...labActionBuffers,held,pressed});
+  const result=stepOriginalActionBuffers(next);
+  labActionBuffers=next;labLastBufferTrace=result;
+  $('labActionBuffer20').value=String(next.buffer570);
+  $('labActionBuffer21').value=String(next.buffer57c);
+  $('labBufferStatus').textContent=`$FAEE action: ${result.actionPath}; $FB5F direction: ${result.directionPath}. $0570 ${labHex(next.buffer570)}, $057C ${labHex(next.buffer57c)}, $0574 ${labHex(next.buffer574)}, $0578 ${labHex(next.buffer578)}, $0580 ${labHex(next.buffer580)}, $0584 ${labHex(next.buffer584)}. Source-local buffer update only.`;
+ }catch(err){$('labBufferStatus').textContent=`Original button buffer step rejected: ${err.message}`;}
+});
+$('labBufferResetBtn').addEventListener('click',()=>{
+ labActionBuffers=createOriginalActionBufferState();labLastBufferTrace=null;
+ $('labActionBuffer20').value='0';$('labActionBuffer21').value='0';
+ $('labBufferStatus').textContent='Original button buffers reset. No original gameplay was executed.';
+});
+$('labActionTraceBtn').addEventListener('click',()=>{
+ try{
+  const get=id=>Number($(id).value);
+  const state=createOriginalPlayerActionState({playerId:get('labActionPlayerId'),playerState:get('labActionPlayerState'),held:get('labActionHeld'),pressed:get('labActionPressed'),buffer20:get('labActionBuffer20'),buffer21:get('labActionBuffer21'),facing:get('labActionFacing'),action:get('labActionInitialAction'),angle:get('labActionInitialAngle')});
+  const gate=evaluateOriginalPlayerActionEntry({controlPosition:get('labActionControlPosition'),action:state.action});
+  const schedule=scheduleOriginalKickoffControllerCalls(get('labActionScript'));
+  const result=gate.dispatch?stepOriginalPlayerActionPostHelper(state):null;
+  labLastActionTrace={gate,result,state:{...state},schedule};
+  $('labActionStatus').textContent=`$B8AB gate: ${gate.dispatch?'OPEN':'CLOSED'} (${gate.reason}); action ${labHex(state.action)}, angle ${labHex(state.angle)}; ${result?`branch ${result.path}`:'no post-helper action'}. Kickoff $B4B2 schedules ${schedule.length} UNEXECUTED calls. $FAEE helper may be stepped separately; the player action side effects remain UNEXECUTED.`;
+ }catch(err){labLastActionTrace=null;$('labActionStatus').textContent=`Player action trace rejected: ${err.message}`;}
+});
+$('labActionResetBtn').addEventListener('click',()=>{
+ for(const [id,value] of Object.entries(ACTION_INPUT_DEFAULTS))$(id).value=String(value);
+ labLastActionTrace=null;labActionBuffers=createOriginalActionBufferState();labLastBufferTrace=null;$('labBufferStatus').textContent='Original button buffers reset.';$('labActionStatus').textContent='Player action research reset. No original gameplay was executed.';
+});
+// Isolated bank04 $B4B2 → $B850 source-local RAM projection. The $B4C9
+// alternative is deliberately NOT run and Classic gameplay remains locked.
+let labLastPossessionTrace=null;
+const POSS_INPUT_DEFAULTS=Object.freeze({labPossScript:1,labPossOwner:2,labPossFrame:0,labPossSlot:'0',labPossHeld:0,labPossPressed:128,labPossPress0:0,labPossControl0:0,labPossControl1:0});
+$('labPossTraceBtn').addEventListener('click',()=>{
+ try{
+  const get=id=>{const value=Number($(id).value);if(!Number.isInteger(value)||value<0||value>255)throw new RangeError(`${id} must be a byte (0–255)`);return value;};
+  const owner=get('labPossOwner'),frame=get('labPossFrame'),gameScript=get('labPossScript');
+  const selectedSlot=$('labPossSlot').value==='none'?null:Number($('labPossSlot').value);
+  const other=owner===255?0:255;
+  const selectedPlayers=[other,other,other,other],held=[0,0,0,0],pressed=[get('labPossPress0'),0,0,0];
+  if(selectedSlot!==null){selectedPlayers[selectedSlot]=owner;held[selectedSlot]=get('labPossHeld');pressed[selectedSlot]=get('labPossPressed');}
+  else {get('labPossHeld');get('labPossPressed');}
+  const ram=createOriginalPossessionRam({gameScript,frame,owner,selectedPlayers,held,pressed,controlPositions:[get('labPossControl0'),get('labPossControl1')]});
+  const result=stepOriginalScriptBit0ControlBranch(ram);
+  labLastPossessionTrace={...result,ownerAction:ram[0x0479+owner],ownerAngle:ram[0x04b0+owner],ownerFlag:ram[0x067e+owner],matchedSlotAction:selectedSlot===null?null:ram[0x0479+selectedSlot]};
+  $('labPossStatus').textContent=result.implemented
+   ?`$B850: ${result.branch}; ${result.writes.length?result.writes.map(w=>`RAM $${w.address.toString(16).toUpperCase().padStart(4,'0')} ← ${labHex(w.value)}`).join('; '):'no RAM writes'}. No action execution or NES runtime parity.`
+   :`$B4B2 dispatches four $B4C9 calls; all ${result.pendingCalls.length} remain unexecuted. RAM unchanged.`;
+ }catch(err){labLastPossessionTrace=null;$('labPossStatus').textContent=`Possession trace rejected: ${err.message}`;}
+});
+$('labPossResetBtn').addEventListener('click',()=>{
+ for(const [id,value] of Object.entries(POSS_INPUT_DEFAULTS))$(id).value=String(value);
+ labLastPossessionTrace=null;$('labPossStatus').textContent='Possession trace reset. No original gameplay executed.';
+});
+// Full $B4B2 branch selector, still isolated from the Enhanced match and
+// original action executor. The legacy $B850 preview above is preserved.
+let labLastAlternateTrace=null,labLastAlternateRam=null;
+const ALT_INPUT_DEFAULTS=Object.freeze({labAltScript:0,labAltSlot:'0',labAltPlayer:2,labAltState:128,labAltAction:128,labAltHeld:0,labAltPressed:128,labAltOwner:12,labAltMovement:0,labAltTimer:0,labAltTeam0:0,labAltTeam1:0,labAltPass0:15});
+$('labAltTraceBtn').addEventListener('click',()=>{
+ try{
+  const get=id=>{const n=Number($(id).value);if(!Number.isInteger(n)||n<0||n>255)throw new RangeError(`${id} must be a byte (0–255)`);return n;};
+  const slot=Number($('labAltSlot').value),player=get('labAltPlayer'),owner=get('labAltOwner');
+  const ram=createOriginalAlternateControllerRam({slot,player,gameScript:get('labAltScript'),playerState:get('labAltState'),action:get('labAltAction'),held:get('labAltHeld'),pressed:get('labAltPressed'),owner,playerMovement:get('labAltMovement'),playerTimer:get('labAltTimer'),teamPossession:[get('labAltTeam0'),get('labAltTeam1')],passDirections:[get('labAltPass0'),15]});
+  const result=stepOriginalControllerDispatch(ram);
+  labLastAlternateRam=ram.slice();
+  labLastAlternateTrace={...result,player,slot,playerAction:ram[0x0479+player],playerAngle:ram[0x04b0+player]};
+  if(result.dispatch==='$B850'){
+   $('labAltStatus').textContent=`$B850 branch ${result.branch}; ${result.writes.length} source-local writes. Action executor NOT run.`;
+  }else{
+   const selected=result.calls[slot];
+   $('labAltStatus').textContent=`$B4C9: ${result.calls.length} slots processed; selected slot ${slot} → player ${player}, ${selected.reason}; ${selected.helperInvoked?`group ${selected.group}, class ${selected.classIndex}, table $${selected.tablePtr.toString(16).toUpperCase()}, raw action ${labHex(ram[0x0479+player])}, angle ${labHex(ram[0x04b0+player])}`:'gate closed'}; ${selected.changes.length} changed bytes. NO original match physics or runtime parity.`;
+  }
+ }catch(err){labLastAlternateTrace=null;labLastAlternateRam=null;$('labAltStatus').textContent=`Controller selector rejected: ${err.message}`;}
+});
+$('labAltResetBtn').addEventListener('click',()=>{
+ for(const [id,value] of Object.entries(ALT_INPUT_DEFAULTS))$(id).value=String(value);
+ labLastAlternateTrace=null;labLastAlternateRam=null;$('labAltStatus').textContent='Controller selector fixture reset. Classic Mode remains disabled.';
+});
+// Bank06 $AA14-$AAAB source-local arbitration, still NOT football physics.
+let labLastArbitrationTrace=null;
+const ARB_DEFAULTS=Object.freeze({labArbPlayer:2,labArbAction:53,labArbMovement:128,labArbState:128,labArbWeather:0,labArbSkill:1,labArbSurface:0,labArbVariant:0});
+const labArbByte=id=>{const n=Number($(id).value);if(!Number.isInteger(n)||n<0||n>255)throw new RangeError(`${id} must be a byte (0–255)`);return n;};
+const showArbTrace=(ram,player,tableVariant,origin)=>{
+ const result=stepOriginalActionArbitration(ram,player,{tableVariant});
+ labLastArbitrationTrace={...result,origin};
+ $('labArbStatus').textContent=`${origin}: ${result.reason}; action ${labHex(result.actionBefore)} → ${labHex(result.actionAfter)}, movement ${labHex(result.movementBefore)} → ${labHex(result.movementAfter)}, ${result.writes.length} RAM writes. NO football physics or original NES frame parity.`;
+};
+$('labArbTraceBtn').addEventListener('click',()=>{
+ try{
+  const player=labArbByte('labArbPlayer');
+  const ram=createOriginalActionArbitrationRam({player,action:labArbByte('labArbAction'),movement:labArbByte('labArbMovement'),playerState:labArbByte('labArbState'),weather:labArbByte('labArbWeather'),skill:labArbByte('labArbSkill'),surface:labArbByte('labArbSurface')});
+  showArbTrace(ram,player,Number($('labArbVariant').value),'Independent synthetic RAM');
+ }catch(err){labLastArbitrationTrace=null;$('labArbStatus').textContent=`Arbitration rejected: ${err.message}`;}
+});
+$('labArbChainBtn').addEventListener('click',()=>{
+ try{
+  if(!labLastAlternateRam||!labLastAlternateTrace)throw new Error('run the controller selector above first');
+  const player=labLastAlternateTrace.player;
+  if(player>11)throw new RangeError('controller selected a non-player object');
+  showArbTrace(labLastAlternateRam.slice(),player,Number($('labArbVariant').value),'Controller → arbitration');
+ }catch(err){labLastArbitrationTrace=null;$('labArbStatus').textContent=`Arbitration chain rejected: ${err.message}`;}
+});
+$('labArbResetBtn').addEventListener('click',()=>{
+ for(const [id,value] of Object.entries(ARB_DEFAULTS))$(id).value=String(value);
+ labLastArbitrationTrace=null;$('labArbStatus').textContent='Arbitration fixture reset. No original gameplay executed.';
+});
+// Source-local movement-state / pending ball-action branch fixture, NOT a NES frame.
+let labLastMovementTrace=null;
+function movementFixture(){
+ const player=labArbByte('labMovePlayer');
+ if(player>11)throw new RangeError('player slot must be 0–11');
+ const ram=new Uint8Array(0x800);
+ ram[0x0459+player]=labArbByte('labMoveId');
+ ram[0x0486+player]=labArbByte('labMoveState');
+ ram[0x0399+player]=labArbByte('labMoveZHi');
+ ram[0x0386+player]=labArbByte('labMoveZLo');
+ ram[0x0485]=labArbByte('labMoveShot');
+ ram[0x0492]=labArbByte('labMoveBallState');
+ return {ram,player};
+}
+$('labMoveStateBtn').addEventListener('click',()=>{
+ try{
+  const {ram,player}=movementFixture();
+  const trace=stepOriginalMovementState(ram,player,{tableVariant:Number($('labMoveVariant').value)});
+  labLastMovementTrace=trace;
+  $('labMoveStatus').textContent=`$AACA: movement ${labHex(trace.movement)}, metadata $${trace.metadataAddress.toString(16).toUpperCase()}, state ${labHex(trace.stateBefore)} → ${labHex(trace.stateAfter)}. NO physics or NES reference parity.`;
+ }catch(error){labLastMovementTrace=null;$('labMoveStatus').textContent=`Movement state rejected: ${error.message}`;}
+});
+$('labMoveShotBtn').addEventListener('click',()=>{
+ try{
+  const {ram,player}=movementFixture();
+  const trace=stepOriginalBallShotPriority(ram,player);
+  labLastMovementTrace=trace;
+  $('labMoveStatus').textContent=`$AB2A: ${trace.reason}, pending ${labHex(trace.pendingBefore)} → ${labHex(trace.pendingAfter)}, movement ${labHex(trace.movementAfter)}. Weather callback and ball physics NOT implemented.`;
+ }catch(error){labLastMovementTrace=null;$('labMoveStatus').textContent=`Ball-action branch rejected: ${error.message}`;}
+});
+$('playBtn').addEventListener('click',start);
+$('restartBtn').addEventListener('click',start);
+$('homeBtn').addEventListener('click',()=>show('home'));
+function tapPause(){if(visible!=='game')return;
+ if(playback)playbackPaused=!playbackPaused;
+ else tapButton('pause');
+ renderer.draw(match);
+}
+$('pauseBtn').addEventListener('click',tapPause);
+$('gamePauseBtn').addEventListener('click',tapPause);
+$('switchBtn').addEventListener('click',()=>{if(visible==='game'&&!playback){
+  tapButton('switch');renderer.draw(match);
+ }});
+$('saveReplayBtn').addEventListener('click',()=>{
+ try{const replay=recorder?exportReplay(recorder):playback?.replay;
+  if(!replay)throw new Error('Start a match or load a replay first');
+  const blob=new Blob([JSON.stringify(replay)],{type:'application/json'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=`kunio-replay-${replay.seed}-${replay.frames.length}.json`;
+  document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  notice(`Saved ${replay.frames.length} recorded input frames.`);
+ }catch(err){notice(`Replay export failed: ${err.message}`);}
+});
+$('loadReplayBtn').addEventListener('click',()=>$('replayFile').click());
+$('replayFile').addEventListener('change',async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{if(file.size>4_000_000)throw new Error('Replay file exceeds 4 MB');
+  const parsed=JSON.parse(await file.text());const loaded=createPlayback(parsed);
+  playback=loaded;match=loaded.state;recorder=null;playbackPaused=false;recordingStopped=false;
+  input.release();accumulator=0;lastTime=0;$('saveReplayBtn').disabled=false;
+  show('game');renderer.draw(match);notice(`Playing verified-format replay: ${parsed.frames.length} input frames.`);
+ }catch(err){notice(`Replay import rejected: ${err.message}`);}
+ e.target.value='';
+});
+$('controlsBtn').addEventListener('click',()=>{lastPanel=visible;show('settings');renderSettings();});
+$('closeSettings').addEventListener('click',()=>show(lastPanel));
+function renderSettings(){
+ const keyContainer=$('keyboardBindings');keyContainer.replaceChildren();
+ for(const [a,code] of Object.entries(input.settings.keyboard)){
+  const row=document.createElement('div');row.className='setting-row';
+  const name=document.createElement('span');name.textContent=a;
+  const b=document.createElement('button');b.textContent=code.replace(/^(Key|Digit)/,'');
+  b.addEventListener('click',()=>{
+    b.textContent='PRESS KEY…';const onKey=e=>{e.preventDefault();e.stopPropagation();window.removeEventListener('keydown',onKey,true);
+      try{input.rebindKeyboard(a,e.code);$('settingsNotice').textContent=`${a} assigned to ${e.code}`;}
+      catch(err){$('settingsNotice').textContent=err.message;}
+      renderSettings();};window.addEventListener('keydown',onKey,true);});
+  row.append(name,b);keyContainer.append(row);
+ }
+ const gp=$('gamepadBindings');gp.replaceChildren();
+ for(const [a,val] of Object.entries(input.settings.gamepad)){
+  const row=document.createElement('div');row.className='setting-row';
+  const name=document.createElement('span');name.textContent=a;const sel=document.createElement('select');
+  for(let i=0;i<=16;i++){const opt=document.createElement('option');opt.value=String(i);opt.textContent=`Button ${i}`;opt.selected=i===val;sel.append(opt);}
+  sel.addEventListener('change',()=>input.setPadButton(a,Number(sel.value)));
+  row.append(name,sel);gp.append(row);
+ }
+ const touch=$('touchBindings');touch.replaceChildren();
+ for(const [button,val] of Object.entries(input.settings.touch)){
+  const row=document.createElement('div');row.className='setting-row';const name=document.createElement('span');name.textContent=`Button ${button}`;
+  const sel=document.createElement('select');for(const a of ACTIONS){const opt=document.createElement('option');opt.value=a;opt.textContent=a;opt.selected=a===val;sel.append(opt);}
+  sel.addEventListener('change',()=>{input.setTouchAction(button,sel.value);renderSettings();renderTouchLabels();});
+  row.append(name,sel);touch.append(row);
+ }
+}
+$('resetControls').addEventListener('click',()=>{input.settings=defaults();input.save();renderSettings();renderTouchLabels();$('settingsNotice').textContent='Defaults restored';});
+function renderTouchLabels(){for(const b of document.querySelectorAll('[data-touch]'))b.textContent=input.settings.touch[b.dataset.touch].toUpperCase();}
+renderTouchLabels();
+const joystick=$('joystick'),dot=$('joystickDot');let joystickPointer=null;
+function joystickMove(e){const r=joystick.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+ const x=(e.clientX-cx)/(r.width*.36),y=(e.clientY-cy)/(r.height*.36);
+ input.setJoystick(x,y);dot.style.transform=`translate(${input.joystick.dx*r.width*.27}px,${input.joystick.dy*r.height*.27}px)`;}
+function endStick(e){if(joystickPointer!==e.pointerId)return;joystickPointer=null;input.setJoystick(0,0);dot.style.transform='';}
+joystick.addEventListener('pointerdown',e=>{e.preventDefault();if(joystickPointer!==null)return;joystickPointer=e.pointerId;joystick.setPointerCapture(e.pointerId);joystickMove(e);});
+joystick.addEventListener('pointermove',e=>{if(e.pointerId===joystickPointer)joystickMove(e);});
+joystick.addEventListener('pointerup',endStick);joystick.addEventListener('pointercancel',endStick);
+for(const b of document.querySelectorAll('[data-touch]')){
+ b.addEventListener('pointerdown',e=>{e.preventDefault();b.setPointerCapture(e.pointerId);input.pressTouch(e.pointerId,b.dataset.touch);b.classList.add('is-down');});
+ const release=e=>{input.releaseTouch(e.pointerId);if(!Array.from(input.touchHeld.values()).includes(b.dataset.touch))b.classList.remove('is-down');};
+ b.addEventListener('pointerup',release);b.addEventListener('pointercancel',release);
+}
+document.addEventListener('visibilitychange',()=>{if(document.hidden){
+ input.release();accumulator=0;lastTime=0;
+ if(playback)playbackPaused=true;
+ else if(visible==='game'&&match.phase==='playing')tapButton('pause');
+}});
+function animate(now){requestAnimationFrame(animate);if(!lastTime)lastTime=now;
+ const delta=Math.min(now-lastTime,150);lastTime=now;
+ if(visible!=='game')return;
+ accumulator+=delta;const fixed=1000/TICK_RATE;
+ let updates=0;
+ while(accumulator>=fixed&&updates<6){
+  if(playback){
+    if(!playbackPaused&&!playback.done){
+      try{playbackStep(playback);if(playback.done)notice('Replay finished: checksum verified.');}
+      catch(err){playbackPaused=true;notice(`Replay stopped: ${err.message}`);}
+    }
+  }else if(match.phase!=='ended'){
+    const frame=input.frame();
+    // Do not accumulate empty idle frames while paused. Record the release edge once.
+    if(match.phase!=='paused'||frame.pause||match.previousButtons.pause)liveStep(frame);
+  }
+  accumulator-=fixed;updates++;
+}
+ if(updates===6)accumulator=0; // drop excess wall-time; never variable simulation steps.
+ renderer.draw(match);
+ $('status').textContent=playback
+  ? `REPLAY ${playback.index}/${playback.replay.frames.length}${playbackPaused?' • PAUSED':''}${playback.done?' • VERIFIED':''}`
+  : `${match.phase.toUpperCase()} • TICK ${match.tick}${recordingStopped?' • RECORDING LIMIT':''}`;
+}
+requestAnimationFrame(animate);
+// Expose read-only test instrumentation with no production cheating or state mutation.
+window.__kunioDebug=Object.freeze({getSnapshot:()=>({tick:match.tick,phase:match.phase,score:[...match.score],ball:{...match.ball},controlled:match.controlled,selectedPlayer:{...match.players.find(p=>p.id===match.controlled)}}),getPanel:()=>visible,getOriginalInputLab:()=>({selected:[...labSelected],held:[...labState.held],pressed:[...labState.pressed],samples:labState.samples,random:{...labRandom},field:{...labField},lastAudioCommands:[...labLastAudioCommands],kickoffDecision:labLastKickoffDecision?structuredClone(labLastKickoffDecision):null,goalCutscene:{...labGoal},goalCutsceneDecision:labLastGoalDecision?structuredClone(labLastGoalDecision):null,playerActionTrace:labLastActionTrace?structuredClone(labLastActionTrace):null,actionBuffers:{...labActionBuffers},bufferTrace:labLastBufferTrace?{...labLastBufferTrace}:null,possessionTrace:labLastPossessionTrace?structuredClone(labLastPossessionTrace):null,alternateTrace:labLastAlternateTrace?structuredClone(labLastAlternateTrace):null,arbitrationTrace:labLastArbitrationTrace?structuredClone(labLastArbitrationTrace):null,movementTrace:labLastMovementTrace?structuredClone(labLastMovementTrace):null,fieldHandler:resolveOriginalMatchSubscreenHandler(2),screenHandler:resolveOriginalScreenHandler(0)}),getInput:()=>({...input.frame()}),getReplayStatus:()=>({mode:playback?'playback':recorder?'recording':'none',frames:recorder?.frames.length??playback?.replay.frames.length??0,index:playback?.index??0,done:playback?.done??false,paused:playbackPaused,recordingStopped})});
+
+</script></body></html>
