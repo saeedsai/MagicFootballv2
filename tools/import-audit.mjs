@@ -14,7 +14,9 @@ export const ARCHIVED_SOURCE_BLOBS=Object.freeze({
  'src/classic/OriginalPpuTransfers.js':'29edb93b67d4ca93991fa79781f197c81bcb2a0d',
  'src/classic/OriginalActionBuffers.js':'ae9f2e48b17fba5846796656ceeb9e16b1a45abf',
  'src/classic/OriginalInput.js':'aa991f4cfbc83e13321bf96b852020d35f51db8f',
- 'src/classic/OriginalPossessionControl.js':'d56920ac60d4832cece81f37881a37efdbcee5b0'
+ 'src/classic/OriginalPossessionControl.js':'d56920ac60d4832cece81f37881a37efdbcee5b0',
+ 'src/classic/OriginalFieldLogic.js':'d5523e4624f5e3d3a9f6cc2e0aaec3b145c63d63',
+ 'src/classic/OriginalGoalCutscene.js':'1c3afe80899eb6205a52d0ef44341b6a11f13f3a'
 });
 export const archivedGitBlob = content => createHash('sha1').update('blob '+content.length+'\0').update(content).digest('hex');
 export function verifyRestoredSources(root=fileURLToPath(new URL('..',import.meta.url))){

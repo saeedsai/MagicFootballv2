@@ -22,3 +22,12 @@ The full original 185-file archive and its historical Git commits are not yet im
 | `bank_FF.asm` `$EE06`, `$EDCD` input/edge reads | `src/classic/OriginalInput.js` | pending | Archived blob exact; synthetic serial edge test | Hardware/controller channels unverified |
 | `bank_FF.asm` `$FAEE–$FBA8` hold/repeat buffers | `src/classic/OriginalActionBuffers.js` | pending | Archived blob exact; synthetic buffer clearing test | Action execution not yet ported |
 | `bank_04.asm` `$B850–$B8AA` possession branch | `src/classic/OriginalPossessionControl.js` | pending | Archived blob exact; synthetic controller-slot test | Not full match mechanics |
+
+## 2026-10-19 archive-verified field and goal restoration
+
+| Pinned disassembly | Archived JavaScript | Original archived tests | Status |
+| --- | --- | --- | --- |
+| bank_FF.asm $C615-$C63A, $C87B-$C89B, $C5B3-$C5C9 | `src/classic/OriginalFieldLogic.js` | `tests/original-field-logic.test.js` (17 tests) | Exact source restored; isolated RAM-branch tests only; no full-frame parity |
+| bank_FF.asm $C699-$C71B | `src/classic/OriginalGoalCutscene.js` | `tests/original-goal-cutscene.test.js` (10 tests) | Exact source restored; 12 external routines still unported; no full-frame parity |
+
+Upstream pinned SHA: `df2c8e55e7f13e5792482527db9e7c9e4a84c6e1`. Source baseline: `274195e506b818fdd0957df980284aa08482735e`. No ROM, CHR, PRG, DPCM or derived sprite art distributed.
