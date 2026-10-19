@@ -40,3 +40,8 @@ The full 185-file modular tree and local Git history are still **not migrated**:
 ## 2026-10-19 original-source restoration: verified batch 1
 
 The exact uploaded archive (SHA-256 `aa0b2e06caf54d3073d900439e7f015abacf754b407f805b3e0bc43cfa1e1f63`) and local Git commit `274195e506b818fdd0957df980284aa08482735e` have been verified. Batch 1 restores four byte-identical modular JavaScript sources (`OriginalRandom`, `OriginalStateIds`, `OriginalScreenDispatch`, `OriginalRomSha1`) and two original Node test files; GitHub blob SHA values equal the archived Git object hashes. A separately developed Java port of the isolated original RNG and exhaustive 65,536-state regression test are included. The complete 185-file tree and original 17-commit history remain NOT migrated. The archived 237-pass/6-skip local suite is not a remote CI claim; CI covers only migrated tests. Classic Mode remains disabled, and no original asset bytes were uploaded.
+
+
+## Archive preflight guardrail (2026-10-19)
+
+The source ZIP integrity inspector and nine synthetic ZIP-safety tests are staged on feature/archive-preflight-rebased-20261019, preserving the concurrently restored original JavaScript modules. It validates the exact expected archive SHA-256 and reports candidate Git blob hashes while excluding private originals and flagging audio/graphics for rights review. It does not itself import the missing source or restore Git history. See reports/ARCHIVE_PREFLIGHT_2026-10-19.md and reports/ARCHIVE_PREFLIGHT_CI_2026-10-19.md. Complete migration and Classic Mode parity remain unverified.

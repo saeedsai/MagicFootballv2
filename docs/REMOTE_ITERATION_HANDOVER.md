@@ -13,3 +13,8 @@ The six audit unit tests are new; historical 243-test results are from the separ
 ## 2026-10-19 original-source restoration: verified batch 1
 
 The exact uploaded archive (SHA-256 `aa0b2e06caf54d3073d900439e7f015abacf754b407f805b3e0bc43cfa1e1f63`) and local Git commit `274195e506b818fdd0957df980284aa08482735e` have been verified. Batch 1 restores four byte-identical modular JavaScript sources (`OriginalRandom`, `OriginalStateIds`, `OriginalScreenDispatch`, `OriginalRomSha1`) and two original Node test files; GitHub blob SHA values equal the archived Git object hashes. A separately developed Java port of the isolated original RNG and exhaustive 65,536-state regression test are included. The complete 185-file tree and original 17-commit history remain NOT migrated. The archived 237-pass/6-skip local suite is not a remote CI claim; CI covers only migrated tests. Classic Mode remains disabled, and no original asset bytes were uploaded.
+
+
+## Archive preflight integration addendum (2026-10-19)
+
+A SHA-pinned read-only archive inspector and nine synthetic safety tests are staged in the feature/archive-preflight-rebased-20261019 branch. The tool is in tools/archive-preflight.mjs. See reports/ARCHIVE_PREFLIGHT_2026-10-19.md and reports/ARCHIVE_PREFLIGHT_CI_2026-10-19.md for usage and verified CI. This independent run could not read the full ZIP; concurrent source restoration on main remains authoritative. The complete 185-file modular import and historical Git object recovery remain open, and Classic Mode is disabled.
