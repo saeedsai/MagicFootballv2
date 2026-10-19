@@ -31,3 +31,10 @@ The full original 185-file archive and its historical Git commits are not yet im
 | bank_FF.asm $C699-$C71B | `src/classic/OriginalGoalCutscene.js` | `tests/original-goal-cutscene.test.js` (10 tests) | Exact source restored; 12 external routines still unported; no full-frame parity |
 
 Upstream pinned SHA: `df2c8e55e7f13e5792482527db9e7c9e4a84c6e1`. Source baseline: `274195e506b818fdd0957df980284aa08482735e`. No ROM, CHR, PRG, DPCM or derived sprite art distributed.
+
+## 2026-10-19 batch 5 — bank06 action arbitration and movement
+
+| Pinned disassembly | Archived JavaScript | Test evidence | Status |
+| --- | --- | --- | --- |
+| bank_06.asm $AA14-$AAAB, $AC69-$AD40 | `src/classic/OriginalActionArbitration.js` | `tests/action-arbitration-import.test.mjs` (4 synthetic tests); archived full test deferred pending alternate-controller source | Exact JS blob restored; isolated RAM/action metadata checks only |
+| bank_06.asm $AAC3-$AB51, $AC4D-$AC64 | `src/classic/OriginalMovementTransition.js` | `tests/original-movement-transition.test.js` (16 exact archived tests) | Exact JS blob restored; synthetic RAM chain, not NES frame parity |
