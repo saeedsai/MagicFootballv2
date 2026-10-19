@@ -32,3 +32,7 @@ The standalone HTML does contain bundled native JS implementation code and the r
 **Classic Mode is disabled and incomplete.** The standalone match is a provisional development testbed. Original game behavior, art assembly, audio, AI, physics, and menus remain unverified and incomplete.
 
 The public repository excludes the original NES ROM, extracted CHR/PRG/audio and private reference sprites. The original owner's local ROM import workflow may be used privately; this does not grant permission to republish protected assets.
+
+## 2026-10-19 remote audit increment
+
+The full 185-file modular tree and local Git history are still **not migrated**: the exact source ZIP was unavailable in this run's mounted files and Library. Six new unit tests and a Git-tracked-path migration audit have been prepared for remote CI. The audit protects the byte-identical Iteration 15 standalone and the disabled Classic Mode gate, rejects protected binary files, and never claims that a source-file count proves full migration. See `docs/REMOTE_ITERATION_HANDOVER.md`. This is a guardrail increment, **not** an original-game conversion or a completed source migration.
