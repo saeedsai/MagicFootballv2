@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "source": "Owner-supplied original NES dump",
+  "upstreamCommit": "df2c8e55e7f13e5792482527db9e7c9e4a84c6e1",
+  "originalDumpSHA1": "f47c60143992c5f2e36a31c5f290900c54dc346e",
+  "originalHeaderFormat": "NES 2.0",
+  "canonicalHeaderSHA1": "edf933eee8d6b99b7743367eda089b9850ce51ec",
+  "upstreamReferenceBinaryVerified": true,
+  "normalizedHeaderByteOffsets": [
+    7,
+    15
+  ],
+  "graphicsGitBlobSHA1": "e62db8eeaa386d65ff741847bd8d01cecdada00f",
+  "graphicsSourceMatch": true,
+  "mapper": 4,
+  "prgBanks": [
+    {
+      "id": "PRG-00",
+      "index": 0,
+      "offsetInFile": 16,
+      "length": 16384,
+      "sha256": "dcec1cea70680bb269b3960c7b00437879a8031d9fcdba53f278345bd21b004e"
+    },
+    {
+      "id": "PRG-01",
+      "index": 1,
+      "offsetInFile": 16400,
+      "length": 16384,
+      "sha256": "b157d2a9149096d542ce3fe80a87990f4ded831266e9ff9696927b6a0195e311"
+    },
+    {
+      "id": "PRG-02",
+      "index": 2,
+      "offsetInFile": 32784,
+      "length": 16384,
+      "sha256": "0730ab4281edb6524edbdf543ab0a3eacd5b77ff61ebb46f568264e2f94dbe73"
+    },
+    {
+      "id": "PRG-03",
+      "index": 3,
+      "offsetInFile": 49168,
+      "length": 16384,
+      "sha256": "9ca5ddbdae6d0ac2367d7b98f2fb396980595f6831620aa82c58f4b9e029de4c"
+    },
+    {
+      "id": "PRG-04",
+      "index": 4,
+      "offsetInFile": 65552,
+      "length": 16384,
+      "sha256": "68f8b9721b1c396d688936895ce61f49ec1fe666605609ee2c0b9ca4c994e8ee"
+    },
+    {
+      "id": "PRG-05",
+      "index": 5,
+      "offsetInFile": 81936,
+      "length": 16384,
+      "sha256": "d3301528658e81ff88dce0da1018e129f0851927ad2451f310eeb546ddccd8ae"
+    },
+    {
+      "id": "PRG-06",
+      "index": 6,
+      "offsetInFile": 98320,
+      "length": 16384,
+      "sha256": "a7a3d87331116c32eee95f26460d3c5837001c2c4e364bdd8c3a0ed90129cc56"
+    },
+    {
+      "id": "PRG-07",
+      "index": 7,
+      "offsetInFile": 114704,
+      "length": 16384,
+      "sha256": "4df70ac44ef483722471c681d6a55482bbefc72bf9e93b347609ad5b2ff99d5e"
+    }
+  ],
+  "chrBanks": [
+    {
+      "id": "CHR-00",
+      "index": 0,
+      "offsetInFile": 131088,
+      "length": 8192,
+      "sha256": "0d204e818304286aed9ebce66c0566f2df1666316e63a21271daadada937bb78",
+      "tileStart": 0,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-01",
+      "index": 1,
+      "offsetInFile": 139280,
+      "length": 8192,
+      "sha256": "d73e832c34475302cd140f0730388b4305ebb051a6861f094511dcb4dd3d3db6",
+      "tileStart": 512,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-02",
+      "index": 2,
+      "offsetInFile": 147472,
+      "length": 8192,
+      "sha256": "78e04ac27bbb720d60ece701df73f9e91efbce7954174634d4838f35de7f905f",
+      "tileStart": 1024,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-03",
+      "index": 3,
+      "offsetInFile": 155664,
+      "length": 8192,
+      "sha256": "57e127cd8c48d6547798cba716b2f7ba615a2557ba74f9c352d815eb731eff5c",
+      "tileStart": 1536,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-04",
+      "index": 4,
+      "offsetInFile": 163856,
+      "length": 8192,
+      "sha256": "e189d5fd65d33da5605ff5086ce3a3a172bc2a3aa38cbf668fdfa09812350c6b",
+      "tileStart": 2048,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-05",
+      "index": 5,
+      "offsetInFile": 172048,
+      "length": 8192,
+      "sha256": "a2ac16b09552ef60cd565cb2fd9a6540247fb78e76af9285e617799ac5e6c0a0",
+      "tileStart": 2560,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-06",
+      "index": 6,
+      "offsetInFile": 180240,
+      "length": 8192,
+      "sha256": "51bca0a6404debc95349f1d0a36cc16fc730efb59205ea0b3ad72af0ee851705",
+      "tileStart": 3072,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-07",
+      "index": 7,
+      "offsetInFile": 188432,
+      "length": 8192,
+      "sha256": "e3982118cc5ed69e14d652103dd18a2e365fdaff13529c73b4f5d5e2b331907a",
+      "tileStart": 3584,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-08",
+      "index": 8,
+      "offsetInFile": 196624,
+      "length": 8192,
+      "sha256": "ff6c1b19556fa723b3b039408c3fca17ba7b056ff6ee87f5925bc1da8f0e3ccb",
+      "tileStart": 4096,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-09",
+      "index": 9,
+      "offsetInFile": 204816,
+      "length": 8192,
+      "sha256": "12b00fcb41a5dd6c22f3e2d7f8d334ba81a5bb765828dae26f3647d53e6de9a0",
+      "tileStart": 4608,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-10",
+      "index": 10,
+      "offsetInFile": 213008,
+      "length": 8192,
+      "sha256": "ca1300c1761087397784137924c456b1fb85a8342825683f8bbe2a7b21058a39",
+      "tileStart": 5120,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-11",
+      "index": 11,
+      "offsetInFile": 221200,
+      "length": 8192,
+      "sha256": "8c225104a24f0f6f30bcb76af2fad9fb27dcfa08182b8cd324aca1a8756f4fcb",
+      "tileStart": 5632,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-12",
+      "index": 12,
+      "offsetInFile": 229392,
+      "length": 8192,
+      "sha256": "51fa039770ce2453a5bae510a73a7e44fd0ace074e790c3678c913e22122935b",
+      "tileStart": 6144,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-13",
+      "index": 13,
+      "offsetInFile": 237584,
+      "length": 8192,
+      "sha256": "e00d8e762f6e67b8172061fa7b8ed595d37dcd2e3b206de40714b8a0bc23a870",
+      "tileStart": 6656,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-14",
+      "index": 14,
+      "offsetInFile": 245776,
+      "length": 8192,
+      "sha256": "0702c0e072ee01391dee73937382248c816401da37379c016791ad549187c655",
+      "tileStart": 7168,
+      "tileCount": 512
+    },
+    {
+      "id": "CHR-15",
+      "index": 15,
+      "offsetInFile": 253968,
+      "length": 8192,
+      "sha256": "417174c7c750148e3df6b633206cbac024168e198ff1cec2af4733dec0c086a6",
+      "tileStart": 7680,
+      "tileCount": 512
+    }
+  ],
+  "disclaimer": "Byte hashes and addresses only; no ROM data. Full NES frame, PPU bank selection, original palette and metasprite animation still unimplemented."
+}

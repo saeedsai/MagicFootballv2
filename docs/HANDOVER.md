@@ -1,0 +1,7 @@
+# Iteration 15 — original source weather OAM producer
+
+Resume root `HANDOVER.md`, `NEXT_ITERATION.md`, `docs/ORIGINAL_WEATHER_OAM_TRACE.md`, `reports/LATEST_TEST_REPORT.md`, and pinned original source SHA `df2c8e55e7f13e5792482527db9e7c9e4a84c6e1`. Last verified local Git checkpoint is the Iteration 15 commit (see root handover). Classic Mode remains **DISABLED**; the provisional development match is not original gameplay.
+
+The first source-derived **OAM producer** is now implemented: original fixed-bank `$D993–$DA45` initializes/updates twelve *weather-effect* sprites using five original PRG data tables. Native JavaScript is byte-identical to a small isolated interpreter executing the original PRG opcodes across 80 synthetic RAM comparisons; this is not NES full-frame parity. New offline SHA-1 supports verified owner `.nes` import in the standalone browser lab without storing or distributing PRG. New source, tests, UI, documentation and screenshots are committed locally. The owner ROM and extracted CHR remain private and ignored by Git.
+
+Next: source-trace actual player-character OAM producers in bank04 `$8100+` and fixed-bank routines, original metasprite/animation tables, OAM priority/sprite 8x8 vs 8x16 mode, real palettes/CHR bank assignments, original emulator frame/RAM/OAM fixtures; only then integrate original player sprites. Source mapping/coverage is incomplete; original gameplay, audio, AI, menus and physics remain open.

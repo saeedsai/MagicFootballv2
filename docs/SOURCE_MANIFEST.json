@@ -1,0 +1,164 @@
+{
+  "sourceRepository": "https://github.com/cyneprepou4uk/NES-Games-Disassembly",
+  "directory": "Kunio-kun no Nekketsu Soccer League",
+  "commit": "df2c8e55e7f13e5792482527db9e7c9e4a84c6e1",
+  "auditAccess": "GitHub connector/API excerpts and listings. Full clone unavailable due sandbox DNS, and full disassembly analysis not performed.",
+  "items": [
+    {
+      "path": "CHR_ROM.chr",
+      "size": 131072,
+      "blobSHA": "e62db8eeaa386d65ff741847bd8d01cecdada00f",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "DPCM.bin",
+      "size": 385,
+      "blobSHA": "91f3514c6bdd4b22864a29e20739abb8118bc9b6",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "assemble.bat",
+      "size": 7289,
+      "blobSHA": "74ca479e95b66a5d59c14858437d41f56084cc82",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "assemble.sh",
+      "size": 915,
+      "blobSHA": "da359a402bff1e28e0b1926845f764cceb98d223",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "bank_00.asm",
+      "size": 728430,
+      "blobSHA": "7fd2b31ec30fc546629d8304911164ee7bd75b5b",
+      "analysis": "Not analyzed"
+    },
+    {
+      "path": "bank_01.asm",
+      "size": 798469,
+      "blobSHA": "db05847d5fc7a872f410980c2f75823cfb28090a",
+      "analysis": "Not analyzed"
+    },
+    {
+      "path": "bank_02.asm",
+      "size": 748979,
+      "blobSHA": "9da0c967d2cef2de12718028acaff472cf8bbf04",
+      "analysis": "Not analyzed"
+    },
+    {
+      "path": "bank_03.asm",
+      "size": 515675,
+      "blobSHA": "44efd991b4d40e1f01c7756bc0a978da1335b24d",
+      "analysis": "Not analyzed"
+    },
+    {
+      "path": "bank_04.asm",
+      "size": 731095,
+      "blobSHA": "e19d5c593b4b3c67e0fdc7eb9d2ad1f1a82fdf04",
+      "analysis": "Not analyzed"
+    },
+    {
+      "path": "bank_05.asm",
+      "size": 527723,
+      "blobSHA": "f420acdc95f881331a3352a2a728c6f02c486ccf",
+      "analysis": "Not analyzed"
+    },
+    {
+      "path": "bank_06.asm",
+      "size": 491315,
+      "blobSHA": "a59aba73692dd2b3775c158c03dafa2452f39f95",
+      "analysis": "Not analyzed"
+    },
+    {
+      "path": "bank_FF.asm",
+      "size": 496741,
+      "blobSHA": "d9b5307a83f022c17deb0cec82b2bea2249c5484",
+      "analysis": "Partial verified: $D993-$DA45 weather OAM producer and five source tables, $EE5A OAM DMA, $EE7D/$EE9A MMC3 CHR bank writes, $F05F-$F0B3 palette queue; remaining routines not exhaustively audited"
+    },
+    {
+      "path": "bank_ram.inc",
+      "size": 492693,
+      "blobSHA": "a4370c74c127b5f040b625a505c8cedc8b74d82d",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "bank_val.inc",
+      "size": 2449,
+      "blobSHA": "730ede7cf7afeb140bc8a283c63fda1d935d416a",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "header.bin",
+      "size": 16,
+      "blobSHA": "d12a10b281869bf77b63239a6a8611a66ffc9379",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "ld65.cfg",
+      "size": 1382,
+      "blobSHA": "71eab265832c3ced295f694a509bc150cbe366f1",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "preparations.lua",
+      "size": 7544,
+      "blobSHA": "37702d6d744793e7e5745ebd4556593a15be6e38",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "ca65.exe",
+      "size": 707307,
+      "blobSHA": "0a92e810979b6abba2a3caf780aaf26e2018c897",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "ld65.exe",
+      "size": 567424,
+      "blobSHA": "065ab1020aadb6db506948b476ba7e07da604c18",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "lua53.dll",
+      "size": 330181,
+      "blobSHA": "d9c297f998b11300ecbc60cfb6d176189079ce7a",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "lua53.exe",
+      "size": 121549,
+      "blobSHA": "3be8bd377b12badb82755be75d736df75dd14a61",
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "_misc/Kunio-kun no Nekketsu Soccer League (J) [!].cdl",
+      "size": 262144,
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "_misc/Russian disassembly by Ti_.asm",
+      "size": 1816042,
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "_misc/debug logs.zip",
+      "size": 3046746,
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "_misc/goal3_misc.fm2",
+      "size": 2428091,
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "_misc/goal3_playoff.fm2",
+      "size": 1906746,
+      "analysis": "Inventory only"
+    },
+    {
+      "path": "_misc/goal3_walkthrough.fm2",
+      "size": 6900326,
+      "analysis": "Inventory only"
+    }
+  ]
+}

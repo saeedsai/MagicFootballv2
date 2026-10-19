@@ -1,0 +1,2421 @@
+{
+  "format": "kunio-soccer-input-replay",
+  "schemaVersion": 1,
+  "mode": "enhanced-dev",
+  "rulesVersion": "enhanced-dev-0.1",
+  "tickRate": 60,
+  "seed": 20261019,
+  "frames": [
+    {
+      "dx": 0,
+      "dy": 0.7,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.076847,
+      "dy": 0.699338,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.15324,
+      "dy": 0.697355,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.228726,
+      "dy": 0.694054,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.30286,
+      "dy": 0.689441,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.375203,
+      "dy": 0.683524,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.445326,
+      "dy": 0.676316,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.512816,
+      "dy": 0.66783,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.577273,
+      "dy": 0.658081,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.638315,
+      "dy": 0.647089,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.695583,
+      "dy": 0.634873,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.748736,
+      "dy": 0.621458,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.797462,
+      "dy": 0.606868,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.841471,
+      "dy": 0.591131,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.880503,
+      "dy": 0.574276,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.914328,
+      "dy": 0.556336,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.942746,
+      "dy": 0.537345,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.965587,
+      "dy": 0.517338,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.982718,
+      "dy": 0.496354,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.994037,
+      "dy": 0.474431,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.999477,
+      "dy": 0.451611,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.999006,
+      "dy": 0.427938,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.992627,
+      "dy": 0.403456,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.980376,
+      "dy": 0.378212,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.962328,
+      "dy": 0.352252,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.938588,
+      "dy": 0.325627,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.909297,
+      "dy": 0.298387,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.874629,
+      "dy": 0.270582,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.834787,
+      "dy": 0.242266,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.790009,
+      "dy": 0.213492,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.740558,
+      "dy": 0.184315,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.686727,
+      "dy": 0.154789,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.628835,
+      "dy": 0.124971,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.567224,
+      "dy": 0.094916,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.502258,
+      "dy": 0.064682,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.434322,
+      "dy": 0.034326,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.363816,
+      "dy": 0.003905,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.29116,
+      "dy": -0.026523,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.216781,
+      "dy": -0.056901,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.14112,
+      "dy": -0.087172,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.064625,
+      "dy": -0.117278,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.012253,
+      "dy": -0.147162,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.089058,
+      "dy": -0.176769,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.165337,
+      "dy": -0.206041,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.240638,
+      "dy": -0.234923,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.314515,
+      "dy": -0.263362,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.386532,
+      "dy": -0.291303,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.456264,
+      "dy": -0.318693,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.523297,
+      "dy": -0.345481,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.587235,
+      "dy": -0.371616,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.6477,
+      "dy": -0.397048,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.704334,
+      "dy": -0.421731,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.756802,
+      "dy": -0.445616,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.804795,
+      "dy": -0.468658,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.848028,
+      "dy": -0.490815,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.886246,
+      "dy": -0.512045,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.919222,
+      "dy": -0.532306,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.946761,
+      "dy": -0.551562,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.968702,
+      "dy": -0.569774,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.984913,
+      "dy": -0.586911,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.995299,
+      "dy": -0.602937,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.999798,
+      "dy": -0.617824,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.998385,
+      "dy": -0.631544,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.991067,
+      "dy": -0.64407,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.977887,
+      "dy": -0.655378,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.958924,
+      "dy": -0.665448,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.93429,
+      "dy": -0.67426,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.90413,
+      "dy": -0.681797,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.868623,
+      "dy": -0.688046,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.827978,
+      "dy": -0.692995,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.782437,
+      "dy": -0.696633,
+      "shoot": true,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.732268,
+      "dy": -0.698955,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.677769,
+      "dy": -0.699956,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.619261,
+      "dy": -0.699634,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.55709,
+      "dy": -0.69799,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.491625,
+      "dy": -0.695026,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.423252,
+      "dy": -0.690749,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.352376,
+      "dy": -0.685166,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.279415,
+      "dy": -0.678289,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.204803,
+      "dy": -0.670129,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.128979,
+      "dy": -0.660702,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.052392,
+      "dy": -0.650027,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.024505,
+      "dy": -0.638123,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.101256,
+      "dy": -0.625014,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.177409,
+      "dy": -0.610722,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.252513,
+      "dy": -0.595277,
+      "shoot": false,
+      "pass": true,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.326123,
+      "dy": -0.578706,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.397804,
+      "dy": -0.561042,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.467133,
+      "dy": -0.542317,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.533699,
+      "dy": -0.522567,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.597109,
+      "dy": -0.50183,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.656987,
+      "dy": -0.480144,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.712979,
+      "dy": -0.457551,
+      "shoot": false,
+      "pass": false,
+      "tackle": true,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.764755,
+      "dy": -0.434092,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.812008,
+      "dy": -0.409814,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.854458,
+      "dy": -0.38476,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.891855,
+      "dy": -0.35898,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.923977,
+      "dy": -0.332521,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.950635,
+      "dy": -0.305433,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.971671,
+      "dy": -0.277768,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.986959,
+      "dy": -0.249579,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": true,
+      "pause": false
+    },
+    {
+      "dx": 0.996411,
+      "dy": -0.220917,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.999969,
+      "dy": -0.191838,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.997614,
+      "dy": -0.162396,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.989358,
+      "dy": -0.132648,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.975251,
+      "dy": -0.102649,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.955377,
+      "dy": -0.072455,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.929851,
+      "dy": -0.042125,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.898827,
+      "dy": -0.011715,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.862487,
+      "dy": 0.018717,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.821045,
+      "dy": 0.049113,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.774748,
+      "dy": 0.079417,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.723869,
+      "dy": 0.109571,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.668708,
+      "dy": 0.139518,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.609593,
+      "dy": 0.1692,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.546873,
+      "dy": 0.198564,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.480918,
+      "dy": 0.227551,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.412118,
+      "dy": 0.256109,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.340882,
+      "dy": 0.284183,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.267629,
+      "dy": 0.311719,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.192794,
+      "dy": 0.338667,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.116818,
+      "dy": 0.364974,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.040152,
+      "dy": 0.390591,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.036752,
+      "dy": 0.415471,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.113439,
+      "dy": 0.439564,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.189455,
+      "dy": 0.462828,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": true
+    },
+    {
+      "dx": -0.26435,
+      "dy": 0.485216,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.337682,
+      "dy": 0.506687,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.409016,
+      "dy": 0.527201,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.477932,
+      "dy": 0.546718,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.544021,
+      "dy": 0.565202,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": true
+    },
+    {
+      "dx": -0.606893,
+      "dy": 0.582617,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.666175,
+      "dy": 0.598932,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.721517,
+      "dy": 0.614114,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.772592,
+      "dy": 0.628136,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.819098,
+      "dy": 0.64097,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.86076,
+      "dy": 0.652593,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.897331,
+      "dy": 0.662983,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.928594,
+      "dy": 0.672119,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.954366,
+      "dy": 0.679985,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.974493,
+      "dy": 0.686566,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.988858,
+      "dy": 0.691849,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.997373,
+      "dy": 0.695825,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.99999,
+      "dy": 0.698485,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.996693,
+      "dy": 0.699826,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.987501,
+      "dy": 0.699843,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.972469,
+      "dy": 0.698538,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.951685,
+      "dy": 0.695913,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.925273,
+      "dy": 0.691972,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.893389,
+      "dy": 0.686723,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.856221,
+      "dy": 0.680177,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.813989,
+      "dy": 0.672344,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.766943,
+      "dy": 0.663241,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.71536,
+      "dy": 0.652885,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.659548,
+      "dy": 0.641294,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.599834,
+      "dy": 0.628492,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.536573,
+      "dy": 0.614501,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.470138,
+      "dy": 0.599349,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.400923,
+      "dy": 0.583065,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.329337,
+      "dy": 0.565678,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.255803,
+      "dy": 0.547222,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.180756,
+      "dy": 0.527732,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.10464,
+      "dy": 0.507244,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.027905,
+      "dy": 0.485798,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.048994,
+      "dy": 0.463433,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.125604,
+      "dy": 0.440192,
+      "shoot": true,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.201472,
+      "dy": 0.41612,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.276147,
+      "dy": 0.391261,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.34919,
+      "dy": 0.365663,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.420167,
+      "dy": 0.339373,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.488659,
+      "dy": 0.312442,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.554262,
+      "dy": 0.28492,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.616586,
+      "dy": 0.25686,
+      "shoot": false,
+      "pass": true,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.675263,
+      "dy": 0.228315,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.729947,
+      "dy": 0.199337,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.780314,
+      "dy": 0.169984,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.826066,
+      "dy": 0.140308,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.866932,
+      "dy": 0.110368,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.902671,
+      "dy": 0.080219,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.933072,
+      "dy": 0.049919,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.957954,
+      "dy": 0.019524,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.97717,
+      "dy": -0.010908,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.990607,
+      "dy": -0.041319,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.998186,
+      "dy": -0.071652,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.999861,
+      "dy": -0.10185,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.995623,
+      "dy": -0.131855,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.985496,
+      "dy": -0.161611,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.969541,
+      "dy": -0.191062,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.947851,
+      "dy": -0.220151,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.920556,
+      "dy": -0.248824,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.887817,
+      "dy": -0.277027,
+      "shoot": false,
+      "pass": false,
+      "tackle": true,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.849826,
+      "dy": -0.304707,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.80681,
+      "dy": -0.33181,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.759022,
+      "dy": -0.358286,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.706745,
+      "dy": -0.384086,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.650288,
+      "dy": -0.409159,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.589985,
+      "dy": -0.433459,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.526193,
+      "dy": -0.456939,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.459288,
+      "dy": -0.479556,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.389668,
+      "dy": -0.501267,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.317743,
+      "dy": -0.52203,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.243938,
+      "dy": -0.541806,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.168691,
+      "dy": -0.560559,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.092446,
+      "dy": -0.578252,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": 0.015655,
+      "dy": -0.594852,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.061229,
+      "dy": -0.610328,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.137751,
+      "dy": -0.62465,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.213458,
+      "dy": -0.637791,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.287903,
+      "dy": -0.649727,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.360645,
+      "dy": -0.660435,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.431255,
+      "dy": -0.669895,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.499313,
+      "dy": -0.678089,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.564419,
+      "dy": -0.685001,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.626186,
+      "dy": -0.690618,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.68425,
+      "dy": -0.69493,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": true,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.738268,
+      "dy": -0.697928,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.787918,
+      "dy": -0.699608,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.832909,
+      "dy": -0.699965,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.872974,
+      "dy": -0.698999,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.907876,
+      "dy": -0.696712,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.937409,
+      "dy": -0.693108,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.961397,
+      "dy": -0.688194,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.9797,
+      "dy": -0.68198,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.992208,
+      "dy": -0.674476,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.998849,
+      "dy": -0.665698,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.999581,
+      "dy": -0.655661,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.994403,
+      "dy": -0.644385,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.983342,
+      "dy": -0.631892,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.966467,
+      "dy": -0.618203,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.943875,
+      "dy": -0.603347,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.915701,
+      "dy": -0.58735,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.882111,
+      "dy": -0.570243,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.843304,
+      "dy": -0.552058,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.79951,
+      "dy": -0.53283,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.750987,
+      "dy": -0.512595,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.698023,
+      "dy": -0.491391,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.64093,
+      "dy": -0.469258,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.580047,
+      "dy": -0.446238,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.515734,
+      "dy": -0.422375,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    },
+    {
+      "dx": -0.44837,
+      "dy": -0.397713,
+      "shoot": false,
+      "pass": false,
+      "tackle": false,
+      "sprint": false,
+      "switch": false,
+      "pause": false
+    }
+  ],
+  "checkpoints": [
+    {
+      "frame": 120,
+      "hash": "c62ba2f7"
+    },
+    {
+      "frame": 240,
+      "hash": "e6a26591"
+    }
+  ],
+  "finalHash": "e6a26591"
+}
