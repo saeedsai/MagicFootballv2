@@ -15,10 +15,10 @@ export function assess(paths, html, status, readme) {
   const forbidden = paths.filter(restricted);
   const errors = [];
   if (forbidden.length) errors.push('Restricted asset/archive tracked');
-  if (!sourceCandidate && blobSha(html) !== PINNED_HTML_BLOB) errors.push('Bootstrap HTML hash changed before source migration');
+  if (blobSha(html) !== PINNED_HTML_BLOB) errors.push('Pinned standalone HTML hash mismatch');
   if (!readme.includes(PINNED_UPSTREAM)) errors.push('Pinned upstream SHA absent');
   if (!html.toString().includes('Classic Mode is still disabled')) errors.push('Classic disabled marker absent');
-  if (!sourceCandidate && /^\*\*Migration state:\*\* COMPLETE$/m.test(status)) errors.push('False migration-complete claim');
+  if (/^\*\*Migration state:\*\* COMPLETE$/m.test(status)) errors.push('False migration-complete claim');
   return { trackedFiles: paths.length, sourceCount, testCount, missingModules, sourceCandidate, migrationVerifiedComplete: false, forbidden, errors };
 }
 export function audit(root = '.') {
