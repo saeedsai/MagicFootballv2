@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
 
 export const ARCHIVED_SOURCE_BLOBS=Object.freeze({
  'src/classic/OriginalRandom.js':'e61eb50841f0b840cd7395a21efe85f81af77b31',
@@ -23,7 +24,7 @@ export function verifyRestoredSources(root=fileURLToPath(new URL('..',import.met
  }
  return {verified,expectedSourceFiles:Object.keys(ARCHIVED_SOURCE_BLOBS).length,archivedSourceFiles:22,totalArchivedFiles:185,complete:false,errors};
 }
-if(process.argv[1] && fileURLToPath(import.meta.url)===process.argv[1]){
+if(process.argv[1] && fileURLToPath(import.meta.url)===resolve(process.argv[1])){
  const result=verifyRestoredSources();
  process.stdout.write(JSON.stringify(result,null,2)+'\n');
  if(result.errors.length)process.exitCode=1;
