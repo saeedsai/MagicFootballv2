@@ -36,3 +36,8 @@ The public repository excludes the original NES ROM, extracted CHR/PRG/audio and
 ## 2026-10-19 remote audit increment
 
 The full 185-file modular tree and local Git history are still **not migrated**: the exact source ZIP was unavailable in this run's mounted files and Library. Six new unit tests and a Git-tracked-path migration audit have been prepared for remote CI. The audit protects the byte-identical Iteration 15 standalone and the disabled Classic Mode gate, rejects protected binary files, and never claims that a source-file count proves full migration. See `docs/REMOTE_ITERATION_HANDOVER.md`. This is a guardrail increment, **not** an original-game conversion or a completed source migration.
+
+
+## 2026-10-19 archive preflight increment
+
+The exact source ZIP is still unavailable in this run, so the 185-file modular migration and original Git history remain **INCOMPLETE**. A read-only ZIP preflight tool and nine synthetic integrity/rights tests were added to the remote feature branch. The tool refuses an incorrect archive SHA-256, rejects unsafe ZIP paths/links and corrupt entries, reports SHA-256 and Git blob hashes for later reviewed import, and never extracts or publishes protected content. A ZIP file count cannot prove a complete Git-tracked migration. See reports/ARCHIVE_PREFLIGHT_2026-10-19.md. **Classic Mode is still disabled.**

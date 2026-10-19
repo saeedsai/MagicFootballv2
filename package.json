@@ -6,6 +6,6 @@
   "description": "Temporary standalone HTML checkpoint while full Iteration 15 modular source migration is pending",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check tests/standalone.test.mjs"
+    "check": "node --check tests/standalone.test.mjs && node --check tools/archive-preflight.mjs && node --check tools/migration-audit.mjs"
   }
 }

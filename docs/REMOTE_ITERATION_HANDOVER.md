@@ -9,3 +9,10 @@ This increment adds `tools/migration-audit.mjs` and six unit tests. The CI audit
 **Next action:** obtain the exact archive, verify its SHA-256, enumerate all 185 tracked files and provenance, import safe modular code/tests/docs to a branch based on the latest main tree, preserve historical ancestry separately, review diff, execute full test/build/browser checks, then merge without force-push. No original ROM, CHR, PRG, DPCM, music or derived art should be published without rights. Classic Mode stays disabled pending frame-level evidence.
 
 The six audit unit tests are new; historical 243-test results are from the separate local Iteration 15 checkout, not the incomplete remote. See `MIGRATION_STATUS.md`.
+
+
+## 2026-10-19 next remote increment: safe archive preflight
+
+The authentic archive was not available to this execution. New tools/archive-preflight.mjs and tests/archive-preflight.test.mjs prepare a safe SHA-pinned manifest from the archive **once it becomes accessible**. See reports/ARCHIVE_PREFLIGHT_2026-10-19.md for commands, exclusions and limitations. The new tool does not extract, import or publish any archive content and cannot establish which paths were Git-tracked. Existing index.html and historical handover are untouched.
+
+Continue from the latest main SHA and inspect the exact remote tree/CI before changing files. The first priority remains importing the actual 185 tracked source files and preserving their Git provenance; next is authentic player OAM/metasprite and frame-level comparison work. Do not mark the source migration complete or enable Classic Mode without evidence.
