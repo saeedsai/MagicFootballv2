@@ -9,7 +9,9 @@ export const blobSha = bytes => createHash('sha1').update('blob ' + bytes.length
 export const restricted = path => /\.(nes|chr|prg|dpcm|nsf|bin|zip)$/i.test(path) || /(^|\/)standalone-private\.html$/i.test(path);
 export function assess(paths, html, status, readme) {
   const missingModules = REQUIRED_MODULES.filter(path => !paths.includes(path));
-  const sourceCandidate = paths.length >= 185 && missingModules.length === 0;
+  const sourceCount = paths.filter(path => /^src\/.*\.(?:js|mjs)$/i.test(path)).length;
+  const testCount = paths.filter(path => /^tests\/.*\.(?:js|mjs)$/i.test(path)).length;
+  const sourceCandidate = paths.length >= 185 && sourceCount >= 100 && testCount >= 1 && missingModules.length === 0;
   const forbidden = paths.filter(restricted);
   const errors = [];
   if (forbidden.length) errors.push('Restricted asset/archive tracked');
@@ -17,7 +19,7 @@ export function assess(paths, html, status, readme) {
   if (!readme.includes(PINNED_UPSTREAM)) errors.push('Pinned upstream SHA absent');
   if (!html.toString().includes('Classic Mode is still disabled')) errors.push('Classic disabled marker absent');
   if (!sourceCandidate && /^\*\*Migration state:\*\* COMPLETE$/m.test(status)) errors.push('False migration-complete claim');
-  return { trackedFiles: paths.length, missingModules, sourceCandidate, migrationVerifiedComplete: false, forbidden, errors };
+  return { trackedFiles: paths.length, sourceCount, testCount, missingModules, sourceCandidate, migrationVerifiedComplete: false, forbidden, errors };
 }
 export function audit(root = '.') {
   const paths = execFileSync('git', ['ls-files', '-z'], { cwd: root }).toString().split('\0').filter(Boolean);
