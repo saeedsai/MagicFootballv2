@@ -6,6 +6,7 @@ test('every restored original JS blob is byte-identical to uploaded Iteration 15
  const result=verifyRestoredSources();
  assert.deepEqual(result.errors,[]);
  assert.equal(result.verified.length,Object.keys(ARCHIVED_SOURCE_BLOBS).length);
+ assert.equal(result.verified.length,22);
  assert.equal(result.complete,false);
  assert.equal(result.archivedSourceFiles,22);
 });

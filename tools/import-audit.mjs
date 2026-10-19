@@ -18,7 +18,14 @@ export const ARCHIVED_SOURCE_BLOBS=Object.freeze({
  'src/classic/OriginalFieldLogic.js':'d5523e4624f5e3d3a9f6cc2e0aaec3b145c63d63',
  'src/classic/OriginalGoalCutscene.js':'1c3afe80899eb6205a52d0ef44341b6a11f13f3a',
  'src/classic/OriginalActionArbitration.js':'83837771af46a070ea9ba0b7a718d9382e41b918',
- 'src/classic/OriginalMovementTransition.js':'f18e2484fee9421ddfffa94fae8abbfc8216f067'
+ 'src/classic/OriginalMovementTransition.js':'f18e2484fee9421ddfffa94fae8abbfc8216f067',
+ 'src/classic/OriginalAlternateController.js':'b4cc49566b6122afcd807cd0569dd509fa92db4b',
+ 'src/classic/OriginalPlayerAction.js':'af67787411ac97ba7d88225a3c127fabc23cea8b',
+ 'src/core/Match.js':'38c05688fdd117510516ea255f9bc1dedbedb0bb',
+ 'src/core/Replay.js':'f30cf2ae625088faabee63925075f6aef682f2f5',
+ 'src/input/InputManager.js':'06e7647126c81dc41bb93c13f272981b14fee187',
+ 'src/main.js':'572fe39c16d83d58c0b41ac0a0d64bf29967d189',
+ 'src/rendering/Renderer.js':'ce06dc96d4f0c91b44cd44c7c51df39bdf9bb4d9'
 });
 export const archivedGitBlob = content => createHash('sha1').update('blob '+content.length+'\0').update(content).digest('hex');
 export function verifyRestoredSources(root=fileURLToPath(new URL('..',import.meta.url))){
