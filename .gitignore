@@ -1,0 +1,18 @@
+# User-supplied copyrighted NES assets, extracted originals, and private reference traces
+*.nes
+*.chr
+*.bin
+*.zip
+local/
+dist/local/
+dist/standalone-private.html
+reports/screenshots/verified-original-chr-*.png
+
+# Developer machine and generated files
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+!.env.example

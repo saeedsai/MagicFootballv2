@@ -1,0 +1,11 @@
+{
+  "name": "magicfootballv2-bootstrap",
+  "version": "0.15.0-migration",
+  "private": true,
+  "type": "module",
+  "description": "Temporary standalone HTML checkpoint while full Iteration 15 modular source migration is pending",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check tests/standalone.test.mjs"
+  }
+}
