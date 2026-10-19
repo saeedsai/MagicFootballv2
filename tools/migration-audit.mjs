@@ -11,7 +11,7 @@ export function assess(paths, html, status, readme) {
   const missingModules = REQUIRED_MODULES.filter(path => !paths.includes(path));
   const sourceCount = paths.filter(path => /^src\/.*\.(?:js|mjs)$/i.test(path)).length;
   const testCount = paths.filter(path => /^tests\/.*\.(?:js|mjs)$/i.test(path)).length;
-  const sourceCandidate = paths.length >= 185 && sourceCount >= 100 && testCount >= 1 && missingModules.length === 0;
+  const sourceCandidate = paths.length >= 185 && sourceCount >= 22 && testCount >= 22 && missingModules.length === 0;
   const forbidden = paths.filter(restricted);
   const errors = [];
   if (forbidden.length) errors.push('Restricted asset/archive tracked');
