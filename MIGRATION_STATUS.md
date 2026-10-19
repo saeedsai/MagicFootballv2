@@ -36,3 +36,7 @@ The public repository excludes the original NES ROM, extracted CHR/PRG/audio and
 ## 2026-10-19 remote audit increment
 
 The full 185-file modular tree and local Git history are still **not migrated**: the exact source ZIP was unavailable in this run's mounted files and Library. Six new unit tests and a Git-tracked-path migration audit have been prepared for remote CI. The audit protects the byte-identical Iteration 15 standalone and the disabled Classic Mode gate, rejects protected binary files, and never claims that a source-file count proves full migration. See `docs/REMOTE_ITERATION_HANDOVER.md`. This is a guardrail increment, **not** an original-game conversion or a completed source migration.
+
+## 2026-10-19 original-source restoration: verified batch 1
+
+The exact uploaded archive (SHA-256 `aa0b2e06caf54d3073d900439e7f015abacf754b407f805b3e0bc43cfa1e1f63`) and local Git commit `274195e506b818fdd0957df980284aa08482735e` have been verified. Batch 1 restores four byte-identical modular JavaScript sources (`OriginalRandom`, `OriginalStateIds`, `OriginalScreenDispatch`, `OriginalRomSha1`) and two original Node test files; GitHub blob SHA values equal the archived Git object hashes. A separately developed Java port of the isolated original RNG and exhaustive 65,536-state regression test are included. The complete 185-file tree and original 17-commit history remain NOT migrated. The archived 237-pass/6-skip local suite is not a remote CI claim; CI covers only migrated tests. Classic Mode remains disabled, and no original asset bytes were uploaded.

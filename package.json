@@ -3,9 +3,9 @@
   "version": "0.15.0-migration",
   "private": true,
   "type": "module",
-  "description": "Temporary standalone HTML checkpoint while full Iteration 15 modular source migration is pending",
+  "description": "Incrementally restored Iteration 15 native JS research modules and Java reference parity checks; Classic Mode disabled",
   "scripts": {
-    "test": "node --test tests/*.test.mjs",
-    "check": "node --check tests/standalone.test.mjs"
+    "test": "node --test tests/*.test.mjs tests/*.test.js",
+    "check": "node --check tests/standalone.test.mjs && node --check src/classic/OriginalRandom.js && node --check src/classic/OriginalStateIds.js && node --check src/classic/OriginalScreenDispatch.js && node --check src/classic/OriginalRomSha1.js"
   }
 }

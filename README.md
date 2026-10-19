@@ -28,3 +28,7 @@ Do not commit original ROM/CHR/audio, extracted proprietary assets, secrets, or 
 4. Only then expand original movement, ball physics, AI, audio, modes and menu parity; defer Enhanced Mode work.
 
 Project documentation is tracked in [MIGRATION_STATUS.md](MIGRATION_STATUS.md) and [HANDOVER.md](HANDOVER.md).
+
+## Incremental native Java reference port
+
+`java/src/org/magicfootball/classic/OriginalRandom.java` mirrors the source-derived `$EE35` routine in the recovered `src/classic/OriginalRandom.js`. Its dependency-free Java test enumerates all 65,536 two-byte states, without emulating a CPU. Build and run with `javac -d build/java java/src/org/magicfootball/classic/OriginalRandom.java java/test/org/magicfootball/classic/OriginalRandomTest.java` and `java -cp build/java org.magicfootball.classic.OriginalRandomTest`. This does **not** demonstrate full original-game equivalence. Java is a reference / future platform port; HTML5 JavaScript remains the web client. Original art is not bundled: authenticated locally imported graphics can be processed without being published.
