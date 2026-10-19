@@ -1,0 +1,11 @@
+# Kunio Soccer — iteration 15 handover (v0.15.0)
+
+**Baseline:** resumed clean Iteration 14 local Git commit `a5e6c9dedaa7701cab153130b4818e46475c2104`. **Original source:** pinned `df2c8e55e7f13e5792482527db9e7c9e4a84c6e1`. **Strict objective:** native JavaScript recreation of the *actual original binary*, no substitute. **Classic Mode DISABLED**, Enhanced-dev football match remains an isolated provisional testbed.
+
+**Implemented:** `src/classic/OriginalWeatherSprites.js` ports both original `$D993` weather OAM branches (`$81` initialization and `$01` update) with five tables read directly from the authenticated user-supplied PRG. Twelve source-defined sprite quadruplets are produced at RAM `$0200–$022F`, and the existing `$EE5A` DMA routine copies them to research OAM. `src/classic/OriginalRomSha1.js` validates user-selected NES PRG offline against the pinned header-normalized ROM hash. Browser research UI works on standalone/modular/mobile-emulated Chromium. Source trace: `docs/ORIGINAL_WEATHER_OAM_TRACE.md`.
+
+**Tests:** 243 Node tests passed (0 failed/skipped) with the private ROM; 10 new tests. The new test-only 6502 interpreter executes original ROM instructions and compares complete 2 KiB RAM after 80 isolated synthetic input steps. 8 Chromium smoke scripts passed, including the new original weather lab, and existing deterministic development replay hash `e6a26591` is unchanged. Source checks/build passed. **No NES emulator gameplay-frame parity, actual weather sprites RGB/CHR assignment, original player sprite composition, sound, full game physics, or original menus are claimed.**
+
+**Private asset handling:** `local/original.chr`, `dist/local/` and `dist/standalone-private.html` are ignored; the source ZIP/public standalone exclude the original ROM/CHR/PRG/audio. Browser original ROM upload is local-only, with no server or telemetry. No remote push or deployment. The local Git commit hash and working-tree status are in the final report and `reports/LATEST_TEST_REPORT.md`.
+
+**Next:** reconstruct source bank04 original player OAM/metasprite producer and the original frame's CHR/PPUCTRL/palette RAM inputs; obtain NES emulator reference snapshots and differential tests. Do not unlock Classic or add Enhanced-only features before authentic parity gates.
