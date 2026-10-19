@@ -35,3 +35,7 @@ unless a separate GitHub commit and remote file audit confirms them.
 No protected ROM, CHR, PRG, DPCM, audio, or original sprite art is included.
 Classic Mode remains disabled. All reported remote CI results must be
 checked against the actual commit SHA; local tests are not remote CI evidence.
+
+Remote branch CI: Node.js 271 tests / 265 passed / 0 failed / 6 skipped; Java checks passed.
+Evidence: https://github.com/saeedsai/MagicFootballv2/actions/runs/39316929779
+and https://github.com/saeedsai/MagicFootballv2/actions/runs/39316929715.
