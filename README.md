@@ -16,7 +16,7 @@ Open [index.html](index.html) directly or through a local static server. This se
 
 ## Migration status
 
-The previous local Iteration 15 source archive contains the full modular source tree, tests, plans, reports, and local Git history. This GitHub repository was initially empty. The browser build and the core handover/report records are being migrated here first through the connected GitHub API because direct Git transport is unavailable in the current runtime. **The modular tree and its historical commits must be imported before claiming the full source migration is complete.** See [MIGRATION_STATUS.md](MIGRATION_STATUS.md).
+The previous local Iteration 15 source archive contains the full modular source tree, tests, plans, reports, and local Git history. This GitHub repository was initially empty. The browser build and the core handover/report records are being migrated here first through the connected GitHub API because direct Git transport is unavailable in the current runtime. **The modular tree and its historical commits must be imported before claiming the full source migration is complete.** See [MIGRATION_STATUS_CURRENT.md](MIGRATION_STATUS_CURRENT.md) for the latest verified 15/22 source count and [MIGRATION_STATUS.md](MIGRATION_STATUS.md) for the historical migration log.
 
 Do not commit original ROM/CHR/audio, extracted proprietary assets, secrets, or private reference fixtures. Do not claim 100% parity from passing synthetic tests.
 
