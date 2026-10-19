@@ -27,7 +27,7 @@ test('a false COMPLETE status is reported as a failure', () => {
   assert.ok(report.errors.some(error => error.includes('False migration')));
 });
 test('candidate module presence never automatically establishes verified parity', () => {
-  const paths = [...REQUIRED_MODULES, ...Array.from({ length: 182 }, (_, i) => 'src/fixture' + i + '.js')];
+  const paths = [...REQUIRED_MODULES, ...Array.from({ length: 182 }, (_, i) => 'src/fixture' + i + '.js'), ...Array.from({ length: 21 }, (_, i) => 'tests/fixture' + i + '.test.js')];
   const report = sample(paths);
   assert.equal(report.sourceCandidate, true);
   assert.equal(report.migrationVerifiedComplete, false);
