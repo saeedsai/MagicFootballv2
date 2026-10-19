@@ -37,7 +37,7 @@ function zip(specs) {
     central.writeUInt32LE(data.length, 24);
     central.writeUInt16LE(name.length, 28);
     central.writeUInt32LE(offset, 42);
-    if (item.mode) central.writeUInt32LE(item.mode << 16, 38);
+    if (item.mode) central.writeUInt32LE((item.mode << 16) >>> 0, 38);
     locals.push(local, name, compressed);
     centrals.push(central, name);
     offset += local.length + name.length + compressed.length;
